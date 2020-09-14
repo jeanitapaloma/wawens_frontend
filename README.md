@@ -1,4 +1,4 @@
-# wawens_frontend
+# app
 
 ## Project setup
 ```
