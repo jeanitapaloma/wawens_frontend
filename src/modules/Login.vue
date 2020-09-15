@@ -1,67 +1,103 @@
 <template>
-  <v-row justify="center">
-    <v-dialog v-model="dialog" persistent max-width="600px">
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn
-          color="primary"
-          dark
-          v-bind="attrs"
-          v-on="on"
-        >
-          Open Dialog
-        </v-btn>
-      </template>
-      <v-card>
-        <v-card-title>
-          <span class="headline">User Profile</span>
-        </v-card-title>
-        <v-card-text>
-          <v-container>
-            <v-row>
-              <v-col cols="12" sm="6" md="4">
-                <v-text-field label="Legal first name*" required></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6" md="4">
-                <v-text-field label="Legal middle name" hint="example of helper text only on focus"></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6" md="4">
-                <v-text-field
-                  label="Legal last name*"
-                  hint="example of persistent helper text"
-                  persistent-hint
-                  required
-                ></v-text-field>
-              </v-col>
-              <v-col cols="12">
-                <v-text-field label="Email*" required></v-text-field>
-              </v-col>
-              <v-col cols="12">
-                <v-text-field label="Password*" type="password" required></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6">
-                <v-select
-                  :items="['0-17', '18-29', '30-54', '54+']"
-                  label="Age*"
-                  required
-                ></v-select>
-              </v-col>
-              <v-col cols="12" sm="6">
-                <v-autocomplete
-                  :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
-                  label="Interests"
-                  multiple
-                ></v-autocomplete>
-              </v-col>
-            </v-row>
-          </v-container>
-          <small>*indicates required field</small>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="dialog = false">Close</v-btn>
-          <v-btn color="blue darken-1" text @click="dialog = false">Save</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-  </v-row>
+  <div class="card bg-light">
+    <article class="card-body mx-auto" style="width: 500px; height:800px;
+padding-top: 70px;">
+      <v-img src="../assets/logo.png" id="logo" max-height="80" max-width="80" centered/>
+      <br>
+      <br>
+      <a class="btn btn-block btn-social btn-twitter">
+        <span class="fa fa-google"></span>
+        <strong>Sign In with GOOGLE</strong>
+      </a>
+      <a href class="btn btn-block btn-social btn-facebook">
+        <i class="fa fa-facebook"></i>
+        <strong>Sign In with FACEBOOK</strong>
+      </a>
+      <p class="divider-text">
+        <span class="bg-light">OR</span>
+      </p>
+      <form>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </div>
+          <input name class="form-control" placeholder="Email address" type="email">
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-key"></i>
+            </span>
+          </div>
+          <input class="form-control" placeholder="Create password" type="password">
+        </div>
+        <!-- form-group// -->
+        <div class="form-group">
+          <button id="create" type="submit" class="btn btn-primary">SIGN IN</button>
+        </div>
+        <!-- form-group// -->
+        <p class="text-center">
+          <a href>Forgot Password</a>
+          <br>Don't have an account?
+          <a href>Sign Up</a>
+          <br>
+        </p>
+      </form>
+    </article>
+  </div>
+  <!-- card.// -->
 </template>
+<script>
+</script>
+<style>
+#create {
+  width: 110px;
+  background-color: #7b0eaa;
+  color: white;
+  margin-left: 180px;
+}
+.divider-text {
+  position: relative;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.divider-text span {
+  padding: 7px;
+  font-size: 12px;
+  position: relative;
+  z-index: 2;
+  border-color: violet;
+}
+.divider-text:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid violet;
+  top: 55%;
+  left: 0;
+  z-index: 1;
+}
+
+.btn-facebook {
+  background-color: rgb(55, 55, 187);
+  color: #fff;
+  border-color: lightblue;
+}
+.btn-twitter {
+  background-color: whitesmoke;
+  color: #fff;
+  border-color: darkviolet;
+}
+.form-control {
+  border-color: darkviolet;
+}
+.fa {
+  border-color: darkviolet;
+}
+#logo {
+  margin-left: 200px;
+}
+</style>

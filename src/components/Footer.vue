@@ -61,7 +61,7 @@
   padding: 40px 35px;
   position: fixed;
   bottom: 0;
-  height: 30%;
+  height: 20%;
 }
 
 .footer-distributed .footer-left,
