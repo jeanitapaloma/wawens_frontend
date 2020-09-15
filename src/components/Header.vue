@@ -11,8 +11,8 @@
         <v-btn text>About</v-btn>
         <v-btn text>Product</v-btn>
         <v-btn text>FAQs</v-btn>
-        <v-btn text>Login</v-btn>
-        <v-btn text>Sign Up</v-btn>
+        <v-btn text  v-on:click="redirect('/login')" id="login">Login</v-btn>
+        <v-btn text  v-on:click="redirect('/register')" id="register">Sign Up</v-btn>
     </v-toolbar-items>
 
     </v-app-bar>
