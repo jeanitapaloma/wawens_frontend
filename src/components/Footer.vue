@@ -1,97 +1,70 @@
 <template>
-  <footer class="footer-distributed">
-    <div class="footer-left">
-      <p class="footer-company-about">
-        <span>CONTACT INFORMATION:</span>
-        <strong>Phone:</strong> +63 945 380 8056
-        <br>
-        <strong>Email:</strong> owner@wawenubehalaya.com
-        <br>
-      </p>
-    </div>
+  <div id="page-container">
+    <div id="content-wrap">
+      <footer class="footer">      
+        <div class="footer-left" id="footer-left">
+          <p class="footer-company-about" id="footer-company-about">
+            <strong>CONTACT INFORMATION:</strong>
+            <br>
+            <strong>Phone:</strong> +63 945 380 8056
+            <strong>
+              <br>Email:
+            </strong> owner@wawenubehalaya.com
+            <br>
+          </p>
+        </div>
 
-    <div class="footer-center">
-      <p class="footer-company-about">
-        <span>
-          <strong>FOLLOW US:</strong>
-        </span>
-        <i class="fa fa-facebook"></i>
-        <i class="fa fa-youtube"></i>
-
-        <br>
-        <br>
-        <strong>©2020 UBE HALAYA CEBU-Wawen's Ube Halaya</strong>
-        <br>
-        <br>
-      </p>
+        <div class="footer-center" id="footer-center">
+          <p class="footer-company-about" id="footer-company-about">
+            <strong>&nbsp;&nbsp; &nbsp;FOLLOW US:</strong>
+            <br>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-youtube"></a> 
+            </p>
+            <br>
+            <h1 style="font-size:14px; margin-left:5px;"><strong> ©2020 UBE HALAYA CEBU-Wawen's Ube Halaya</strong></h1>
+        </div>
+        <div class="footer-right" id="footer-right">
+          <p class="footer-company-about" id="footer-company-about">
+            <span>
+              <strong>LOCATION:</strong>
+            </span>
+            <br>Cebu City, Cebu, Philippines 6000
+            <strong>
+              <br>TERMS & CONDITIONS PRIVACY POLICY
+            </strong>
+            <br>
+          </p>
+        </div>
+      </footer>
     </div>
-
-    <div class="footer-right">
-      <p class="footer-company-about">
-        <span>LOCATION:</span>
-        <br>Cebu City, Cebu, Philippines 6000
-        <br>
-        <br>
-        <strong>
-          TERMS & CONDITIONS PRIVACY POLICY
-          <br>
-        </strong>
-      </p>
-    </div>
-  </footer>
+  </div>
 </template>
-
-<script>
-</script>
 <style>
-@import url(
-  https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
-
-* {
-  font-family: Open Sans;
-}
-
-.footer-distributed {
+.footer {
   background: transparent;
-  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: transparent;
   box-sizing: border-box;
-  width: 105%;
+  width: 100%;
   text-align: left;
-  font: bold 18px sans-serif;
+  font: bold 10px sans-serif;
   padding: 40px 35px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  height: 20%;
+  height: 15%;
+  /* border-color:#e5b1fd; */
 }
-
-.footer-distributed .footer-left,
-.footer-distributed .footer-center,
-.footer-distributed .footer-right {
+.footer-left {
   display: inline-block;
   vertical-align: top;
-}
-
-
-.footer-distributed .footer-left {
   width: 40%;
 }
-
-.footer-distributed .footer-company-name {
-  color: #222;
-  font-size: 18px;
-  font-weight: normal;
-  margin: 2;
-  display: flex;
-  align-content: center;
+.footer-center {
+  display: inline-block;
+  vertical-align: top;
+  width: 36%;
 }
-
-/* Footer Center */
-
-.footer-distributed .footer-center {
-  width: 35%;
-}
-
-.footer-distributed .footer-center i {
+.footer-center i {
   background-color: darkviolet;
   color: white;
   font-weight: bold;
@@ -104,56 +77,36 @@
   margin: 10px 15px;
   vertical-align: middle;
 }
-
-.footer-distributed .footer-center p {
+.footer-center p {
   display: inline-block;
   color: black;
   font-weight: 400;
   vertical-align: middle;
   margin: 0;
 }
-
-.footer-distributed .footer-center p span {
+.footer-center p span {
   display: block;
   font-weight: normal;
   font-size: 14px;
   line-height: 1;
   align-items: center;
 }
-
-.footer-distributed .footer-center p a {
-  color: black;
-  text-decoration: none;
-}
-
-/* Footer Right */
-
-.footer-distributed .footer-right {
+.footer-right {
   width: 20%;
+  display: inline-block;
+  vertical-align: top;
 }
-
-.footer-distributed .footer-company-about {
+.footer-company-about {
   line-height: 20px;
   color: black;
   font-size: 13px;
   font-weight: normal;
   margin: 0;
 }
-
-.footer-distributed .footer-company-about span {
-  display: block;
-  align-content: center;
-  color: black;
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 20px;
+#copyright{
+  padding-left: 5px;
 }
-
-.footer-distributed .footer-icons {
-  margin-top: 25px;
-}
-
-.footer-distributed .footer-icons a {
+.footer-icons a {
   display: inline-block;
   width: 35px;
   height: 35px;
@@ -169,29 +122,17 @@
   margin-right: 3px;
   margin-bottom: 5px;
 }
+.fa {
+  padding: 5px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
 
-/* If you don't want the footer to be responsive, remove these media queries */
-
-@media (max-width: 780px) {
-  .footer-distributed {
-    font: bold 14px sans-serif;
-    position: fixed;
-    bottom: 0;
-  }
-
-  .footer-distributed .footer-left,
-  .footer-distributed .footer-center,
-  .footer-distributed .footer-right {
-    display: block;
-    width: 100%;
-    margin-bottom: 1000px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-  }
-
-  .footer-distributed .footer-center i {
-    margin-left: 0;
-  }
+.fa:hover {
+    opacity: 0.7;
 }
 </style>

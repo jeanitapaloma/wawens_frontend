@@ -1,63 +1,41 @@
 <template>
-  <div class="card bg-light">
-    <article class="card-body mx-auto" style="width: 500px; height:800px;
-padding-top: 70px;">
-      <v-img src="../assets/logo.png" id="logo" max-height="80" max-width="80" centered/>
-      <br>
-      <br>
-      <a class="btn btn-block btn-social btn-twitter">
-        <span class="fa fa-google"></span>
-        <strong>Sign In with GOOGLE</strong>
-      </a>
-      <a href class="btn btn-block btn-social btn-facebook">
-        <i class="fa fa-facebook"></i>
-        <strong>Sign In with FACEBOOK</strong>
-      </a>
-      <p class="divider-text">
-        <span class="bg-light">OR</span>
-      </p>
-      <form>
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="fa fa-envelope"></i>
-            </span>
+  <div class="container p-3 my-3">
+      <div class="inner">
+        <form action>
+          <h3>WAWEN's UBE HALAYA</h3>
+          <div class="row">
+            <div class="col">
+              <a href class="btn btn-block btn-social btn-facebook">
+                <i class="fa fa-facebook"></i>
+                <strong>&nbsp;Log in with FACEBOOK</strong>
+              </a>
+            </div>
           </div>
-          <input name class="form-control" placeholder="Email address" type="email">
-        </div>
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="fa fa-key"></i>
-            </span>
+          <p class="divider-text">
+            <span class="bg-light">OR</span>
+          </p>
+          <div class="form-wrapper">
+            <label for>Email</label>
+            <input type="text" class="form-control">
           </div>
-          <input class="form-control" placeholder="Create password" type="password">
-        </div>
-        <!-- form-group// -->
-        <div class="form-group">
-          <button id="create" type="submit" class="btn btn-primary">SIGN IN</button>
-        </div>
-        <!-- form-group// -->
-        <p class="text-center">
-          <a href>Forgot Password</a>
-          <br>Don't have an account?
-          <a href>Sign Up</a>
+          <div class="form-wrapper">
+            <label for>Password</label>
+            <input type="password" class="form-control">
+          </div>
+          <button>Login</button>
           <br>
-        </p>
-      </form>
-    </article>
-  </div>
-  <!-- card.// -->
+          <p class="text-center">
+            <a href>Forgot Password?</a>
+            <br>Don't have yet an account?
+            <a href>Sign Up</a>
+          </p>
+
+          <br>
+        </form>
+      </div>
+    </div>
 </template>
-<script>
-</script>
 <style>
-#create {
-  width: 110px;
-  background-color: #7b0eaa;
-  color: white;
-  margin-left: 180px;
-}
 .divider-text {
   position: relative;
   text-align: center;
@@ -75,29 +53,171 @@ padding-top: 70px;">
   content: "";
   position: absolute;
   width: 100%;
-  border-bottom: 1px solid violet;
+  border-bottom: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   top: 55%;
   left: 0;
   z-index: 1;
 }
 
 .btn-facebook {
-  background-color: rgb(55, 55, 187);
-  color: #fff;
-  border-color: lightblue;
+  /* background-color: blue; */
+  color: black;
+  /* border-color: blue; */
+  height: 50px;
+  font-family: "Muli-Regular";
+  color: #333;
+  /* font-size: 30px; */
+  border: 1px solid #ccc;
 }
-.btn-twitter {
-  background-color: whitesmoke;
-  color: #fff;
-  border-color: darkviolet;
+
+body {
+  font-family: "Muli-Regular";
+  color: #666;
+  font-size: 18px;
+  margin: 0;
 }
+
+input,
+textarea,
+select,
+button {
+  font-family: "Muli-Regular";
+  color: #333;
+  font-size: 30px;
+}
+
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  background-size: cover;
+  margin-right: 1000px;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.inner {
+  width: 800px;
+  margin-left: 300px;
+  padding-top: 100px;
+  padding-bottom: 48px;
+  background-color: transparent;
+}
+.inner h3 {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Muli-Bold";
+  text-align: center;
+  margin-bottom: 32px;
+  color: #333;
+  letter-spacing: 2px;
+}
+
+form {
+  width: 50%;
+  padding-left: 20px;
+}
+
 .form-control {
-  border-color: darkviolet;
+  border: 1px solid #ccc;
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 20px;
+  font-family: "Muli-Bold";
+  background: none;
+  font-size: 20px;
 }
-.fa {
-  border-color: darkviolet;
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-left: 20px;
 }
-#logo {
-  margin-left: 200px;
+select option[value=""][disabled] {
+  display: none;
 }
+
+button {
+  border: none;
+  width: 152px;
+  height: 40px;
+  margin: auto;
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #bb6bd9;
+  font-size: 13px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Muli-SemiBold";
+  border-radius: 20px;
+}
+.checkbox {
+  position: relative;
+}
+.checkbox label {
+  padding-left: 22px;
+  cursor: pointer;
+}
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 12px;
+  width: 13px;
+  border-radius: 2px;
+  background-color: #ebebeb;
+  border: 1px solid #ccc;
+  font-family: Material-Design-Iconic-Font;
+  color: #000;
+  font-size: 10px;
+  font-weight: bolder;
+}
+.checkmark:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  content: "\f26b";
+}
+
+@media (max-width: 991px) {
+  .inner {
+    min-width: 768px;
+  }
+}
+@media (max-width: 767px) {
+  .inner {
+    min-width: auto;
+    background: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  form {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
 </style>

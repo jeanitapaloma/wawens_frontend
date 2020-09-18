@@ -1,26 +1,26 @@
 <template>
-  <v-app>
-    <navigationbar/>
-    <footerbar/>
-    <v-main>
+  <div id="app">
+    <navigationbar></navigationbar>
       <router-view></router-view>
-    </v-main>
-  </v-app>
+    <!-- <footerbar></footerbar> -->
+  </div>
 </template>
-
 <script>
-import footerbar from "@/components/Footer.vue";
 import navigationbar from "@/components/Header.vue";
+// import footerbar from "@/components/Footer.vue";
 export default {
   name: "App",
 
   components: {
     navigationbar,
-    footerbar
+    // footerbar
   },
 
   data: () => ({})
 };
 </script>
+<style>
+</style>
+
 
 
