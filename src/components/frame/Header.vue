@@ -2,7 +2,7 @@
   <div>
     <b-navbar toggleable="lg" max-height="200px;" style="background-color:#e5b1fd;" fixed="top">
       <b-col md="5">
-        <b-card-img :src="require('../assets/logo.png')" class="rounded-0" id="userIcon"></b-card-img>
+        <b-card-img :src="require('@/assets/logo.png')" class="rounded-0" id="userIcon"></b-card-img>
       </b-col>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">

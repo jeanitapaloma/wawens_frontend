@@ -8,22 +8,22 @@ export default new Router({
         {
             path: '/',
             name: 'Dashboard',
-            component:  () => import("@/modules/Dashboard.vue"),
+            component:  () => import("@/modules/admin/Dashboard.vue"),
         },
         {
             path: '/login',
             name: 'login',
-            component:  () => import("@/modules/Login.vue"),
+            component:  () => import("@/modules/basic/Login.vue"),
         },
         {
             path: '/register',
             name: 'register',
-            component:  () => import("@/modules/Registration.vue"),
+            component:  () => import("@/modules/basic/Registration.vue"),
         },
         {
             path: '/faq',
             name: 'faq',
-            component:  () => import("@/modules/FAQs.vue"),
+            component:  () => import("@/modules/others/FAQs.vue"),
         },
     ]
 })
