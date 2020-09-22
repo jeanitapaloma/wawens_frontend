@@ -1,34 +1,16 @@
 <template>
   <div id="container">
-    <div class="responsive">
-      <div class="gallery">
-        <img :src="require('@/assets/halaya.jpg')">
-        <div class="desc">Add a description of the image here</div>
+    <div class="row">
+      <div class="column">
+        <img :src="require('@/assets/logo.png')" alt="Snow" style="width:100%">
+      </div>
+      <div class="column">
+        <img :src="require('@/assets/logo.png')" alt="Forest" style="width:100%">
+      </div>
+      <div class="column">
+        <img :src="require('@/assets/logo.png')" alt="Mountains" style="width:100%">
       </div>
     </div>
-
-    <div class="responsive">
-      <div class="gallery">
-        <img :src="require('@/assets/buchi.jpg')">
-        <div class="desc">Add a description of the image here</div>
-      </div>
-    </div>
-
-    <div class="responsive">
-      <div class="gallery">
-        <img :src="require('@/assets/halaya.jpg')">
-        <div class="desc">Add a description of the image here</div>
-      </div>
-    </div>
-
-    <div class="responsive">
-      <div class="gallery">
-        <img :src="require('@/assets/buchi.jpg')">
-        <div class="desc">Add a description of the image here</div>
-      </div>
-    </div>
-
-    <div class="clearfix"></div>
   </div>
 </template>
 <style scoped lang="scss">
@@ -39,50 +21,20 @@
   margin-top: 10%;
 }
 
-div.gallery {
-  border: 1px solid #c19ffc;
-}
-
-div.gallery:hover {
-  border: 3px solid #7400d9;
-}
-
-div.gallery img {
-  width: 100%;
-  height: 300px;
-}
-
-div.desc {
-  padding: 15px;
-  text-align: center;
-}
-
 * {
   box-sizing: border-box;
 }
 
-.responsive {
-  padding: 0 6px;
+.column {
   float: left;
-  width: 24.99999%;
+  width: 33.33%;
+  padding: 5px;
 }
 
-@media only screen and (max-width: 700px) {
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .responsive {
-    width: 100%;
-  }
-}
-
-.clearfix:after {
+/* Clearfix (clear floats) */
+.row::after {
   content: "";
-  display: table;
   clear: both;
+  display: table;
 }
 </style>
