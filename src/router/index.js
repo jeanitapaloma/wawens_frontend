@@ -25,5 +25,11 @@ export default new Router({
             name: 'faq',
             component:  () => import("@/modules/others/FAQs.vue"),
         },
+        {
+            path: '/profile',
+            name: 'profile',
+            component:  () => import("@/modules/basic/Profile.vue"),
+        },
+
     ]
 })

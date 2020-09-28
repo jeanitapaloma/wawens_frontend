@@ -1,7 +1,7 @@
 <template>
   <div class="container p-3 my-3">
     <div class="inner">
-      <form>
+      <form @submit="onSubmit" v-if="show">
         <h3>WAWEN's UBE HALAYA</h3>
         <div class="row">
           <div class="col">
@@ -16,20 +16,32 @@
         </p>
         <div class="form-wrapper">
           <label for>Username</label>
-          <input type="text" class="form-control">
+          <input type="text"
+           v-model="form.username" 
+           required class="form-control">
         </div>
+
         <div class="form-wrapper">
           <label for>Email</label>
-          <input type="text" class="form-control">
+          <input type="email" 
+          v-model="form.email" 
+          required class="form-control">
         </div>
+
         <div class="form-wrapper">
           <label for>Password</label>
-          <input type="password" class="form-control">
+          <input type="password" 
+          v-model="form.password" 
+          required class="form-control">
         </div>
+
         <div class="form-wrapper">
           <label for>Confirm Password</label>
-          <input type="password" class="form-control">
+          <input type="password" 
+          v-model="form.conpassword" 
+          required class="form-control">
         </div>
+        
         <button>Sign Up</button>
         <p class="text-center">
           By signing up these you agree to our
@@ -42,6 +54,40 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      form: {
+        username: "",
+        email: "",
+        password: "",
+        conpassword: ""
+      },
+      show: true
+    };
+  },
+  methods: {
+    onSubmit(evt) {
+      evt.preventDefault();
+      alert(JSON.stringify(this.form));
+    },
+    onReset(evt) {
+      evt.preventDefault();
+      // Reset our form values
+      this.form.username = "";
+      this.form.email = "";
+      this.form.password = "";
+      this.form.conpassword = "";
+      // Trick to reset/clear native browser form validation state
+      this.show = false;
+      this.$nextTick(() => {
+        this.show = true;
+      });
+    }
+  }
+};
+</script>
 <style>
 .divider-text {
   position: relative;
@@ -61,20 +107,16 @@
   position: absolute;
   width: 100%;
   border-bottom: 1px solid #ccc;
-  /* border: 1px solid #ccc; */
   top: 55%;
   left: 0;
   z-index: 1;
 }
 
 .btn-facebook {
-  /* background-color: blue; */
   color: black;
-  /* border-color: blue; */
   height: 40px;
   font-family: "Muli-Regular";
   color: #333;
-  /* font-size: 30px; */
   border: 1px solid #ccc;
 }
 
@@ -91,17 +133,7 @@ select,
 button {
   font-family: "Muli-Regular";
   color: #333;
-  font-size: 30px;
-}
-
-.wrapper {
-  min-height: 100vh;
-  position: relative;
-  background-size: cover;
-  margin-right: 1000px;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
+  font-size: 20px;
 }
 
 .inner {
@@ -113,13 +145,14 @@ button {
 }
 .inner h3 {
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 30px;
   font-family: "Muli-Bold";
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 35px;
   color: #333;
   letter-spacing: 2px;
 }
+
 
 form {
   width: 50%;
@@ -138,18 +171,7 @@ form {
   font-size: 20px;
 }
 
-select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-  padding-left: 20px;
-}
-select option[value=""][disabled] {
-  display: none;
-}
-
 button {
-  border: none;
   width: 152px;
   height: 40px;
   margin: auto;
@@ -166,51 +188,7 @@ button {
   font-family: "Muli-SemiBold";
   border-radius: 20px;
 }
-.checkbox {
-  position: relative;
-}
-.checkbox label {
-  padding-left: 22px;
-  cursor: pointer;
-}
-.checkbox input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-.checkbox input:checked ~ .checkmark:after {
-  display: block;
-}
 
-.checkmark {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 12px;
-  width: 13px;
-  border-radius: 2px;
-  background-color: #ebebeb;
-  border: 1px solid #ccc;
-  font-family: Material-Design-Iconic-Font;
-  color: #000;
-  font-size: 10px;
-  font-weight: bolder;
-}
-.checkmark:after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
-  content: "\f26b";
-}
-
-@media (max-width: 991px) {
-  .inner {
-    min-width: 768px;
-  }
-}
 @media (max-width: 767px) {
   .inner {
     min-width: auto;
@@ -219,11 +197,7 @@ button {
     padding-bottom: 0;
   }
 
-  form {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
+
 }
 
 /*# sourceMappingURL=style.css.map */

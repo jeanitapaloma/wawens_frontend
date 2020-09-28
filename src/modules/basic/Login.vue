@@ -1,40 +1,73 @@
 <template>
   <div class="container p-3 my-3">
-      <div class="inner">
-        <form action>
-          <h3>WAWEN's UBE HALAYA</h3>
-          <div class="row">
-            <div class="col">
-              <a href class="btn btn-block btn-social btn-facebook">
-                <i class="fa fa-facebook"></i>
-                <strong>&nbsp;Log in with FACEBOOK</strong>
-              </a>
-            </div>
+    <div class="inner">
+      <form action @submit="onSubmit" v-if="show">
+        <h3>WAWEN's UBE HALAYA</h3>
+        <div class="row">
+          <div class="col">
+            <a href class="btn btn-block btn-facebook">
+              <i class="fa fa-facebook"></i>
+              <strong>&nbsp;Log in with FACEBOOK</strong>
+            </a>
           </div>
-          <p class="divider-text">
-            <span class="bg-light">OR</span>
-          </p>
-          <div class="form-wrapper">
-            <label for>Email</label>
-            <input type="text" class="form-control">
-          </div>
-          <div class="form-wrapper">
-            <label for>Password</label>
-            <input type="password" class="form-control">
-          </div>
-          <button>Login</button>
-          <br>
-          <p class="text-center">
-            <a href>Forgot Password?</a>
-            <br>Don't have yet an account?
-            <a href>Sign Up</a>
-          </p>
+        </div>
+        <br>
+        <p class="divider-text">
+          <span class="bg-light">OR</span>
+        </p>
+        <div class="form-wrapper">
+          <label for>Email</label>
+          <input type="email" v-model="form.email" required class="form-control">
+        </div>
+        <br>
+        <div class="form-wrapper">
+          <label for>Password</label>
+          <input type="password" v-model="form.password" required class="form-control">
+        </div>
+        <br>
+        <button>LOGIN</button>
+        <br>
+        <p class="text-center">
+          <a href>Forgot Password?</a>
+          <br>Don't have yet an account?
+          <a href>Sign Up</a>
+        </p>
 
-          <br>
-        </form>
-      </div>
+        <br>
+      </form>
     </div>
+  </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      form: {
+        email: "",
+        password: ""
+      },
+      show: true
+    };
+  },
+  methods: {
+    onSubmit(evt) {
+      evt.preventDefault();
+      alert(JSON.stringify(this.form));
+    },
+    onReset(evt) {
+      evt.preventDefault();
+      // Reset our form values
+      this.form.email = "";
+      this.form.password = "";
+      // Trick to reset/clear native browser form validation state
+      this.show = false;
+      this.$nextTick(() => {
+        this.show = true;
+      });
+    }
+  }
+};
+</script>
 <style>
 .divider-text {
   position: relative;
@@ -59,15 +92,17 @@
   left: 0;
   z-index: 1;
 }
+.fa fa-facebook {
+  height: 20px;
+}
 
 .btn-facebook {
-  /* background-color: blue; */
   color: black;
-  /* border-color: blue; */
   height: 50px;
   font-family: "Muli-Regular";
+  font-size: 18px;
+  justify-content: center;
   color: #333;
-  /* font-size: 30px; */
   border: 1px solid #ccc;
 }
 
@@ -84,10 +119,10 @@ select,
 button {
   font-family: "Muli-Regular";
   color: #333;
-  font-size: 30px;
+  font-size: 30%;
 }
 
-.wrapper {
+/* .wrapper {
   min-height: 100vh;
   position: relative;
   background-size: cover;
@@ -95,21 +130,21 @@ button {
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-}
+} */
 
 .inner {
-  width: 800px;
+  width: 900px;
   margin-left: 300px;
-  padding-top: 100px;
-  padding-bottom: 48px;
+  padding-top: 120px;
+  padding-bottom: 50px;
   background-color: transparent;
 }
 .inner h3 {
   text-transform: uppercase;
-  font-size: 22px;
+  font-size: 30px;
   font-family: "Muli-Bold";
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 35px;
   color: #333;
   letter-spacing: 2px;
 }
@@ -121,29 +156,17 @@ form {
 
 .form-control {
   border: 1px solid #ccc;
-  display: block;
   width: 100%;
-  height: 40px;
+  height: 50px;
   padding: 0 10px;
-  border-radius: 20px;
+  border-radius: 25px;
   font-family: "Muli-Bold";
   background: none;
   font-size: 20px;
 }
 
-select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-  padding-left: 20px;
-}
-select option[value=""][disabled] {
-  display: none;
-}
-
 button {
-  border: none;
-  width: 152px;
+  width: 155px;
   height: 40px;
   margin: auto;
   margin-top: 10px;
@@ -154,49 +177,8 @@ button {
   padding: 0;
   background: #bb6bd9;
   font-size: 13px;
-  color: #fff;
-  text-transform: uppercase;
   font-family: "Muli-SemiBold";
   border-radius: 20px;
-}
-.checkbox {
-  position: relative;
-}
-.checkbox label {
-  padding-left: 22px;
-  cursor: pointer;
-}
-.checkbox input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-.checkbox input:checked ~ .checkmark:after {
-  display: block;
-}
-
-.checkmark {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 12px;
-  width: 13px;
-  border-radius: 2px;
-  background-color: #ebebeb;
-  border: 1px solid #ccc;
-  font-family: Material-Design-Iconic-Font;
-  color: #000;
-  font-size: 10px;
-  font-weight: bolder;
-}
-.checkmark:after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
-  content: "\f26b";
 }
 
 @media (max-width: 991px) {
@@ -211,13 +193,5 @@ button {
     padding-top: 0;
     padding-bottom: 0;
   }
-
-  form {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
 }
-
-/*# sourceMappingURL=style.css.map */
 </style>
