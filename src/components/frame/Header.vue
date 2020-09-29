@@ -2,15 +2,14 @@
   <div id="app">
     <div>
       <b-navbar toggleable="lg" variant="none" class="navbar" fixed="top">
-        <b-navbar-brand>
+        <b-navbar-brand style="padding-bottom:60px;">
           <img :src="require('@/assets/logo.png')" class="logo-brand">
         </b-navbar-brand>
-
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
         <b-collapse is-nav id="nav_collapse">
           <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto" style="font-size:15px;">
+          <b-navbar-nav class="ml-auto" id="navbar-nav">
             <b-nav-item to="/" style="padding:5px;">HOME</b-nav-item>
 
             <b-nav-item-dropdown text="ABOUT" style="padding:5px;color:blue;" right>
@@ -36,16 +35,28 @@
   </div>
 </template>
 <style scoped lang="scss">
-.navbar{
+.navbar {
   background-color: #e5b1fd;
-  color: black;
-  font-weight: bold;
-  height: 50px;
+  height: 60px;
   width: 100%;
 }
 
+#navbar-nav {
+  color: black;
+  font-size:18px;
+  font-weight: bold;
+}
+
 .logo-brand {
-  width: 40px;
-  height: 40px;
+  width: 55px;
+  height: 55px;
+}
+
+#app {
+  width: 100%;
+  height: 60px;
+  top:0px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 </style>

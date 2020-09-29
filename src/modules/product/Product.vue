@@ -26,7 +26,7 @@ h1 {
 }
 
 #container {
-  margin-top:100px;
+  margin-top:20px;
   width: 90%;
   margin-left: 10%;
   margin-right: 10%;
