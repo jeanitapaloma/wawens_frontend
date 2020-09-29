@@ -3,15 +3,15 @@
     <h1>WAWEN'S UBE HALAYA : Products</h1>
     <div class="row">
       <div class="column">
-        <img :src="require('@/assets/halaya.jpg')" alt="Snow" style="width:100%;height:300px;">
+        <img :src="require('@/assets/halaya.jpg')" alt="Snow">
         <label>this is he name</label>
-        <img id='cart' :src="require('@/assets/logo.png')">
+        <!-- <img id="cart" :src="require('@/assets/logo.png')"> -->
       </div>
       <div class="column">
-        <img :src="require('@/assets/cake.png')" alt="Forest" style="width:100%;height:300px;">
+        <img :src="require('@/assets/cake.png')" alt="Forest">
       </div>
       <div class="column">
-        <img :src="require('@/assets/buchi.jpg')" alt="Mountains" style="width:100%;height:300px;">
+        <img :src="require('@/assets/buchi.jpg')" alt="Mountains">
       </div>
     </div>
   </div>
@@ -22,14 +22,14 @@ h1 {
   font-family: Segoe Script;
   font-weight: bolder;
   text-align: center;
-  padding-bottom: 2%; 
+  padding-bottom: 2%;
 }
 
 #container {
-  width: 80%;
+  margin-top:100px;
+  width: 90%;
   margin-left: 10%;
   margin-right: 10%;
-  padding-top: 5%;
 }
 
 * {
@@ -37,15 +37,26 @@ h1 {
 }
 
 .column {
-  float: center;
+  float: left;
   width: 30%;
   padding: 5px;
-  margin-left: 10px;
+  margin-left: 1%;
   height: 400px;
-  border: 1px solid #000;
+  border: 2px solid #ddd;
+  border-radius: 2px;
+  border-style:outset;
 }
 
-#cart{
+.column img{
+  width:100%;
+  height:300px;
+}
+
+.column:hover {
+  border: 2px solid #8028d8;
+}
+
+#cart {
   width: 50px;
   height: 50px;
   float: right;

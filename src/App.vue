@@ -22,7 +22,7 @@ export default {
 <style>
 #app{
   /* background-image: url('~@/assets/wallpaper.png'); */
-  margin-top: 4.8%;
+  /* margin-top: 4.8%; */
   background-size:cover;
   background-repeat: no-repeat;
 }
