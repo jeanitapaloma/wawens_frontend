@@ -1,6 +1,7 @@
 <template>
   <div>
     <b-container class="profile">
+      <br>
       <em>Personal Information</em>
       <br>
       <br>
@@ -102,7 +103,7 @@
             v-b-tooltip.hover.top
             title="Change your Avatar"
             id="userIcon"
-            src="require('@/assets/wallpaper.png')"
+            src="require('~@/assets/wallpaper.png')"
             @click="$refs.file.click()"
           ></b-img>
           <div>
@@ -218,6 +219,7 @@ em {
   font-size: 30px;
   font-family: Segoe Script;
   text-align: center;
+  margin-top: 12%;
 }
 .mt-4 {
   border-color: #bb6bd9;
@@ -260,7 +262,7 @@ em {
   .container-sm,
   .container-md,
   container-lg {
-    margin-top: 8%;
+    margin-top: 8px;
     margin-left: 10%;
     margin-bottom: 5%;
   }

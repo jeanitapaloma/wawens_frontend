@@ -30,6 +30,21 @@ export default new Router({
             name: 'profile',
             component:  () => import("@/modules/basic/Profile.vue"),
         },
+        {
+            path: '/partner',
+            name: 'partner',
+            component:  () => import("@/modules/others/Partner.vue"),
+        },
+        {
+            path: '/testimonial',
+            name: 'testimonial',
+            component:  () => import("@/modules/others/Testimonial.vue"),
+        },
+        {
+            path: '/story',
+            name: 'story',
+            component:  () => import("@/modules/others/Story.vue"),
+        },
 
     ]
 })

@@ -9,16 +9,16 @@
           <b-nav-item id="text" class="w-100 p-3" href="#">HOME</b-nav-item>
 
           <b-nav-item-dropdown id="text" class="w-100 p-3" text="ABOUT" right>
-            <b-dropdown-item id="dropdown" to="profile">Our Story</b-dropdown-item>
-            <b-dropdown-item id="dropdown" to="testimonial">Testimonials</b-dropdown-item>
-            <b-dropdown-item id="dropdown" to="partner">Partner</b-dropdown-item>
+              <b-dropdown-item id="dropdown" to="story">Our Story</b-dropdown-item>
+              <b-dropdown-item id="dropdown" to="testimonial">Testimonials</b-dropdown-item>
+              <b-dropdown-item id="dropdown" to="partner">Partner</b-dropdown-item>
           </b-nav-item-dropdown>
 
           <b-nav-item-dropdown id="text" class="w-100 p-3" text="PRODUCT" right>
-            <b-dropdown-item id="dropdown" to="product">All Product</b-dropdown-item>
-            <b-dropdown-item id="dropdown" to="bottle">Ube Halaya Bottle</b-dropdown-item>
-            <b-dropdown-item id="dropdown" to="ubechi">Ube Ubechi</b-dropdown-item>
-            <b-dropdown-item id="dropdown" to="cake">Ube Cake</b-dropdown-item>
+              <b-dropdown-item id="dropdown" to="product">All Product</b-dropdown-item>
+              <b-dropdown-item id="dropdown" to="bottle">Ube Halaya Bottle</b-dropdown-item>
+              <b-dropdown-item id="dropdown" to="ubechi">Ube Ubechi</b-dropdown-item>
+              <b-dropdown-item id="dropdown" to="cake">Ube Cake</b-dropdown-item>
           </b-nav-item-dropdown>
 
           <b-nav-item id="text" class="w-100 p-3" to="faq">FAQs</b-nav-item>
@@ -46,9 +46,16 @@ export default {
   margin-left: auto;
 }
 #text {
-  font-size: 18px;
+  font-size: 15px;
 }
-#dropdown {
-  font-size: 18px;
-}
+// #dropdown-menu{
+//   border: 1px solid rgba(0, 0, 0, 0.15);
+//   border-radius: 0.25rem;
+//   background-color: violet;
+//   background-clip: padding-box;
+//   min-width: 10rem;
+//     padding: 0.5rem 0;
+//     margin: 0.125rem 0 0;
+//     font-size: 1rem;
+// }
 </style>
