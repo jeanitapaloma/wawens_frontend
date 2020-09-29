@@ -6,7 +6,7 @@ Vue.use(Router);
 export default new Router({
     routes: [
         {
-            path: '/',
+            path: '/dashboard',
             name: 'Dashboard',
             component:  () => import("@/modules/admin/Dashboard.vue"),
         },
@@ -26,7 +26,11 @@ export default new Router({
             component:  () => import("@/modules/others/FAQs.vue"),
         },
         {
-            path: '/profile',
+            path: '/product',
+            name: 'product',
+            component:  () => import("@/modules/product/Product.vue"),
+        },
+        {   path: '/profile',
             name: 'profile',
             component:  () => import("@/modules/basic/Profile.vue"),
         },
