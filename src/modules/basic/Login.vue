@@ -15,14 +15,23 @@
         <p class="divider-text">
           <span class="bg-light">OR</span>
         </p>
-        <div class="form-wrapper">
-          <label for>Email</label>
-          <input type="email" v-model="form.email" required class="form-control">
-        </div>
         <br>
-        <div class="form-wrapper">
-          <label for>Password</label>
-          <input type="password" v-model="form.password" required class="form-control">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </div>
+          <input type="email" v-model="form.email" placeholder="Email" required class="form-control">
+        </div>
+  <br>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-key"></i>
+            </span>
+          </div>
+          <input type="password" v-model="form.password" placeholder="Password" required class="form-control">
         </div>
         <br>
         <button>LOGIN</button>
@@ -86,24 +95,27 @@ export default {
   content: "";
   position: absolute;
   width: 100%;
-  border-bottom: 1px solid #ccc;
-  /* border: 1px solid #ccc; */
+  border: 1px solid darkviolet;
   top: 55%;
   left: 0;
   z-index: 1;
 }
 .fa fa-facebook {
-  height: 20px;
+  height: 30px;
+}
+fa fa-key {
+  height: 30px;
+
 }
 
 .btn-facebook {
   color: black;
-  height: 50px;
+  height: 40px;
   font-family: "Muli-Regular";
-  font-size: 18px;
+  font-size: 16px;
   justify-content: center;
   color: #333;
-  border: 1px solid #ccc;
+   border: 1px solid darkviolet;
 }
 
 body {
@@ -121,17 +133,6 @@ button {
   color: #333;
   font-size: 30%;
 }
-
-/* .wrapper {
-  min-height: 100vh;
-  position: relative;
-  background-size: cover;
-  margin-right: 1000px;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-} */
-
 .inner {
   width: 900px;
   margin-left: 300px;
@@ -155,11 +156,10 @@ form {
 }
 
 .form-control {
-  border: 1px solid #ccc;
+  border: 1px solid darkviolet;
   width: 100%;
-  height: 50px;
+  height: 40px;
   padding: 0 10px;
-  border-radius: 25px;
   font-family: "Muli-Bold";
   background: none;
   font-size: 20px;
