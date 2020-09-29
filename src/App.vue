@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import navigationbar from "@/components/frame/Header1.vue";
+import navigationbar from "@/components/frame/Header.vue";
 // import footerbar from "@/components/Footer.vue";
 export default {
   name: "App",
@@ -20,6 +20,12 @@ export default {
 };
 </script>
 <style>
+#app{
+  background-image: url('~@/assets/wallpaper.png');
+  margin-top: 4.8%;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
 </style>
 
 

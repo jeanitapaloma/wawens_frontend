@@ -235,5 +235,3 @@
   border-color: darkviolet;
 }
 </style>
-
-
