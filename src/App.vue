@@ -21,7 +21,7 @@ export default {
 </script>
 <style>
 #app{
-  background-image: url('~@/assets/wallpaper.png');
+  /* background-image: url('~@/assets/wallpaper.png'); */
   margin-top: 4.8%;
   background-size:cover;
   background-repeat: no-repeat;

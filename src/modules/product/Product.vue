@@ -2,13 +2,13 @@
   <div id="container">
     <div class="row">
       <div class="column">
-        <img :src="require('@/assets/logo.png')" alt="Snow" style="width:100%">
+        <img :src="require('@/assets/halaya.jpg')" alt="Snow" style="width:100%">
       </div>
       <div class="column">
-        <img :src="require('@/assets/logo.png')" alt="Forest" style="width:100%">
+        <img :src="require('@/assets/cake.png')" alt="Forest" style="width:100%">
       </div>
       <div class="column">
-        <img :src="require('@/assets/logo.png')" alt="Mountains" style="width:100%">
+        <img :src="require('@/assets/buchi.jpg')" alt="Mountains" style="width:100%">
       </div>
     </div>
   </div>
