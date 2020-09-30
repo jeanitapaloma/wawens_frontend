@@ -1,18 +1,18 @@
 <template>
   <div>
-    <div>
-      <h1 class="h2title">WAWEN's UBE HALAYA:TESTIMONIALS</h1>
+    <br>
+    <div class="text-center mt-5">
+      <h2 class="font-weight-bolder">
+        WAWEN's UBE HALAYA:
+        <span id="style">Testimonial</span>
+      </h2>
     </div>
     <!-- CARD Number 1 -->
     <div class="row">
       <div class="col-md-6">
         <div class="card">
           <div class="card-horizontal">
-            <img
-              src="@/assets/testimonials/JEANITA.jpg"
-              alt="Card image cap"
-              class="img-thumbnail"
-            >
+            <img src="@/assets/P.png" alt="Card image cap" class="img-thumbnail">
             <div class="card-body">
               <p class="card-text text-justify">
                 "It's my first time to taste it and it's very delicious,it's not bidli.
@@ -28,11 +28,7 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-horizontal">
-            <img
-              src="@/assets/testimonials/AJOC.png"
-              alt="Card image cap"
-              class="img-thumbnail"
-            >
+            <img src="@/assets/A.png" alt="Card image cap" class="img-thumbnail">
             <div class="card-body">
               <p class="card-text text-justify">
                 "This is the the Ube Halaya that once you taste it, will keep you order all over again and again.
@@ -49,11 +45,7 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-horizontal">
-            <img
-              src="@/assets/testimonials/ROSELYN.png"
-              alt="Card image cap"
-              class="img-thumbnail"
-            >
+            <img src="@/assets/R.png" alt="Card image cap" class="img-thumbnail">
             <div class="card-body">
               <p class="card-text text-justify">
                 "I am an Ube Lover, and I am really looking for the best ube taste for a long time and Ube
@@ -69,11 +61,7 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-horizontal">
-            <img
-              src="@/assets/testimonials/RICA.jpg"
-              alt="Card image cap"
-              class="img-thumbnail"
-            >
+            <img src="@/assets/D.png" alt="Card image cap" class="img-thumbnail">
             <div class="card-body">
               <p class="card-text text-justify">
                 "Got my ube halaya from Wawen's today and successfully used it in my Ube Macapuno Dream Cake!
@@ -95,8 +83,14 @@
   width: 150px;
   border-radius: 50%;
   margin-left: 4%;
-  margin-top: 4%;
+  margin-top: 2%;
   box-shadow: 8px 8px 5px grey;
+}
+.font-weight-bolder {
+  color: darkviolet;
+  text-shadow: 2px 2px 4px violet;
+  font-family: "Muli-Bold";
+  font-size: 30px;
 }
 .card {
   border-color: darkviolet;
@@ -111,18 +105,6 @@
   margin-right: 2%;
   font-style: italic;
   font-size: 15px;
-}
-.h2title {
-  margin-top: 8%;
-  text-align: center;
-  color: purple;
-  font-weight: bolder;
-  font-family: Roboto;
-  text-shadow: 2px 2px violet;
-}
-.card-horizontal {
-  display: flex;
-  flex: 1 1 auto;
 }
 .card-text {
   margin-left: 7%;

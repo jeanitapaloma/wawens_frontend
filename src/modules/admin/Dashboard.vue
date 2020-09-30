@@ -5,10 +5,7 @@
 </template>
 <style scoped lang="scss">
 #userIcon {
-  margin-top: 4.8%;
-  width: 100%;
-  height: auto;
-  background-size: cover;
+  background-size:cover;
   background-repeat: no-repeat;
 }
 </style>

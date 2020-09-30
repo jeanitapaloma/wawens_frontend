@@ -6,8 +6,9 @@
         <div class="row">
           <div class="col">
             <a href class="btn btn-block btn-social btn-facebook">
-              <i class="fa fa-facebook"></i>
-              <strong>&nbsp;Sign Up with FACEBOOK</strong>
+              <strong>
+                <i class="fa fa-facebook-official" style="font-size:33px;color:blue"> &nbsp;</i> Sign Up with FACEBOOK
+              </strong>
             </a>
           </div>
         </div>
@@ -20,31 +21,55 @@
               <i class="fa fa-user"></i>
             </span>
           </div>
-          <input type="username" v-model="form.username" placeholder="Username" required class="form-control">
+          <input
+            type="username"
+            v-model="form.username"
+            placeholder="Username"
+            required
+            class="form-control"
+          >
         </div>
         <div class="form-group input-group">
-        <div class="input-group-prepend">
+          <div class="input-group-prepend">
             <span class="input-group-text">
               <i class="fa fa-envelope"></i>
             </span>
           </div>
-          <input type="email" v-model="form.email" placeholder="Email" required class="form-control">
+          <input
+            type="email"
+            v-model="form.email"
+            placeholder="Email"
+            required
+            class="form-control"
+          >
         </div>
-         <div class="form-group input-group">
-        <div class="input-group-prepend">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
             <span class="input-group-text">
               <i class="fa fa-key"></i>
             </span>
           </div>
-          <input type="password" v-model="form.password" placeholder="Password" required class="form-control">
+          <input
+            type="password"
+            v-model="form.password"
+            placeholder="Password"
+            required
+            class="form-control"
+          >
         </div>
-         <div class="form-group input-group">
-        <div class="input-group-prepend">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
             <span class="input-group-text">
               <i class="fa fa-lock"></i>
             </span>
           </div>
-          <input type="password" v-model="form.conpassword" placeholder="Confirm Password" required class="form-control">
+          <input
+            type="password"
+            v-model="form.conpassword"
+            placeholder="Confirm Password"
+            required
+            class="form-control"
+          >
         </div>
 
         <button>Sign Up</button>
@@ -114,38 +139,35 @@ export default {
   left: 0;
   z-index: 1;
 }
-
 .btn-facebook {
-  color: black;
-  height: 40px;
   font-family: "Muli-Regular";
   color: #333;
   border: 1px solid darkviolet;
 }
-
+strong {
+  font-size: 18px;
+}
 body {
   font-family: "Muli-Regular";
   color: #666;
   font-size: 18px;
   margin: 0;
 }
-
 input,
 textarea,
 select,
 button {
   font-family: "Muli-Regular";
-  color:black;
+  color: black;
   font-size: 20px;
-  
 }
 
 .inner {
-  width: 900px;
-  margin-left: 300px;
-  padding-top: 100px;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-top: 5%;
   padding-bottom: 48px;
-  background-color: transparent;
+  background: transparent;
 }
 .inner h3 {
   text-transform: uppercase;
@@ -157,12 +179,12 @@ button {
   letter-spacing: 2px;
 }
 form {
-  width: 50%;
+  width: 90%;
   padding-left: 20px;
 }
 .form-control {
   border: 1px solid darkviolet;
-  width: 100%;
+  width: 150%;
   height: 40px;
   padding: 0 10px;
   font-family: "Muli-Bold";
@@ -181,7 +203,7 @@ button {
   padding: 0;
   background: #bb6bd9;
   font-size: 13px;
-  color:black;
+  color: black;
   text-transform: uppercase;
   font-family: "Muli-SemiBold";
   border-radius: 20px;
@@ -195,5 +217,4 @@ button {
     padding-bottom: 0;
   }
 }
-
 </style>
