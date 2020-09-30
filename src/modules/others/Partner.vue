@@ -8,7 +8,7 @@
       <p class="tagline">Know your nearest ube halaya source and you can directly buy to them.</p>
     </div>
     <b-tabs>
-      <b-tab v-for="(tab,i) in tabs" :key="i" :id="tab.id" :title="tab.title">
+      <b-tab  v-for="(tab,i) in tabs" :key="i" :id="tab.id" :title="tab.title">
         <b-row class="pt-3">
           <b-col lg="3" v-for="(item,j) in tab.items" :key="j">
               <b-card
@@ -30,7 +30,7 @@ export default {
       tabs: [
         {
           id: "distributor",
-          title: "DISTRIBUORS",
+          title: "DISTRIBUTORS",
           items: [
             { img: "D1" },
             { img: "D2" },
@@ -69,34 +69,59 @@ export default {
   font-family: "Muli-Bold";
   font-size: 30px;
 }
-card {
-  height: 100px;
-}
 .tagline {
   font-size: 20px;
   font-style: italic;
 }
-#d1 {
+/* #d1 {
   height: 200px;
   width: 250px;
+} */
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: darkviolet;
+    font-size: 20px;
+    font-weight: bold;
+    border: 0;
+    text-decoration: underline;
 }
-.font-weight-bolder {
-  margin-top: 12px;
-  color: darkviolet;
-  text-shadow: 2px 2px 4px violet;
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    /* padding-left: 0;
+    margin-bottom: 0; */
+    list-style: none;
+    border: 0;
+    margin-top: 3%;
+    margin-left: 34%;
 }
+.nav-tabs .nav-link {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    font-size: 20px;
+    color: violet;
+    font-weight: bold;
+}
+.card-img, .card-img-top {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+    margin-top: 10%;
+    border-radius: 5%;
+    box-shadow: 8px 8px 5px grey;
+}
+.mb-4, .my-4 {
+    margin-bottom: 1.5rem !important;
+    border: none;
+}
+
 /* p{
 margin-left: 350px;
 } */
-#distributor {
+/* #distributor {
   color: darkviolet !important;
   text-shadow: 1px 1px 2px violet;
-  border-color: darkviolet;
-}
-.shadow:hover {
-  -moz-box-shadow: 0 0 10px #ccc;
-  -webkit-box-shadow: 0 0 10px #ccc;
+} */
+/* .shadow:hover {
   box-shadow: 0 0 10px darkviolet;
   transform: scale(1.1);
-}
+} */
 </style>
