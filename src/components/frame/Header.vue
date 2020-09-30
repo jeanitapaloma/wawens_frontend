@@ -13,7 +13,7 @@
             <b-nav-item to="/" style="padding:5px;">HOME</b-nav-item>
 
             <b-nav-item-dropdown text="ABOUT" style="padding:5px;color:blue;" right>
-              <b-dropdown-item to="profile">Our Story</b-dropdown-item>
+              <b-dropdown-item to="story">Our Story</b-dropdown-item>
               <b-dropdown-item to="testimonial">Testimonials</b-dropdown-item>
               <b-dropdown-item to="partner">Partner</b-dropdown-item>
             </b-nav-item-dropdown>

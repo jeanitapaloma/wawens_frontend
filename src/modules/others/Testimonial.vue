@@ -32,7 +32,8 @@
             <div class="card-body">
               <p class="card-text text-justify">
                 "This is the the Ube Halaya that once you taste it, will keep you order all over again and again.
-                NO TO SAWA.You can really taste it's ube pureness.Why not try it now."Why not try it now.
+                NO TO SAWA.You can really taste it's ube pureness.Why not try it now.Why not try it now.You'll 
+                surely look for more."
               </p>
               <p class="card-text1">Merry Cris Ajoc</p>
             </div>
@@ -66,7 +67,7 @@
               <p class="card-text text-justify">
                 "Got my ube halaya from Wawen's today and successfully used it in my Ube Macapuno Dream Cake!
                 Super satisfied with the texture & taste.
-                ❤️ Their order response and delivery is fast too."
+                ❤️ Their order response and delivery is fast too. Buy now guyz!"
               </p>
               <p class="card-text1">Rica Christine Debuayan</p>
             </div>
@@ -106,12 +107,22 @@
   font-style: italic;
   font-size: 15px;
 }
+#style {
+  color: darkviolet;
+  text-shadow: 2px 2px 4px violet;
+  font-family: "Segoe Script";
+  font-size: 30px;
+}
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+}
 .card-text {
   margin-left: 7%;
   margin-top: 5%;
   font-size: 15px;
 }
 .row {
-  padding: 3%;
+  padding: 2%;
 }
 </style>
