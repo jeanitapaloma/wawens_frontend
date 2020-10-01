@@ -26,7 +26,9 @@
             </b-nav-item-dropdown>
 
             <b-nav-item to="faq" style="padding:5px;">FAQs</b-nav-item>
-            <b-nav-item to="login" style="padding:5px;">LOGIN</b-nav-item>
+            <div>
+            <b-nav-item  style="padding:5px;" data-toggle="modal" data-target="#form">LOGIN</b-nav-item></div>
+
             <b-nav-item to="register" style="padding:5px;">SIGNUP</b-nav-item>
             <b-nav-item><i class="fa fa-shopping-cart" style="font-size:28px"></i></b-nav-item>
           </b-navbar-nav>
@@ -36,6 +38,7 @@
   </div>
 </template>
 <style scoped lang="scss">
+import
 .navbar {
   background-color: #e5b1fd;
   height: 60px;
