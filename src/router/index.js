@@ -54,6 +54,21 @@ export default new Router({
             name: 'header1',
             component:  () => import("@/components/frame/Header1.vue"),
         },
+        {
+            path: '/submit_order',
+            name: 'submit_order',
+            component:  () => import("@/modules/product/SubmitOrder.vue"),
+        },
+        {
+            path: '/cart',
+            name: 'cart',
+            component:  () => import("@/modules/product/Cart.vue"),
+        },
+        {
+            path: '/order_status',
+            name: 'order_status',
+            component:  () => import("@/modules/product/OrderStatus.vue"),
+        },
 
     ],
     mode: 'history'
