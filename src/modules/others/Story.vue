@@ -92,6 +92,7 @@ OUR STORY
   margin-left: 5%;
   font-weight: bold;
   font-size: 2em;
+  margin-top: 2%;
 }
 .font-weight-bolder {
   color: darkviolet;

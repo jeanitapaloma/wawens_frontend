@@ -1,10 +1,10 @@
 <template>
   <div class="container mt-5">
     <div class="text-center mt-5">
-      <h2 class="font-weight-bolder">
+      <h1 class="font-weight-bolder">
         WAWEN's UBE HALAYA:
         <span>PARTNERS</span>
-      </h2>
+      </h1>
       <p class="tagline">Know your nearest ube halaya source and you can directly buy to them.</p>
     </div>
     <b-tabs>
@@ -67,7 +67,8 @@ export default {
   color: darkviolet;
   text-shadow: 2px 2px 4px violet;
   font-family: "Muli-Bold";
-  font-size: 30px;
+  font-size: 40px;
+  margin-top: -2%;
 }
 .tagline {
   font-size: 20px;
@@ -92,7 +93,6 @@ export default {
     list-style: none;
     border: 0;
     margin-top: 3%;
-    margin-left: 34%;
 }
 .nav-tabs .nav-link {
     border-top-left-radius: 0.25rem;
@@ -105,7 +105,6 @@ export default {
     border-top-left-radius: calc(0.25rem - 1px);
     border-top-right-radius: calc(0.25rem - 1px);
     margin-top: 10%;
-    border-radius: 5%;
     box-shadow: 8px 8px 5px grey;
 }
 .mb-4, .my-4 {
