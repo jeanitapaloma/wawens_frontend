@@ -1,7 +1,7 @@
 <template>
   <div>
+    <h1>Personal Information</h1>
     <b-container class="profile">
-      <em>Personal Information</em>
       <br>
       <b-row>
         <b-col cols="7">
@@ -86,10 +86,12 @@
             ></b-form-input>
           </div>
           <center>
-            <b-button v-show="show"  id="btn">UPDATE</b-button>
-            <b-button v-show="!show"  id="btn">SAVE CHANGES</b-button>&nbsp;
-            <b-button v-show="!show" id="btn">CANCEL</b-button>
+            <br>
+            <b-button v-show="show" v-on:click="update" id="btn" >UPDATE</b-button>
+            <b-button v-show="!show" id="btn">CANCEL</b-button>&nbsp;
+            <b-button v-show="!show" id="btn">SAVE CHANGES</b-button>
           </center>
+          <br>
           <!-- v-on:click="save" -->
         </b-col>
 
@@ -123,16 +125,11 @@
             </span>
             <br>
             <center>
-              <b-button v-show="isChangeClicked" v-on:click="change" id="btn1">CHANGE PASSWORD</b-button>
+              <b-button v-show="isChangeClicked" v-on:click="change" id="btn">CHANGE PASSWORD</b-button>
               <div v-show="!isChangeClicked">
                 <div class="form-group">
                   <label for="currentPassword" class="bmd-label-floating">*CURRENT PASSWORD:</label>
-                  <b-form-input
-                    type="text"
-                    class="form-control"
-                    id="password"
-                    v-model="password"
-                  ></b-form-input>
+                  <b-form-input type="text" class="form-control" id="password" v-model="password"></b-form-input>
                 </div>
                 <div class="form-group">
                   <label for="newPassword" class="bmd-label-floating">*NEW PASSWORD:</label>
@@ -154,7 +151,8 @@
                 </div>
                 <br>
                 <b-button id="btn">CANCEL</b-button>&nbsp;
-                <b-button v-on:click="save" id="btn">SAVE</b-button>
+                <b-button id="btn">SAVE</b-button>
+                <br>
               </div>
             </center>
           </div>
@@ -176,12 +174,13 @@ export default {
       contact: "",
       address: "",
       username: "",
-      password:"",
-      confirmPassword:"",
-      currentPassword:"",
+      password: "",
+      newPassword: "",
+      confirmPassword: "",
+      currentPassword: "",
       inputEnable: false,
       show: true,
-      isChangeClicked:true
+      isChangeClicked: true
     };
   },
   methods: {
@@ -216,38 +215,17 @@ export default {
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-em {
-  color: #bb6bd9;
+h1 {
+  color: darkviolet;
   font-size: 30px;
   font-family: Segoe Script;
-  text-align: center;
-  margin-top: 20%;
+  margin-top: 6%;
+  margin-left: 8%;
 }
 
 .img-thumbnail {
   border: 1px solid #bb6bd9;
-   border-color: #bb6bd9;
-}
-
-.btn-outline-primary {
-  color: #bb6bd9;
   border-color: #bb6bd9;
-}
-
-#button {
-  background-color: transparent;
-}
-.border {
-  border-color: #bb6bd9;
-  border-radius: 0.25rem;
-}
-
-#btn1 {
-  background: #bb6bd9;
-  height: calc(2.5em + 0.75rem + 2px);
-  width: 40%;
-  font-size: 1rem;
-  font-size: 16;
 }
 #btn {
   background: #bb6bd9;
@@ -256,16 +234,19 @@ em {
   font-size: 1rem;
   font-size: 16;
 }
-@media (min-width: 992px) {
+.profile{
+  border: 1px solid #bb6bd9;
+  background-color: #fce9fc;
+}
+/* @media (min-width: 992px) {
   .container,
   .container-sm,
   .container-md,
   container-lg {
-    margin-top: 8%;
     margin-left: 10%;
     margin-bottom: 5%;
+    border: 1px solid #bb6bd9;
   }
-}
-/* :disabled="!inputEnable" */
+} */
 </style>
 

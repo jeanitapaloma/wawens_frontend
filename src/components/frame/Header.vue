@@ -28,6 +28,7 @@
             <b-nav-item to="faq" style="padding:5px;">FAQs</b-nav-item>
             <b-nav-item to="login" style="padding:5px;">LOGIN</b-nav-item>
             <b-nav-item to="register" style="padding:5px;">SIGNUP</b-nav-item>
+            <b-nav-item><i class="fa fa-shopping-cart" style="font-size:28px"></i></b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -36,13 +37,14 @@
 </template>
 <style scoped lang="scss">
 .navbar {
-  background-color: #e5b1fd;
+  background-image: linear-gradient(#e5b1fd, #efe0f8);
   height: 60px;
   width: 100%;
+  border-radius: 0px;
 }
 
 #navbar-nav {
-  color: black;
+  color: white;
   font-size:18px;
   font-weight: bold;
 }
@@ -55,7 +57,6 @@
 #app {
   width: 100%;
   top:0px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
   position: relative;
 }
 .drop{

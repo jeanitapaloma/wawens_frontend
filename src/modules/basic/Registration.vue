@@ -5,11 +5,22 @@
         <h3>WAWEN's UBE HALAYA</h3>
         <div class="row">
           <div class="col">
-            <a href class="btn btn-block btn-social btn-facebook">
-              <strong>
-                <i class="fa fa-facebook-official" style="font-size:33px;color:blue"> &nbsp;</i> Sign Up with FACEBOOK
-              </strong>
-            </a>
+            <b-row>
+              <b-col cols="6" sm="6">
+                <a href class="btn btn-block btn-social btn-google">
+                  <strong>
+                    <i class="fa fa-google" style="font-size:30px">&nbsp;</i> Sign Up with Google
+                  </strong>
+                </a>
+              </b-col>
+              <b-col cols="6" sm="6">
+                <a href class="btn btn-block btn-social btn-facebook">
+                  <strong>
+                    <i class="fa fa-facebook-official" style="font-size:30px;color:blue">&nbsp;</i> Sign Up with Facebook
+                  </strong>
+                </a>
+              </b-col>
+            </b-row>
           </div>
         </div>
         <p class="divider-text">
@@ -18,7 +29,7 @@
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">
-              <i class="fa fa-user"></i>
+              <i class="fa fa-user"  style="font-size:23px"></i>
             </span>
           </div>
           <input
@@ -32,7 +43,7 @@
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">
-              <i class="fa fa-envelope"></i>
+              <i class="fa fa-envelope"  style="font-size:18px"></i>
             </span>
           </div>
           <input
@@ -46,7 +57,7 @@
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">
-              <i class="fa fa-key"></i>
+              <i class="fa fa-key"  style="font-size:20px"></i>
             </span>
           </div>
           <input
@@ -56,11 +67,14 @@
             required
             class="form-control"
           >
+          <span class="input-group-text">
+            <i class="fa fa-eye"  style="font-size:20px"></i>
+          </span>
         </div>
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">
-              <i class="fa fa-lock"></i>
+              <i class="fa fa-lock"  style="font-size:30px"></i>
             </span>
           </div>
           <input
@@ -70,47 +84,52 @@
             required
             class="form-control"
           >
+          <span class="input-group-text">
+            <i class="fa fa-eye"  style="font-size:18px"></i>
+          </span>
         </div>
         <button>Sign Up</button>
         <center>
-            <p>
-              By clicking Sign Up, you agree to our
-              <a
-                href="#"
-                v-b-modal.modal-scrollable
-                @click="show=true"
-              >Terms & Conditions</a>
-            </p>
-             <p>Already have an account?
-          <a href>Login here</a></p>
-            <div>
-              <b-modal
-                scrollable
-                title="Our Terms and Conditions"
-                id="modal-scrollable"
-                v-model="hide"
-              >
-                <b>Wawens Ube halaya Terms of Service ("Agreement")</b>
-                <p>
-                  This Agreement was last modified on December 25 ,2020.
-                  Please read these Terms of Service completely using ubehalaya.com which is owned and operated by UbeHalaya. This Agreement documents the legally binding terms and conditions attached to the use of the Site at ubehalaya.com.
-                  By using or accessing the Site in any way, viewing or browsing the Site, or adding your own content to the Site, you are agreeing to be bound by these Terms of Service.
-                </p>
-                <template v-slot:modal-footer>
-                  <div class="w-100">
-                    <b-button
-                      id="modal"
-                      size="sm"
-                      class="float-right"
-                      @click="show=false"
-                      v-on:click="Terms"
-                    >OK</b-button>
-                  </div>
-                </template>
-              </b-modal>
-            </div>
+          <p>
+            By clicking Sign Up, you agree to our
+            <a
+              href="#"
+              v-b-modal.modal-scrollable
+              @click="show=true"
+            >Terms & Conditions</a>
+          </p>
+         <hr style="width:60%;text-align:center;height:px;background-color:black;">
+          <p>
+            Already have an account?
+            <a href>Login here</a>
+          </p>
+          <div>
+            <b-modal
+              scrollable
+              title="Our Terms and Conditions"
+              id="modal-scrollable"
+              v-model="hide"
+            >
+              <b>Wawens Ube halaya Terms of Service ("Agreement")</b>
+              <p>
+                This Agreement was last modified on December 25 ,2020.
+                Please read these Terms of Service completely using ubehalaya.com which is owned and operated by UbeHalaya. This Agreement documents the legally binding terms and conditions attached to the use of the Site at ubehalaya.com.
+                By using or accessing the Site in any way, viewing or browsing the Site, or adding your own content to the Site, you are agreeing to be bound by these Terms of Service.
+              </p>
+              <template v-slot:modal-footer>
+                <div class="w-100">
+                  <b-button
+                    id="modal"
+                    size="sm"
+                    class="float-right"
+                    @click="show=false"
+                    v-on:click="Terms"
+                  >OK</b-button>
+                </div>
+              </template>
+            </b-modal>
+          </div>
         </center>
-         
       </form>
     </div>
   </div>
@@ -126,14 +145,13 @@ export default {
         conpassword: ""
       },
       show: true,
-      submitted: false,
+      submitted: false
     };
   },
   methods: {
     Terms: function() {
-      console.log(
-        "{Ajoc is beautiful}"
-    )},
+      console.log("{Ajoc is beautiful}");
+    },
     onSubmit(evt) {
       evt.preventDefault();
       alert(JSON.stringify(this.form));
@@ -164,11 +182,15 @@ export default {
 };
 </script>
 <style>
+a, a:hover{
+  color:#333
+}
 .divider-text {
   position: relative;
   text-align: center;
   margin-top: 15px;
   margin-bottom: 15px;
+  color: black;
 }
 .divider-text span {
   padding: 7px;
@@ -186,7 +208,13 @@ export default {
   left: 0;
   z-index: 1;
 }
+
 .btn-facebook {
+  font-family: "Muli-Regular";
+  color: #333;
+  border: 1px solid darkviolet;
+}
+.btn-google {
   font-family: "Muli-Regular";
   color: #333;
   border: 1px solid darkviolet;
@@ -226,8 +254,10 @@ button {
   letter-spacing: 2px;
 }
 form {
-  width: 90%;
+  width: 100%;
   padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid darkviolet;
 }
 .form-control {
   border: 1px solid darkviolet;
@@ -249,11 +279,11 @@ button {
   justify-content: center;
   padding: 0;
   background: #bb6bd9;
-  font-size: 13px;
-  color: black;
+  font-size: 15px;
+  color: #ffffff;
   text-transform: uppercase;
   font-family: "Muli-SemiBold";
-  border-radius: 20px;
+  border-radius: 5px;
 }
 @media (max-width: 767px) {
   .inner {

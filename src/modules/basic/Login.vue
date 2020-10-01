@@ -5,11 +5,22 @@
         <h3>WAWEN's UBE HALAYA</h3>
         <div class="row">
           <div class="col">
-            <a href class="btn btn-block btn-social btn-facebook">
-              <strong>
-                <i class="fa fa-facebook-official" style="font-size:33px;color:blue"> &nbsp;</i> Sign in with FACEBOOK
-              </strong>
-            </a>
+            <b-row>
+              <b-col cols="6" sm="6">
+                <a href class="btn btn-block btn-social btn-google">
+                  <strong>
+                    <i class="fa fa-google" style="font-size:30px">&nbsp;</i> Sign Up with Google
+                  </strong>
+                </a>
+              </b-col>
+              <b-col cols="6" sm="6">
+                <a href class="btn btn-block btn-social btn-facebook">
+                  <strong>
+                    <i class="fa fa-facebook-official" style="font-size:30px;color:blue">&nbsp;</i> Sign Up with Facebook
+                  </strong>
+                </a>
+              </b-col>
+            </b-row>
           </div>
         </div>
         <p class="divider-text">
@@ -18,7 +29,7 @@
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">
-              <i class="fa fa-envelope"></i>
+              <i class="fa fa-envelope" style="font-size:20px"></i>
             </span>
           </div>
           <input
@@ -33,7 +44,7 @@
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">
-              <i class="fa fa-key"></i>
+              <i class="fa fa-key" style="font-size:20px"></i>
             </span>
           </div>
           <input
@@ -43,9 +54,12 @@
             required
             class="form-control"
           >
+          <span class="input-group-text">
+           <i class="fa fa-eye"  style="font-size:18px"></i>
+          </span>
         </div>
 
-        <button v-on:click="header1">LOGIN</button>
+        <button >LOGIN</button>
         <br>
         <p class="text-center">
           <a href>Forgot Password?</a>
@@ -101,6 +115,9 @@ export default {
 };
 </script>
 <style>
+.fa-eye-slash {
+  font-size: 20px;
+}
 .divider-text {
   position: relative;
   text-align: center;
@@ -123,7 +140,13 @@ export default {
   left: 0;
   z-index: 1;
 }
+
 .btn-facebook {
+  font-family: "Muli-Regular";
+  color: #333;
+  border: 1px solid darkviolet;
+}
+.btn-google {
   font-family: "Muli-Regular";
   color: #333;
   border: 1px solid darkviolet;
@@ -149,7 +172,7 @@ button {
   margin-right: 25%;
   padding-top: 5%;
   padding-bottom: 48px;
-  background:transparent;
+  background: transparent;
 }
 .inner h3 {
   text-transform: uppercase;
@@ -161,9 +184,10 @@ button {
   letter-spacing: 2px;
 }
 form {
-  width: 90%;
+  width: 100%;
   padding-left: 20px;
-  /* margin-top: 1%; */
+  padding-right: 20px;
+  border: 1px solid darkviolet;
 }
 .form-control {
   border: 1px solid darkviolet;
@@ -187,7 +211,7 @@ button {
   background: #bb6bd9;
   font-size: 13px;
   font-family: "Muli-SemiBold";
-  border-radius: 20px;
+  border-radius: 5px;
 }
 i {
   height: 20px;

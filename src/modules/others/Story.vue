@@ -29,7 +29,7 @@ OUR STORY
       </p>
     </div>
     <h5 class="h5owner">CLARKE PANTINOPLE</h5>
-    <img src="@/assets/clark.png" alt="Card image cap" id="image3" class="float-right">
+    <img src="@/assets/sirimage.jpg" alt="Card image cap" id="image3" class="float-right">
   </div>
 </template>
 <style>
@@ -39,6 +39,7 @@ OUR STORY
   margin-top: 6%;
   font-weight: bold;
   font-style: italic;
+  font-size: 20px;
 }
 #image1 {
   margin-right: 5%;
@@ -48,32 +49,34 @@ OUR STORY
 }
 #image2 {
   margin-left: 5%;
+  margin-top: 3%;
   margin-right: 2%;
   border-radius: 10%;
   box-shadow: 8px 8px 5px grey;
 }
 #image3 {
-  border-radius: 75%;
+  border-radius: 50%;
+  width: 10%;
   box-shadow: 8px 8px 5px grey;
-  width: 100px;
   margin-right: 1%;
   margin-top: 3%;
 }
 .ourstory {
   margin-left: 5%;
-  margin-top: 2.5%;
-  font-size: 18px;
+  margin-top: 3%;
+  font-size: 16px;
 }
 .pmaker {
   margin-right: 5%;
-  margin-top: 3%;
-  font-size: 18px;
+  margin-top: 5%;
+  font-size: 16px;
 }
 .h2title {
   text-align: center;
   color: purple;
   font-weight: bolder;
   text-shadow: 2px 2px violet;
+  margin-top: -8%;
 }
 .tmaking {
   color: purple;
@@ -84,10 +87,13 @@ OUR STORY
 .h5story {
   margin-left: 5%;
   font-weight: bold;
+  font-size: 20px;
 }
 .h5maker {
   margin-left: 5%;
   font-weight: bold;
+  font-size: 2em;
+  margin-top: 2%;
 }
 .font-weight-bolder {
   color: darkviolet;
