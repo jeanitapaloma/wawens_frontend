@@ -76,6 +76,7 @@ div u {
   color: #8028d8;
   font-size: 15px;
   font-weight: bolder;
+  font-family: Tahoma;
 }
 
 </style>
