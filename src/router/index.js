@@ -31,5 +31,6 @@ export default new Router({
             component:  () => import("@/modules/basic/Profile.vue"),
         },
 
-    ]
+    ],
+    mode: 'history'
 })

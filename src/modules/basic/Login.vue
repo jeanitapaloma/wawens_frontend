@@ -39,6 +39,7 @@
   </div>
 </template>
 <script>
+
 export default {
   data() {
     return {
@@ -53,6 +54,19 @@ export default {
     onSubmit(evt) {
       evt.preventDefault();
       alert(JSON.stringify(this.form));
+    
+      
+        this.$http.post('/login',{
+          email : this.form.email,
+          password : this.form.password
+        }).then((res)=>{
+          // Redirect to homepage
+          console.log(res);
+          
+        })
+        
+    
+
     },
     onReset(evt) {
       evt.preventDefault();
