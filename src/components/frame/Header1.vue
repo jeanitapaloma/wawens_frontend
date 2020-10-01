@@ -10,11 +10,10 @@
         <b-collapse is-nav id="nav_collapse">
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto" id="navbar-nav">
-
-            <b-nav-item-dropdown  text="ABOUT" style="padding:5px;color:blue;" right>
+            <b-nav-item-dropdown text="ABOUT" style="padding:5px;" right>
               <b-dropdown-item class="drpd" to="story">Our Story</b-dropdown-item>
               <b-dropdown-item class="drpd" to="testimonial">Testimonials</b-dropdown-item>
-              <b-dropdown-item class="drpd"  to="partner">Partner</b-dropdown-item>
+              <b-dropdown-item class="drpd" to="partner">Partner</b-dropdown-item>
             </b-nav-item-dropdown>
 
             <b-nav-item-dropdown text="PRODUCT" style="padding:5px;" right>
@@ -46,14 +45,15 @@
 </template>
 <style scoped lang="scss">
 .navbar {
-  background-color: #e5b1fd;
+  background-image: linear-gradient(#e5b1fd, #efe0f8);
   height: 60px;
   width: 100%;
+  border-radius: 0px;
 }
 
 #navbar-nav {
   color: black;
-  font-size:18px;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -61,13 +61,13 @@
   width: 55px;
   height: 55px;
 }
-.drpd{
+.drpd {
   font-size: 16px;
 }
 
 #app {
   width: 100%;
-  top:0px;
+  top: 0px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
   position: relative;
 }
