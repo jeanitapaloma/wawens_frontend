@@ -33,8 +33,8 @@
 .container {
   margin-top: 80px;
   width: 90%;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 h1 {
@@ -47,11 +47,10 @@ h1 {
 
 div.gallery {
   display: block;
-  margin: 5px;
+  margin: 1%;
   border: 1px solid #ccc;
   float: left;
-  width: 31%;
-  margin-left: 1%;
+  width: 30%;
   border-style: outset;
   height: 350px;
 }
