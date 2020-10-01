@@ -155,6 +155,17 @@ export default {
     onSubmit(evt) {
       evt.preventDefault();
       alert(JSON.stringify(this.form));
+     
+        this.$http.post('/register',{
+          username: this.form.username,
+          email : this.form.email,
+          password : this.form.password
+        }).then((res)=>{
+          // Redirect to homepage
+          console.log(res);
+          
+        })
+       
     },
     onReset(evt) {
       evt.preventDefault();

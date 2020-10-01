@@ -70,5 +70,7 @@ export default new Router({
             component:  () => import("@/modules/product/OrderStatus.vue"),
         },
 
-    ]
+    ],
+    mode: 'history'
 })
+
