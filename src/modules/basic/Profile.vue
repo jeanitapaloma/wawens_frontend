@@ -1,9 +1,7 @@
 <template>
   <div>
     <b-container class="profile">
-      <br>
       <em>Personal Information</em>
-      <br>
       <br>
       <b-row>
         <b-col cols="7">
@@ -15,7 +13,7 @@
               class="form-control"
               id="email"
               v-model="email"
-              :disabled="!inputEnable"
+              :disabled="!inputEnable || show"
             ></b-form-input>
           </div>
           <div class="form-group">
@@ -26,7 +24,7 @@
               class="form-control"
               id="firstname"
               v-model="firstname"
-              :disabled="!inputEnable"
+              :disabled="!inputEnable || show"
             ></b-form-input>
           </div>
           <div class="form-group">
@@ -37,7 +35,7 @@
               class="form-control"
               id="middlename"
               v-model="middlename"
-              :disabled="!inputEnable"
+              :disabled="!inputEnable || show"
             ></b-form-input>
           </div>
           <div class="form-group">
@@ -48,11 +46,11 @@
               class="form-control"
               id="lastname"
               v-model="lastname"
-              :disabled="!inputEnable"
+              :disabled="!inputEnable || show"
             ></b-form-input>
           </div>
           <b-row>
-            <b-col cols="8" sm="6">
+            <b-col cols="6" sm="6">
               <label for="gender" class="bmd-label-floating">GENDER</label>
               <b-form-input
                 required
@@ -60,10 +58,10 @@
                 class="form-control"
                 id="gender"
                 v-model="gender"
-                :disabled="!inputEnable"
+                :disabled="!inputEnable || show"
               ></b-form-input>
             </b-col>
-            <b-col cols="4" sm="6">
+            <b-col cols="6" sm="6">
               <label for="contact" class="bmd-label-floating">CONTACT</label>
               <b-form-input
                 required
@@ -71,7 +69,7 @@
                 class="form-control"
                 id="contact"
                 v-model="contact"
-                :disabled="!inputEnable"
+                :disabled="!inputEnable || show"
               ></b-form-input>
             </b-col>
           </b-row>
@@ -84,15 +82,15 @@
               class="form-control"
               id="address"
               v-model="address"
-              :disabled="!inputEnable"
+              :disabled="!inputEnable || show"
             ></b-form-input>
           </div>
-          <br>
           <center>
-            <b-button v-show="show" v-on:click="update" id="btn">UPDATE</b-button>
-            <b-button v-show="!show" v-on:click="save" id="btn">SAVE CHANGES</b-button>&nbsp;
+            <b-button v-show="show"  id="btn">UPDATE</b-button>
+            <b-button v-show="!show"  id="btn">SAVE CHANGES</b-button>&nbsp;
             <b-button v-show="!show" id="btn">CANCEL</b-button>
           </center>
+          <!-- v-on:click="save" -->
         </b-col>
 
         <b-col cols="5">
@@ -125,8 +123,8 @@
             </span>
             <br>
             <center>
-              <b-button v-show="show" v-on:click="change" id="btn1">CHANGE PASSWORD</b-button>
-              <div v-show="!show">
+              <b-button v-show="isChangeClicked" v-on:click="change" id="btn1">CHANGE PASSWORD</b-button>
+              <div v-show="!isChangeClicked">
                 <div class="form-group">
                   <label for="currentPassword" class="bmd-label-floating">*CURRENT PASSWORD:</label>
                   <b-form-input
@@ -178,8 +176,12 @@ export default {
       contact: "",
       address: "",
       username: "",
-      inputEnableA: false,
-      show: true
+      password:"",
+      confirmPassword:"",
+      currentPassword:"",
+      inputEnable: false,
+      show: true,
+      isChangeClicked:true
     };
   },
   methods: {
@@ -189,7 +191,7 @@ export default {
     },
     change() {
       this.inputEnable = true;
-      this.show = false;
+      this.isChangeClicked = false;
     }
   }
 };
@@ -219,17 +221,14 @@ em {
   font-size: 30px;
   font-family: Segoe Script;
   text-align: center;
-  margin-top: 12%;
+  margin-top: 20%;
 }
-.mt-4 {
-  border-color: #bb6bd9;
-}
+
 .img-thumbnail {
   border: 1px solid #bb6bd9;
+   border-color: #bb6bd9;
 }
-.form-control {
-  border: 1px solid #bb6bd9;
-}
+
 .btn-outline-primary {
   color: #bb6bd9;
   border-color: #bb6bd9;
@@ -262,7 +261,7 @@ em {
   .container-sm,
   .container-md,
   container-lg {
-    margin-top: 8px;
+    margin-top: 8%;
     margin-left: 10%;
     margin-bottom: 5%;
   }
