@@ -6,42 +6,72 @@
         <div class="row">
           <div class="col">
             <a href class="btn btn-block btn-social btn-facebook">
-              <i class="fa fa-facebook"></i>
-              <strong>&nbsp;Sign Up with FACEBOOK</strong>
+              <strong>
+                <i class="fa fa-facebook-official" style="font-size:33px;color:blue"> &nbsp;</i> Sign Up with FACEBOOK
+              </strong>
             </a>
           </div>
         </div>
         <p class="divider-text">
           <span class="bg-light">OR</span>
         </p>
-        <div class="form-wrapper">
-          <label for>Username</label>
-          <input type="text"
-           v-model="form.username" 
-           required class="form-control">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
+          <input
+            type="username"
+            v-model="form.username"
+            placeholder="Username"
+            required
+            class="form-control"
+          >
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </div>
+          <input
+            type="email"
+            v-model="form.email"
+            placeholder="Email"
+            required
+            class="form-control"
+          >
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-key"></i>
+            </span>
+          </div>
+          <input
+            type="password"
+            v-model="form.password"
+            placeholder="Password"
+            required
+            class="form-control"
+          >
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-lock"></i>
+            </span>
+          </div>
+          <input
+            type="password"
+            v-model="form.conpassword"
+            placeholder="Confirm Password"
+            required
+            class="form-control"
+          >
         </div>
 
-        <div class="form-wrapper">
-          <label for>Email</label>
-          <input type="email" 
-          v-model="form.email" 
-          required class="form-control">
-        </div>
-
-        <div class="form-wrapper">
-          <label for>Password</label>
-          <input type="password" 
-          v-model="form.password" 
-          required class="form-control">
-        </div>
-
-        <div class="form-wrapper">
-          <label for>Confirm Password</label>
-          <input type="password" 
-          v-model="form.conpassword" 
-          required class="form-control">
-        </div>
-        
         <button>Sign Up</button>
         <p class="text-center">
           By signing up these you agree to our
@@ -85,12 +115,10 @@ export default {
     },
     onReset(evt) {
       evt.preventDefault();
-      // Reset our form values
       this.form.username = "";
       this.form.email = "";
       this.form.password = "";
       this.form.conpassword = "";
-      // Trick to reset/clear native browser form validation state
       this.show = false;
       this.$nextTick(() => {
         this.show = true;
@@ -117,71 +145,63 @@ export default {
   content: "";
   position: absolute;
   width: 100%;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid darkviolet;
   top: 55%;
   left: 0;
   z-index: 1;
 }
-
 .btn-facebook {
-  color: black;
-  height: 40px;
   font-family: "Muli-Regular";
   color: #333;
-  border: 1px solid #ccc;
+  border: 1px solid darkviolet;
 }
-
+strong {
+  font-size: 18px;
+}
 body {
   font-family: "Muli-Regular";
   color: #666;
   font-size: 18px;
   margin: 0;
 }
-
 input,
 textarea,
 select,
 button {
   font-family: "Muli-Regular";
-  color: #333;
+  color: black;
   font-size: 20px;
 }
 
 .inner {
-  width: 900px;
-  margin-left: 300px;
-  padding-top: 100px;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-top: 5%;
   padding-bottom: 48px;
-  background-color: transparent;
+  background: transparent;
 }
 .inner h3 {
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 28px;
   font-family: "Muli-Bold";
   text-align: center;
   margin-bottom: 35px;
   color: #333;
   letter-spacing: 2px;
 }
-
-
 form {
-  width: 50%;
+  width: 90%;
   padding-left: 20px;
 }
-
 .form-control {
-  border: 1px solid #ccc;
-  display: block;
-  width: 100%;
+  border: 1px solid darkviolet;
+  width: 150%;
   height: 40px;
   padding: 0 10px;
-  border-radius: 20px;
   font-family: "Muli-Bold";
   background: none;
   font-size: 20px;
 }
-
 button {
   width: 152px;
   height: 40px;
@@ -194,7 +214,7 @@ button {
   padding: 0;
   background: #bb6bd9;
   font-size: 13px;
-  color: #fff;
+  color: black;
   text-transform: uppercase;
   font-family: "Muli-SemiBold";
   border-radius: 20px;
@@ -207,9 +227,5 @@ button {
     padding-top: 0;
     padding-bottom: 0;
   }
-
-
 }
-
-/*# sourceMappingURL=style.css.map */
 </style>
