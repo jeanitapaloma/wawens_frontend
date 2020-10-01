@@ -55,5 +55,7 @@ export default new Router({
             component:  () => import("@/components/frame/Header1.vue"),
         },
 
-    ]
+    ],
+    mode: 'history'
 })
+
