@@ -71,15 +71,46 @@
             class="form-control"
           >
         </div>
-
         <button>Sign Up</button>
-        <p class="text-center">
-          By signing up these you agree to our
-          <a href>Term</a> and
-          <a href>Policy</a>
-          <br>Already have an account?
-          <a href>Login here</a>
-        </p>
+        <center>
+            <p>
+              By clicking Sign Up, you agree to our
+              <a
+                href="#"
+                v-b-modal.modal-scrollable
+                @click="show=true"
+              >Terms & Conditions</a>
+            </p>
+             <p>Already have an account?
+          <a href>Login here</a></p>
+            <div>
+              <b-modal
+                scrollable
+                title="Our Terms and Conditions"
+                id="modal-scrollable"
+                v-model="hide"
+              >
+                <b>Wawens Ube halaya Terms of Service ("Agreement")</b>
+                <p>
+                  This Agreement was last modified on December 25 ,2020.
+                  Please read these Terms of Service completely using ubehalaya.com which is owned and operated by UbeHalaya. This Agreement documents the legally binding terms and conditions attached to the use of the Site at ubehalaya.com.
+                  By using or accessing the Site in any way, viewing or browsing the Site, or adding your own content to the Site, you are agreeing to be bound by these Terms of Service.
+                </p>
+                <template v-slot:modal-footer>
+                  <div class="w-100">
+                    <b-button
+                      id="modal"
+                      size="sm"
+                      class="float-right"
+                      @click="show=false"
+                      v-on:click="Terms"
+                    >OK</b-button>
+                  </div>
+                </template>
+              </b-modal>
+            </div>
+        </center>
+         
       </form>
     </div>
   </div>
@@ -94,10 +125,15 @@ export default {
         password: "",
         conpassword: ""
       },
-      show: true
+      show: true,
+      submitted: false,
     };
   },
   methods: {
+    Terms: function() {
+      console.log(
+        "{Ajoc is beautiful}"
+    )},
     onSubmit(evt) {
       evt.preventDefault();
       alert(JSON.stringify(this.form));
@@ -208,7 +244,6 @@ button {
   font-family: "Muli-SemiBold";
   border-radius: 20px;
 }
-
 @media (max-width: 767px) {
   .inner {
     min-width: auto;

@@ -45,7 +45,7 @@
           >
         </div>
 
-        <button>LOGIN</button>
+        <button v-on:click="header1">LOGIN</button>
         <br>
         <p class="text-center">
           <a href>Forgot Password?</a>
@@ -76,10 +76,8 @@ export default {
     },
     onReset(evt) {
       evt.preventDefault();
-      // Reset our form values
       this.form.email = "";
       this.form.password = "";
-      // Trick to reset/clear native browser form validation state
       this.show = false;
       this.$nextTick(() => {
         this.show = true;
@@ -123,9 +121,7 @@ body {
   font-family: "Muli-Regular";
   color: #666;
   font-size: 18px;
-  margin: 0;
 }
-
 input,
 textarea,
 select,

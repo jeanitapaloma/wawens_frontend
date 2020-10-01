@@ -49,6 +49,11 @@ export default new Router({
             name: 'story',
             component:  () => import("@/modules/others/Story.vue"),
         },
+        {
+            path: '/header1',
+            name: 'header1',
+            component:  () => import("@/components/frame/Header1.vue"),
+        },
 
     ]
 })
