@@ -5,56 +5,33 @@
       <div class="gallery">
         <img :src="require('@/assets/halaya.jpg')" width="600" height="400">
         <div class="desc">
-          <div class="name">
-            <u>Ube Halaya in Square Bottle</u>
-          </div>
-          <div class="cart">
-            <button>
-              Add to Cart
-              <i style="color:black;" class="fa fa-shopping-cart"></i>
-            </button>
-          </div>
+          <u>Ube Halaya in Square Bottle</u>
         </div>
       </div>
 
       <div class="gallery">
         <img :src="require('@/assets/cake.png')" width="600" height="400">
         <div class="desc">
-          <div class="name">
-            <u>Ube Halaya Happy Birthday Round Cake</u>
-          </div>
-          <div class="cart">
-            <button>
-              Add to Cart
-              <i style="color:black;" class="fa fa-shopping-cart"></i>
-            </button>
-          </div>
+          <u>Ube Halaya Happy Birthday Round Cake</u>
         </div>
       </div>
 
       <div class="gallery">
         <img :src="require('@/assets/buchi.jpg')" width="600" height="400">
         <div class="desc">
-          <div class="name">
-            <u>Ubechi</u>
-          </div>
-          <div class="cart">
-            <button>
-              Add to Cart
-              <i style="color:black;" class="fa fa-shopping-cart"></i>
-            </button>
-          </div>
+          <u>Ubechi</u>
         </div>
       </div>
     </div>
     <!-- for modal -->
-  
+
     <!-- end of modal -->
   </div>
 </template>
+
 <style>
 .container {
-  margin-top: 20px;
+  margin-top: 80px;
   width: 90%;
   margin-left: 10%;
   margin-right: 10%;
@@ -66,22 +43,6 @@ h1 {
   font-weight: bolder;
   text-align: center;
   padding-bottom: 2%;
-}
-
-div button {
-  float: right;
-  background-color: white;
-  border: 2px solid #8028d8;
-  color: #8028d8;
-  font-family: Segoe Script;
-  font-weight: bolder;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 8px;
-  font-stretch: narrower;
-  font-size: 10px;
-  width: 100%;
-  height: 40px;
 }
 
 div.gallery {
@@ -117,14 +78,4 @@ div u {
   font-weight: bolder;
 }
 
-div.name {
-  width: 69%;
-  float: left;
-}
-
-div.cart {
-  width: 29%;
-  float: right;
-}
 </style>
-
