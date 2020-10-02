@@ -10,7 +10,7 @@
         <b-collapse is-nav id="nav_collapse">
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto" id="navbar-nav">
-            <b-nav-item to="/" style="padding:5px;">HOME</b-nav-item>
+            <b-nav-item to="/dashboard" style="padding:5px;">HOME</b-nav-item>
 
             <b-nav-item-dropdown text="ABOUT" style="padding:5px;color:blue;" right>
               <b-dropdown-item class="drop" to="story">Our Story</b-dropdown-item>

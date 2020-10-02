@@ -100,30 +100,6 @@
               <a href>Login here</a>
             </p>
             <div>
-              <b-modal
-                scrollable
-                title="Our Terms and Conditions"
-                id="modal-scrollable"
-                v-model="hide"
-              >
-                <b>Wawens Ube halaya Terms of Service ("Agreement")</b>
-                <p>
-                  This Agreement was last modified on December 25 ,2020.
-                  Please read these Terms of Service completely using ubehalaya.com which is owned and operated by UbeHalaya. This Agreement documents the legally binding terms and conditions attached to the use of the Site at ubehalaya.com.
-                  By using or accessing the Site in any way, viewing or browsing the Site, or adding your own content to the Site, you are agreeing to be bound by these Terms of Service.
-                </p>
-                <template v-slot:modal-footer>
-                  <div class="w-100">
-                    <b-button
-                      id="modal"
-                      size="sm"
-                      class="float-right"
-                      @click="show=false"
-                      v-on:click="Terms"
-                    >OK</b-button>
-                  </div>
-                </template>
-              </b-modal>
             </div>
           </center>
         </form>
@@ -140,7 +116,8 @@ export default {
     email: "",
     password: "",
     conpassword: ""
-  })
+  }),
+  
 };
 </script>
 
