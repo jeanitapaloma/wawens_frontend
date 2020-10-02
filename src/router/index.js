@@ -60,6 +60,21 @@ export default new Router({
             name: 'customers',
             component:  () => import("@/modules/admin/Customers.vue"),
         },
+        {
+            path: '/submit_order',
+            name: 'submit_order',
+            component:  () => import("@/modules/product/SubmitOrder.vue"),
+        },
+        {
+            path: '/cart',
+            name: 'cart',
+            component:  () => import("@/modules/product/Cart.vue"),
+        },
+        {
+            path: '/order_status',
+            name: 'order_status',
+            component:  () => import("@/modules/product/OrderStatus.vue"),
+        },
 
     ],
     mode: 'history'
