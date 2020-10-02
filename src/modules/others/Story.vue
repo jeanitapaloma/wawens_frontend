@@ -76,6 +76,7 @@ OUR STORY
   color: purple;
   font-weight: bolder;
   text-shadow: 2px 2px violet;
+  margin-top: -8%;
 }
 .tmaking {
   color: purple;

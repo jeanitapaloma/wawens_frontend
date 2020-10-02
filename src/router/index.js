@@ -49,7 +49,7 @@ export default new Router({
             name: 'story',
             component:  () => import("@/modules/others/Story.vue"),
         },
-        // ADMIN
+        
         {
             path: '/orders',
             name: 'orders',
@@ -61,5 +61,7 @@ export default new Router({
             component:  () => import("@/modules/admin/Customers.vue"),
         },
 
-    ]
+    ],
+    mode: 'history'
 })
+

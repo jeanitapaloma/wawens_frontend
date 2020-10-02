@@ -1,11 +1,15 @@
 <template>
-<div>
-    <b-card-img :src="require('@/assets/wallpaper.png')"  id="userIcon"></b-card-img>
-</div>
+  <div id="lawas">
+    <div >
+    <sidebar/>
+    </div>
+  </div>
 </template>
-<style scoped lang="scss">
-#userIcon {
-  background-size:cover;
-  background-repeat: no-repeat;
+<script>
+import sidebar  from '@/components/frame/sidebar.vue'
+export default {
+  components: {
+    sidebar,
+  }
 }
-</style>
+</script>

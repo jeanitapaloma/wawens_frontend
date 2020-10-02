@@ -1,94 +1,94 @@
 <template>
-  <div class="container p-3 my-3">
-    <div class="inner">
-      <form action @submit="onSubmit" v-if="show">
-        <h3>WAWEN's UBE HALAYA</h3>
+  <div>
+    <div>
+      <b-modal v-model="modal" id="modal-tall" hide-header title="WAWEN's UBE HALAYA" hide-footer>
+        <br>
+        <h3
+          style="text-align: center;font-style:Segoe Script;font-size: 28px;color:black"
+        >WAWEN's UBE HALAYA</h3>
+        <span>
+          <p style="text-align: center; color:black">Sign in to your Account.</p>
+        </span>
         <div class="row">
           <div class="col">
-            <a href class="btn btn-block btn-social btn-facebook">
-              <strong>
-                <i class="fa fa-facebook-official" style="font-size:33px;color:blue"> &nbsp;</i> Sign in with FACEBOOK
-              </strong>
-            </a>
+            <b-row>
+              <b-col cols="6" sm="6">
+                <a href class="btn btn-block btn-social btn-google">
+                  <strong>
+                    <i class="fa fa-google" style="font-size:30px">&nbsp;</i> Sign Up with Google
+                  </strong>
+                </a>
+              </b-col>
+              <b-col cols="6" sm="6">
+                <a href class="btn btn-block btn-social btn-facebook">
+                  <strong>
+                    <i class="fa fa-facebook-official" style="font-size:30px;color:blue">&nbsp;</i> Sign Up with Facebook
+                  </strong>
+                </a>
+              </b-col>
+            </b-row>
           </div>
         </div>
         <p class="divider-text">
           <span class="bg-light">OR</span>
         </p>
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
+        <form>
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa fa-envelope" style="font-size:20px"></i>
+              </span>
+            </div>
+
+            <input type="email" v-model="email" class="form-control" placeholder="Email" required>
+          </div>
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa fa-key" style="font-size:20px"></i>
+              </span>
+            </div>
+            <input
+              type="password"
+              v-model="password"
+              class="form-control"
+              placeholder="Password"
+              required
+            >
             <span class="input-group-text">
-              <i class="fa fa-envelope"></i>
+              <i class="fa fa-eye" style="font-size:18px"></i>
             </span>
           </div>
-          <input
-            type="email"
-            v-model="form.email"
-            placeholder="Email"
-            required
-            class="form-control"
-          >
-        </div>
+          <button>LOGIN</button>
+          <br>
+          <p class="text-center">
+            <a href>Forgot Password?</a>
+            <br>Don't have yet an account?
+            <a href>Sign Up</a>
+          </p>
 
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="fa fa-key"></i>
-            </span>
-          </div>
-          <input
-            type="password"
-            v-model="form.password"
-            placeholder="Password"
-            required
-            class="form-control"
-          >
-        </div>
-
-        <button>LOGIN</button>
-        <br>
-        <p class="text-center">
-          <a href>Forgot Password?</a>
-          <br>Don't have yet an account?
-          <a href>Sign Up</a>
-        </p>
-
-        <br>
-      </form>
+          <br>
+        </form>
+      </b-modal>
     </div>
   </div>
 </template>
+
 <script>
+
 export default {
-  data() {
-    return {
-      form: {
-        email: "",
-        password: ""
-      },
-      show: true
-    };
-  },
-  methods: {
-    onSubmit(evt) {
-      evt.preventDefault();
-      alert(JSON.stringify(this.form));
-    },
-    onReset(evt) {
-      evt.preventDefault();
-      // Reset our form values
-      this.form.email = "";
-      this.form.password = "";
-      // Trick to reset/clear native browser form validation state
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
-    }
-  }
+  data: () => ({
+    modal: true,
+    email: "",
+    password: ""
+  })
 };
 </script>
+
 <style>
+.fa-eye-slash {
+  font-size: 20px;
+}
 .divider-text {
   position: relative;
   text-align: center;
@@ -111,7 +111,13 @@ export default {
   left: 0;
   z-index: 1;
 }
+
 .btn-facebook {
+  font-family: "Muli-Regular";
+  color: #333;
+  border: 1px solid darkviolet;
+}
+.btn-google {
   font-family: "Muli-Regular";
   color: #333;
   border: 1px solid darkviolet;
@@ -123,9 +129,7 @@ body {
   font-family: "Muli-Regular";
   color: #666;
   font-size: 18px;
-  margin: 0;
 }
-
 input,
 textarea,
 select,
@@ -134,27 +138,7 @@ button {
   color: #333;
   font-size: 30%;
 }
-.inner {
-  margin-left: 25%;
-  margin-right: 25%;
-  padding-top: 5%;
-  padding-bottom: 48px;
-  background:transparent;
-}
-.inner h3 {
-  text-transform: uppercase;
-  font-size: 28px;
-  font-family: "Muli-Bold";
-  text-align: center;
-  margin-bottom: 35px;
-  color: #333;
-  letter-spacing: 2px;
-}
-form {
-  width: 90%;
-  padding-left: 20px;
-  /* margin-top: 1%; */
-}
+
 .form-control {
   border: 1px solid darkviolet;
   width: 150%;
@@ -177,13 +161,12 @@ button {
   background: #bb6bd9;
   font-size: 13px;
   font-family: "Muli-SemiBold";
-  border-radius: 20px;
+  border-radius: 5px;
 }
 i {
   height: 20px;
   width: 20px;
 }
-
 @media (max-width: 991px) {
   .inner {
     min-width: 768px;

@@ -10,7 +10,7 @@
         <b-collapse is-nav id="nav_collapse">
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto" id="navbar-nav">
-            <b-nav-item to="/" style="padding:5px;">HOME</b-nav-item>
+            <b-nav-item to="/dashboard" style="padding:5px;">HOME</b-nav-item>
 
             <b-nav-item-dropdown text="ABOUT" style="padding:5px;color:blue;" right>
               <b-dropdown-item class="drop" to="story">Our Story</b-dropdown-item>
@@ -28,6 +28,7 @@
             <b-nav-item to="faq" style="padding:5px;">FAQs</b-nav-item>
             <b-nav-item to="login" style="padding:5px;">LOGIN</b-nav-item>
             <b-nav-item to="register" style="padding:5px;">SIGNUP</b-nav-item>
+            <b-nav-item to="cart"><i class="fa fa-shopping-cart" style="font-size:28px"></i></b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -36,14 +37,15 @@
 </template>
 <style scoped lang="scss">
 .navbar {
-  background-color: #e5b1fd;
+  background-image: linear-gradient(#e5b1fd, #efe0f8);
   height: 60px;
   width: 100%;
+  border-radius: 0px;
 }
 
 #navbar-nav {
-  color: black;
-  font-size:18px;
+  color: white;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -54,12 +56,10 @@
 
 #app {
   width: 100%;
-  height: 60px;
-  top:0px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  top: 0px;
   position: relative;
 }
-.drop{
+.drop {
   font-size: 15px;
 }
 </style>
