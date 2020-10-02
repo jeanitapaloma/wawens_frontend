@@ -60,7 +60,11 @@ export default new Router({
             name: 'customers',
             component:  () => import("@/modules/admin/Customers.vue"),
         },
-        
+        {
+            path: '/customers',
+            name: 'customers',
+            component:  () => import("@/modules/product/Cart.vue"),
+        },
 
     ],
     mode: 'history'
