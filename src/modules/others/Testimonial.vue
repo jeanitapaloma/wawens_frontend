@@ -4,7 +4,7 @@
     <div class="text-center mt-5">
       <h2 class="font-weight-bolder">
         WAWEN's UBE HALAYA:
-        <span id="style">Testimonial</span>
+        <span id="style">TESTIMONIALS</span>
       </h2>
     </div>
     <!-- CARD Number 1 -->
@@ -111,7 +111,6 @@
 #style {
   color: darkviolet;
   text-shadow: 2px 2px 4px violet;
-  font-family: "Segoe Script";
   font-size: 30px;
 }
 .card-horizontal {

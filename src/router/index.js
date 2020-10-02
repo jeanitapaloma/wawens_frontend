@@ -49,25 +49,16 @@ export default new Router({
             name: 'story',
             component:  () => import("@/modules/others/Story.vue"),
         },
+        
         {
-            path: '/header1',
-            name: 'header1',
-            component:  () => import("@/components/frame/Header1.vue"),
+            path: '/orders',
+            name: 'orders',
+            component:  () => import("@/modules/admin/Orders.vue"),
         },
         {
-            path: '/submit_order',
-            name: 'submit_order',
-            component:  () => import("@/modules/product/SubmitOrder.vue"),
-        },
-        {
-            path: '/cart',
-            name: 'cart',
-            component:  () => import("@/modules/product/Cart.vue"),
-        },
-        {
-            path: '/order_status',
-            name: 'order_status',
-            component:  () => import("@/modules/product/OrderStatus.vue"),
+            path: '/customers',
+            name: 'customers',
+            component:  () => import("@/modules/admin/Customers.vue"),
         },
 
     ],
