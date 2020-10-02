@@ -28,9 +28,7 @@
             <b-nav-item to="faq" style="padding:5px;">FAQs</b-nav-item>
             <b-nav-item to="login" style="padding:5px;">LOGIN</b-nav-item>
             <b-nav-item to="register" style="padding:5px;">SIGNUP</b-nav-item>
-            <b-nav-item>
-              <i class="fa fa-shopping-cart" style="font-size:28px"></i>
-            </b-nav-item>
+            <b-nav-item to="cart"><i class="fa fa-shopping-cart" style="font-size:28px"></i></b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>

@@ -1,237 +1,47 @@
-<template>
-  <div class="container py-3 m-3">
-    <div class="row">
-      <div class="col-10 mx-auto">
-        <center>
-          <strong>
-            <br>
-            <br>
-            <p style="font-size:25px; margin-left:20px; margin-bottom:10px;">
-              HOW
-              CAN WE HELP YOU?
-            </p>
-          </strong>
-        </center>
-        <div class="main">
-          <div class="col-50 grid-margin">
-            <!-- <div class="card">
-            <div class="card-body">-->
-            <form action="#">
-              <div class="form-group d-flex search-field" style="margin-left:100px;">
-                <input type="text" class="form-control" placeholder="Start typing...">
-              </div>
-            </form>
-            <!-- </div>
-            </div>-->
-            <p class="mt-4 text-center" style="margin-left:50px">
-              <a>You can also browse the topic of what are you looking for</a>
-            </p>
-          </div>
-          <div class="accordion" id="faqExample">
-            <p>
-              <strong>FREQUENTLY ASK QUESTIONS</strong>
-            </p>
-            <div class="card">
-              <div class="card-header p-2" id="headingOne">
-                <h5 class="mb-0">
-                  <svg
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    class="bi bi-chevron-right"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0
-1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <button
-                    class="btn btn-link"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
-                    color="white"
-                  >How do I know if my order is confirmed ?</button>
-                </h5>
-              </div>
-
-              <div
-                id="collapseOne"
-                class="collapse show"
-                aria-labelledby="headingOne"
-                data-parent="#faqExample"
-              >
-                <div class="card-body">
-                  <b>Answer:</b> Once your order is confirmed and processed, you will
-                  receive a shipment notification via E-mail/SMS advising you on the
-                  estimated date of delivery. You can also check the current status of
-                  your order, just click on order page to get real time status of your
-                  order.
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header p-2" id="headingTwo">
-                <h5 class="mb-0">
-                  <svg
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    class="bi bi-chevron-right"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0
-1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <button
-                    class="btn btn-link collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="collapseTwo"
-                  >What payments method do you accept?</button>
-                </h5>
-              </div>
-              <div
-                id="collapseTwo"
-                class="collapse"
-                aria-labelledby="headingTwo"
-                data-parent="#faqExample"
-              >
-                <div class="card-body">
-                  <b>Answer:</b> Cash on Delivery. Thank you!
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header p-2" id="headingThree">
-                <h5 class="mb-0">
-                  <svg
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    class="bi bi-chevron-right"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0
-1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <button
-                    class="btn btn-link collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseThree"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >Can I change my order details?</button>
-                </h5>
-              </div>
-              <div
-                id="collapseThree"
-                class="collapse"
-                aria-labelledby="headingThree"
-                data-parent="#faqExample"
-              >
-                <div class="card-body">
-                  <b>Answer:</b> You have submit your order information, it can't be
-                  change due to some consequences.
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header p-2" id="headingThree">
-                <h5 class="mb-0">
-                  <svg
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    class="bi bi-chevron-right"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0
-1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <button
-                    class="btn btn-link collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseThree"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >Can I cancel my order?</button>
-                </h5>
-              </div>
-              <div
-                id="collapseThree"
-                class="collapse"
-                aria-labelledby="headingThree"
-                data-parent="#faqExample"
-              >
-                <div class="card-body">
-                  <span class="label label-primary">
-                    <b>Answer</b>
-                  </span> It depends.
-                  But if, the business owner already confirmed your delivery status or
-                  it was noticed by the business then, you ca't do it anymore.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--/row-->
+  <template>
+  <div class="container">
+    <center><h1 style="margin-top:80px;">HOW CAN WE HELP YOU?</h1></center>
+    <div class="container p-3 my-3 border">
+    <form>
+    <input type="text" id="form" class="form-control form-control-lg" placeholder="Start Typing..."></form></div>
+    <p style="font-size: 19px;"><center>You can also browse what are you looking for</center></p>
+    
+    <p style="font-size:20px"> <strong>FREQUENTLY ASKED QUESTIONS</strong></p>
+    
+    <div class="accordion">
+     <b-card no-body class="mb-4" style="border: 2px solid #e5b1fd;" v-for="item in items" :key="item.message">
+      <b-card-header header-tag="header" class="p-1" role="tab">
+        <b-button block v-b-toggle.accordion-1  style="border: 2px #e5b1fd;height: 50px;text-align:left;background-color:#e5b1fd; font-size:16px">
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <strong> {{ item.questions}}</strong></b-button>
+      </b-card-header>
+      <b-collapse id="accordion-1" accordion="my-accordion">
+        <b-card-body>
+          <b-card-text style="font-size:15px;"><strong>Answer: </strong>{{ item.message }}</b-card-text>
+        </b-card-body>
+      </b-collapse>
+    </b-card>
   </div>
-  <!--container-->
+  </div>
 </template>
+<script>
+  export default {
+    data() {
+      return {
+        items: [
+      { message: 'It will notify on your order status where you can able to see you order history also!', questions:"How do I know if my order was already confirmed?" },
+      { message: 'We only accept cash on delivery payment method for now!',  questions:"What payments method do you accept?" },
+      { message:"As long the status of your order is not yet confirmed you can change!", questions: "Can I change my order details?"},
+      { message:"As long the status of your order is not yet confirmed you can cancel", questions: "Can I canccel my order?"}
+    ]        
+      }
+    }
+  }
+</script>
 <style>
-/* Styles for wrapping the search box *
-
-/* Bootstrap 4 text input with search icon */
-#contain {
-  width: 600px;
-  margin-top: auto;
-  margin-bottom: auto;
-  /* color: violet; */
-}
-.btn {
-  font-style: italic;
-  font-weight: bold;
-  margin-top: 20px;
-}
-#inputfield {
-  height: 70px;
-}
-.container {
-  border-color: darkviolet;
-}
-.card {
-  margin-right: 500px;
-  width: 1100px;
-  /* background-color: #dda0dd; */
-  border-color: darkviolet;
-}
-.form-control {
-  height: auto;
-  margin-top: 20px;
-  border-color: darkviolet;
+#form{
+  height: 50px;
+  font-size: 16px;
 }
 </style>
+
