@@ -26,8 +26,6 @@
               <img :src="require('@/assets/buchi.jpg')" style="width:100%; height: 80%;margin-top:5px;margin-left:20px;" >
               <h5 style="font-size:20px; text-align:left; margin-left:20px;"><strong> Price : &#x20B1; 19.00 / order</strong></h5>
           </div>
-    
-    
     <div class="col" >
           <p style="font-size:19px; text-align:left;" ><strong>DESCRIPTION</strong></p>
           <p style="font-size:14px;">
@@ -52,7 +50,7 @@
             <button @click="increment()">&#xff0b;</button></center>
            <button id="cart">
               Add to Cart
-              <i style="color:black;" class="fa fa-shopping-cart"></i>
+              <i class="fa fa-shopping-cart"></i>
           </button>
           </div>
           </div>
@@ -133,7 +131,7 @@ div u {
   font-weight: bolder;
   border-radius: 8px;
   font-stretch: narrower;
-  font-size: 10px;
+  font-size: 16px;
   width: 50%;
   height: 40px;
   margin-left:100px;
@@ -157,23 +155,25 @@ pre {
 }
   input {
     border: 0;
-    border-top: 2px solid #ddd;;
-    border-bottom: 2px solid #ddd;;
     width: 8.5rem;
     text-align: center;
     padding: 0 .5rem;
     height:35px;
+     border: 2px solid black;
+     color: black;
   
   }
   
   button {
-    border: 2px solid #ddd;;
+
+     border: 2px solid black;
     padding: .5rem;
     background: #f5f5f5;
-    color: #888;
+    color: black;
     font-size: 1 rem, bold;
     cursor: pointer;
     width: 10%;
+    height: 35px;
   
 }
 
