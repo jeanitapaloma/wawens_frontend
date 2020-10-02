@@ -1,8 +1,14 @@
 <template>
-  <div class="container p-3 my-3">
-    <div class="inner">
-      <form action @submit="onSubmit" v-if="show">
-        <h3>WAWEN's UBE HALAYA</h3>
+  <div>
+    <div>
+      <b-modal v-model="modal" id="modal-tall" hide-header title="WAWEN's UBE HALAYA" hide-footer>
+        <br>
+        <h3
+          style="text-align: center;font-style:Segoe Script;font-size: 28px;color:black"
+        >WAWEN's UBE HALAYA</h3>
+        <span>
+          <p style="text-align: center; color:black">Sign in to your Account.</p>
+        </span>
         <div class="row">
           <div class="col">
             <b-row>
@@ -26,80 +32,58 @@
         <p class="divider-text">
           <span class="bg-light">OR</span>
         </p>
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
+        <form>
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa fa-envelope" style="font-size:20px"></i>
+              </span>
+            </div>
+
+            <input type="email" v-model="email" class="form-control" placeholder="Email" required>
+          </div>
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa fa-key" style="font-size:20px"></i>
+              </span>
+            </div>
+            <input
+              type="password"
+              v-model="password"
+              class="form-control"
+              placeholder="Password"
+              required
+            >
             <span class="input-group-text">
-              <i class="fa fa-envelope" style="font-size:20px"></i>
+              <i class="fa fa-eye" style="font-size:18px"></i>
             </span>
           </div>
-          <input
-            type="email"
-            v-model="form.email"
-            placeholder="Email"
-            required
-            class="form-control"
-          >
-        </div>
+          <button>LOGIN</button>
+          <br>
+          <p class="text-center">
+            <a href>Forgot Password?</a>
+            <br>Don't have yet an account?
+            <a href>Sign Up</a>
+          </p>
 
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="fa fa-key" style="font-size:20px"></i>
-            </span>
-          </div>
-          <input
-            type="password"
-            v-model="form.password"
-            placeholder="Password"
-            required
-            class="form-control"
-          >
-          <span class="input-group-text">
-           <i class="fa fa-eye"  style="font-size:18px"></i>
-          </span>
-        </div>
-
-        <button >LOGIN</button>
-        <br>
-        <p class="text-center">
-          <a href>Forgot Password?</a>
-          <br>Don't have yet an account?
-          <a href>Sign Up</a>
-        </p>
-
-        <br>
-      </form>
+          <br>
+        </form>
+      </b-modal>
     </div>
   </div>
 </template>
+
 <script>
 export default {
-  data() {
-    return {
-      form: {
-        email: "",
-        password: ""
-      },
-      show: true
-    };
-  },
-  methods: {
-    onSubmit(evt) {
-      evt.preventDefault();
-      alert(JSON.stringify(this.form));
-    },
-    onReset(evt) {
-      evt.preventDefault();
-      this.form.email = "";
-      this.form.password = "";
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
-    }
-  }
+  data: () => ({
+    modal: true,
+    email: "",
+    password: ""
+  })
 };
 </script>
+
 <style>
 .fa-eye-slash {
   font-size: 20px;
@@ -153,28 +137,7 @@ button {
   color: #333;
   font-size: 30%;
 }
-.inner {
-  margin-left: 25%;
-  margin-right: 25%;
-  padding-top: 5%;
-  padding-bottom: 48px;
-  background: transparent;
-}
-.inner h3 {
-  text-transform: uppercase;
-  font-size: 28px;
-  font-family: "Muli-Bold";
-  text-align: center;
-  margin-bottom: 35px;
-  color: #333;
-  letter-spacing: 2px;
-}
-form {
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  border: 1px solid darkviolet;
-}
+
 .form-control {
   border: 1px solid darkviolet;
   width: 150%;
@@ -203,7 +166,6 @@ i {
   height: 20px;
   width: 20px;
 }
-
 @media (max-width: 991px) {
   .inner {
     min-width: 768px;

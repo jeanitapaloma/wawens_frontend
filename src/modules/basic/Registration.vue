@@ -1,8 +1,14 @@
 <template>
-  <div class="container p-3 my-3">
-    <div class="inner">
-      <form @submit="onSubmit" v-if="show">
-        <h3>WAWEN's UBE HALAYA</h3>
+  <div>
+    <div>
+      <b-modal v-model="modal" id="modal-tall" hide-header title="WAWEN's UBE HALAYA" hide-footer>
+        <br>
+        <h3
+          style="text-align: center;font-style:Segoe Script;font-size: 28px;color:black"
+        >WAWEN's UBE HALAYA</h3>
+        <span>
+          <p style="text-align: center; color:black">Create your Account.</p>
+        </span>
         <div class="row">
           <div class="col">
             <b-row>
@@ -26,160 +32,127 @@
         <p class="divider-text">
           <span class="bg-light">OR</span>
         </p>
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="fa fa-user"  style="font-size:23px"></i>
-            </span>
+        <form>
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa fa-user" style="font-size:20px"></i>
+              </span>
+            </div>
+            <input type="text" v-model="user" class="form-control" placeholder="Username" required>
           </div>
-          <input
-            type="username"
-            v-model="form.username"
-            placeholder="Username"
-            required
-            class="form-control"
-          >
-        </div>
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="fa fa-envelope"  style="font-size:18px"></i>
-            </span>
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa fa-envelope" style="font-size:20px"></i>
+              </span>
+            </div>
+
+            <input type="email" v-model="email" class="form-control" placeholder="Email" required>
           </div>
-          <input
-            type="email"
-            v-model="form.email"
-            placeholder="Email"
-            required
-            class="form-control"
-          >
-        </div>
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="fa fa-key"  style="font-size:20px"></i>
-            </span>
-          </div>
-          <input
-            type="password"
-            v-model="form.password"
-            placeholder="Password"
-            required
-            class="form-control"
-          >
-          <span class="input-group-text">
-            <i class="fa fa-eye"  style="font-size:20px"></i>
-          </span>
-        </div>
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="fa fa-lock"  style="font-size:30px"></i>
-            </span>
-          </div>
-          <input
-            type="password"
-            v-model="form.conpassword"
-            placeholder="Confirm Password"
-            required
-            class="form-control"
-          >
-          <span class="input-group-text">
-            <i class="fa fa-eye"  style="font-size:18px"></i>
-          </span>
-        </div>
-        <button>Sign Up</button>
-        <center>
-          <p>
-            By clicking Sign Up, you agree to our
-            <a
-              href="#"
-              v-b-modal.modal-scrollable
-              @click="show=true"
-            >Terms & Conditions</a>
-          </p>
-         <hr style="width:60%;text-align:center;height:px;background-color:black;">
-          <p>
-            Already have an account?
-            <a href>Login here</a>
-          </p>
-          <div>
-            <b-modal
-              scrollable
-              title="Our Terms and Conditions"
-              id="modal-scrollable"
-              v-model="hide"
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa fa-key" style="font-size:20px"></i>
+              </span>
+            </div>
+            <input
+              type="password"
+              v-model="password"
+              class="form-control"
+              placeholder="Password"
+              required
             >
-              <b>Wawens Ube halaya Terms of Service ("Agreement")</b>
-              <p>
-                This Agreement was last modified on December 25 ,2020.
-                Please read these Terms of Service completely using ubehalaya.com which is owned and operated by UbeHalaya. This Agreement documents the legally binding terms and conditions attached to the use of the Site at ubehalaya.com.
-                By using or accessing the Site in any way, viewing or browsing the Site, or adding your own content to the Site, you are agreeing to be bound by these Terms of Service.
-              </p>
-              <template v-slot:modal-footer>
-                <div class="w-100">
-                  <b-button
-                    id="modal"
-                    size="sm"
-                    class="float-right"
-                    @click="show=false"
-                    v-on:click="Terms"
-                  >OK</b-button>
-                </div>
-              </template>
-            </b-modal>
+            <span class="input-group-text">
+              <i class="fa fa-eye" style="font-size:18px"></i>
+            </span>
           </div>
-        </center>
-      </form>
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa fa-lock" style="font-size:20px"></i>
+              </span>
+            </div>
+            <input
+              type="password"
+              v-model="conpassword"
+              class="form-control"
+              placeholder="Confirm Password"
+              required
+            >
+            <span class="input-group-text">
+              <i class="fa fa-eye" style="font-size:18px"></i>
+            </span>
+          </div>
+          <button>SIGN UP</button>
+          <center>
+            <p>
+              By clicking Sign Up, you agree to our
+              <a
+                href="#"
+                v-b-modal.modal-scrollable
+                @click="show=true"
+              >Terms & Conditions</a>
+            </p>
+            <hr style="width:60%;text-align:center;height:px;background-color:black;">
+            <p>
+              Already have an account?
+              <a href>Login here</a>
+            </p>
+            <div>
+              <b-modal
+                scrollable
+                title="Our Terms and Conditions"
+                id="modal-scrollable"
+                v-model="hide"
+              >
+                <b>Wawens Ube halaya Terms of Service ("Agreement")</b>
+                <p>
+                  This Agreement was last modified on December 25 ,2020.
+                  Please read these Terms of Service completely using ubehalaya.com which is owned and operated by UbeHalaya. This Agreement documents the legally binding terms and conditions attached to the use of the Site at ubehalaya.com.
+                  By using or accessing the Site in any way, viewing or browsing the Site, or adding your own content to the Site, you are agreeing to be bound by these Terms of Service.
+                </p>
+                <template v-slot:modal-footer>
+                  <div class="w-100">
+                    <b-button
+                      id="modal"
+                      size="sm"
+                      class="float-right"
+                      @click="show=false"
+                      v-on:click="Terms"
+                    >OK</b-button>
+                  </div>
+                </template>
+              </b-modal>
+            </div>
+          </center>
+        </form>
+      </b-modal>
     </div>
   </div>
 </template>
+
 <script>
 export default {
-  data() {
-    return {
-      form: {
-        username: "",
-        email: "",
-        password: "",
-        conpassword: ""
-      },
-      show: true,
-      submitted: false
-    };
-  },
-  methods: {
-    Terms: function() {
-      console.log("{Ajoc is beautiful}");
-    },
-    onSubmit(evt) {
-      evt.preventDefault();
-      alert(JSON.stringify(this.form));
-    },
-    onReset(evt) {
-      evt.preventDefault();
-      this.form.username = "";
-      this.form.email = "";
-      this.form.password = "";
-      this.form.conpassword = "";
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
-    }
-  }
+  data: () => ({
+    modal: true,
+    user: "",
+    email: "",
+    password: "",
+    conpassword: ""
+  })
 };
 </script>
+
 <style>
-a, a:hover{
-  color:#333
+.fa-eye-slash {
+  font-size: 20px;
 }
 .divider-text {
   position: relative;
   text-align: center;
   margin-top: 15px;
   margin-bottom: 15px;
-  color: black;
 }
 .divider-text span {
   padding: 7px;
@@ -192,7 +165,7 @@ a, a:hover{
   content: "";
   position: absolute;
   width: 100%;
-  border-bottom: 1px solid darkviolet;
+  border: 1px solid darkviolet;
   top: 55%;
   left: 0;
   z-index: 1;
@@ -215,39 +188,16 @@ body {
   font-family: "Muli-Regular";
   color: #666;
   font-size: 18px;
-  margin: 0;
 }
 input,
 textarea,
 select,
 button {
   font-family: "Muli-Regular";
-  color: black;
-  font-size: 20px;
+  color: #333;
+  font-size: 30%;
 }
 
-.inner {
-  margin-left: 25%;
-  margin-right: 25%;
-  padding-top: 5%;
-  padding-bottom: 48px;
-  background: transparent;
-}
-.inner h3 {
-  text-transform: uppercase;
-  font-size: 28px;
-  font-family: "Muli-Bold";
-  text-align: center;
-  margin-bottom: 35px;
-  color: #333;
-  letter-spacing: 2px;
-}
-form {
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  border: 1px solid darkviolet;
-}
 .form-control {
   border: 1px solid darkviolet;
   width: 150%;
@@ -258,7 +208,7 @@ form {
   font-size: 20px;
 }
 button {
-  width: 152px;
+  width: 155px;
   height: 40px;
   margin: auto;
   margin-top: 10px;
@@ -268,11 +218,18 @@ button {
   justify-content: center;
   padding: 0;
   background: #bb6bd9;
-  font-size: 15px;
-  color: #ffffff;
-  text-transform: uppercase;
+  font-size: 13px;
   font-family: "Muli-SemiBold";
   border-radius: 5px;
+}
+i {
+  height: 20px;
+  width: 20px;
+}
+@media (max-width: 991px) {
+  .inner {
+    min-width: 768px;
+  }
 }
 @media (max-width: 767px) {
   .inner {

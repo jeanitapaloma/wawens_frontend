@@ -26,11 +26,11 @@
             </b-nav-item-dropdown>
 
             <b-nav-item to="faq" style="padding:5px;">FAQs</b-nav-item>
-            <div>
-            <b-nav-item  style="padding:5px;" data-toggle="modal" data-target="#form">LOGIN</b-nav-item></div>
-
+            <b-nav-item to="login" style="padding:5px;">LOGIN</b-nav-item>
             <b-nav-item to="register" style="padding:5px;">SIGNUP</b-nav-item>
-            <b-nav-item><i class="fa fa-shopping-cart" style="font-size:28px"></i></b-nav-item>
+            <b-nav-item>
+              <i class="fa fa-shopping-cart" style="font-size:28px"></i>
+            </b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -38,7 +38,6 @@
   </div>
 </template>
 <style scoped lang="scss">
-import
 .navbar {
   background-image: linear-gradient(#e5b1fd, #efe0f8);
   height: 60px;
@@ -48,7 +47,7 @@ import
 
 #navbar-nav {
   color: white;
-  font-size:18px;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -59,10 +58,10 @@ import
 
 #app {
   width: 100%;
-  top:0px;
+  top: 0px;
   position: relative;
 }
-.drop{
+.drop {
   font-size: 15px;
 }
 </style>
