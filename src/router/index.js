@@ -49,6 +49,17 @@ export default new Router({
             name: 'story',
             component:  () => import("@/modules/others/Story.vue"),
         },
+        // ADMIN
+        {
+            path: '/orders',
+            name: 'orders',
+            component:  () => import("@/modules/admin/Orders.vue"),
+        },
+        {
+            path: '/customers',
+            name: 'customers',
+            component:  () => import("@/modules/admin/Customers.vue"),
+        },
 
     ]
 })
