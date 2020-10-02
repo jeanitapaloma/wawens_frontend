@@ -40,7 +40,7 @@
               </span>
             </div>
 
-            <input type="email" v-model="email" class="form-control" placeholder="Email" required>
+            <input type="email" v-model="form.email" class="form-control" placeholder="Email" required>
           </div>
           <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -50,7 +50,7 @@
             </div>
             <input
               type="password"
-              v-model="password"
+              v-model="form.password"
               class="form-control"
               placeholder="Password"
               required
@@ -59,12 +59,12 @@
               <i class="fa fa-eye" style="font-size:18px"></i>
             </span>
           </div>
-          <button>LOGIN</button>
+          <button @submit="onSubmit">LOGIN</button>
           <br>
           <p class="text-center">
             <a href>Forgot Password?</a>
             <br>Don't have yet an account?
-            <a href>Sign Up</a>
+            <a v-on:click="redirect('/register')">Sign Up</a>
           </p>
 
           <br>
@@ -75,14 +75,23 @@
 </template>
 
 <script>
-
+import AUTH from "@/services/auth";
 export default {
-  data: () => ({
+ data: () => ({
     modal: true,
-    email: "",
-    password: ""
-  })
-};
+    auth: AUTH,
+    form:{
+      email: "",
+      password: "",
+    },
+  }),
+  methods:{
+    onSubmit(evt) {
+      evt.preventDefault();
+      AUTH.login(this.form.email, this.form.password);
+  }
+}
+}
 </script>
 
 <style>
