@@ -100,6 +100,7 @@ OUR STORY
   text-shadow: 2px 2px 4px violet;
   font-family: "Muli-Bold";
   font-size: 30px;
+  margin-top: 5%;
 }
 
 #style {

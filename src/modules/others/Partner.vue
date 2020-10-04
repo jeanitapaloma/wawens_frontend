@@ -68,7 +68,7 @@ export default {
   text-shadow: 2px 2px 4px violet;
   font-family: "Muli-Bold";
   font-size: 40px;
-  margin-top: -2%;
+  margin-top: 5%;
 }
 .tagline {
   font-size: 20px;

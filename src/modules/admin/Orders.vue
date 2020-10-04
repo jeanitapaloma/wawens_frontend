@@ -66,7 +66,7 @@ td {
   font-family: Segoe Script;
   font-style: italic;
   font-size: 20px;
-  margin-top: 1%;
+  margin-top: 6%;
 }
 #ptotal {
   color: black;
