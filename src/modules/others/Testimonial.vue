@@ -1,7 +1,7 @@
 <template>
   <div>
     <br>
-    <div class="text-center mt-5">
+    <div class="text-center mt-5 pt-5">
       <h2 class="font-weight-bolder">
         WAWEN's UBE HALAYA:
         <span id="style">TESTIMONIALS</span>

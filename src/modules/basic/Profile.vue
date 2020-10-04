@@ -1,4 +1,5 @@
 <template>
+<sidebar>
   <div>
     <h1>Personal Information</h1>
     <b-container class="profile">
@@ -160,9 +161,16 @@
       </b-row>
     </b-container>
   </div>
+
+</sidebar>
+  
 </template>
 <script>
+import sidebar from '../../components/frame/sidebar.vue'
 export default {
+  components: {
+    sidebar
+  },
   data() {
     return {
       file: "",

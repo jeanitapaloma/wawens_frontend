@@ -39,7 +39,14 @@
                 <i class="fa fa-user" style="font-size:20px"></i>
               </span>
             </div>
-            <input type="text" v-model="user" class="form-control" placeholder="Username" required>
+            <input 
+            type="text" 
+            id="username"
+            v-model="form.username" 
+            class="form-control" 
+            placeholder="Username" 
+            :class="{ 'is-invalid': submitted && $v.form.username.$error }"/>
+            <div v-if="submitted && !$v.form.username.required" class="invalid-feedback" >Username is required</div>
           </div>
           <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -48,7 +55,18 @@
               </span>
             </div>
 
-            <input type="email" v-model="email" class="form-control" placeholder="Email" required>
+            <input 
+            type="email"
+             v-model="form.email" 
+             class="form-control" 
+             id="email"
+             placeholder="Email"
+             :class="{ 'is-invalid': submitted && $v.mine.email.$error }" 
+             >
+             <div v-if="submitted && $v.form.email.$error" class="invalid-feedback">
+            <span v-if="!$v.form.email.required">Email is required</span>
+            <span v-if="!$v.form.email.email">Email is invalid</span>
+          </div>
           </div>
           <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -57,15 +75,24 @@
               </span>
             </div>
             <input
-              type="password"
-              v-model="password"
+              v-model="form.password"
+              id="password"
               class="form-control"
               placeholder="Password"
-              required
+              :class="{ 'is-invalid': submitted && $v.mine.password.$error }"
+              :type="passwordVisible ? 'text' : 'password'"
             >
-            <span class="input-group-text">
+            <!-- <span class="input-group-text">
               <i class="fa fa-eye" style="font-size:18px"></i>
+            </span> -->
+            <span class="visibility" tabindex='-1' @click='togglePasswordVisibility' :arial-label='passwordVisible ? "Hide password" : "Show password"'>
+              <i class="material-icons">{{ passwordVisible ? "hide" : "show" }}</i>
             </span>
+
+              <div v-if="submitted && $v.form.password.$error" class="invalid-feedback">
+                <span v-if="!$v.form.password.required">Password is required</span>
+                <span v-if="!$v.form.password.minLength">Weak Password</span>
+              </div>
           </div>
           <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -75,23 +102,26 @@
             </div>
             <input
               type="password"
-              v-model="conpassword"
+              id="conpassword"
+              v-model="form.conpassword"
               class="form-control"
               placeholder="Confirm Password"
-              required
+              :class="{ 'is-invalid': submitted && $v.mine.conpassword.$error }"
             >
-            <span class="input-group-text">
+            <!-- <span class="input-group-text">
               <i class="fa fa-eye" style="font-size:18px"></i>
-            </span>
+            </span> -->
+            <div v-if="submitted && $v.form.conpassword.$error" class="invalid-feedback">
+          <span v-if="!$v.form.conpassword.required">Confirm Password is required</span>
+          <span v-else-if="!$v.form.conpassword.sameAsPassword">Passwords must match</span>
+        </div>
           </div>
-          <button>SIGN UP</button>
+          <button @submit="onSubmit">SIGN UP</button>
           <center>
             <p>
               By clicking Sign Up, you agree to our
               <a
                 href="#"
-                v-b-modal.modal-scrollable
-                @click="show=true"
               >Terms & Conditions</a>
             </p>
             <hr style="width:60%;text-align:center;height:px;background-color:black;">
@@ -107,16 +137,54 @@
     </div>
   </div>
 </template>
-
 <script>
+import { required, email, sameAs } from "vuelidate/lib/validators";
+import AUTH from "@/services/auth";
 export default {
   data: () => ({
     modal: true,
-    user: "",
-    email: "",
-    password: "",
-    conpassword: ""
+    auth: AUTH,
+    form:{
+      username: "",
+      email: "",
+      password: "",
+      conpassword: ""
+    },
+    passwordVisible: false,
+    submitted: false
   }),
+  validations: {
+    form: {
+      username: { required },
+      email: { required, email },
+      password: {
+        required,
+        strongPassword(password) {
+          return (
+            /[a-z]/.test(password) && // checks for a-z
+            /[0-9]/.test(password) && // checks for 0-9
+            /\W|_/.test(password) && // checks for special char
+            password.length >= 6
+          );
+        }
+      },
+      conpassword: { required, sameAsPassword: sameAs("password") }
+    }
+  },
+  methods: {
+    togglePasswordVisibility () {
+			this.passwordVisible = !this.passwordVisible
+    },
+    onSubmit(evt) {
+      evt.preventDefault();
+      this.submitted = true;
+      if (this.$v.$invalid) {
+         AUTH.register(this.form.username,this.form.email,this.form.password,this.form.conpassword)
+        return;
+      }
+      alert("SUCCESS!! :-)" + JSON.stringify(this.mine)); 
+    }
+  }
   
 };
 </script>

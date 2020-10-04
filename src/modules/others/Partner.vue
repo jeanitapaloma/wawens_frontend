@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5">
+  <div class="container mt-5 pt-5">
     <div class="text-center mt-5">
       <h1 class="font-weight-bolder">
         WAWEN's UBE HALAYA:

@@ -10,11 +10,13 @@ import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import Vuelidate from 'vuelidate'
 
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 library.add(faFacebook)
+Vue.use(Vuelidate)
 Vue.use(BootstrapVue)
 Vue.use(VueSidebarMenu)
 Vue.use(IconsPlugin)
