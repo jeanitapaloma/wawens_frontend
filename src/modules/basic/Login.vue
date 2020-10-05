@@ -90,6 +90,10 @@ export default {
       evt.preventDefault();
       AUTH.login(this.form.email, this.form.password);
   }
+},
+mounted(){
+  this.$http.post('api/users').then(res => console.log(res)).catch(err => console.log(err));
+  
 }
 }
 </script>
