@@ -1,11 +1,11 @@
 <template>
 <div class="container mt-5 pt-5">
-    <b-jumbotron bg-variant="transparent" header="WAWEN'S UBE HALAYA : Products"></b-jumbotron>
+    <b-jumbotron bg-variant="transparent">WAWEN'S UBE HALAYA : <br><p id="category">{{category ? category : 'All Products'}}</p></b-jumbotron>
     <b-row>
-        <b-col lg="4" v-for="i in 3" :key="i">
+        <b-col lg="4" v-for="i in 7" :key="i">
             <b-card id="gallery" :img-src="require('@/assets/cake.png')" img-alt="Image" img-top img-height="300px" class="mb-5">
                 <b-link data-toggle="modal" data-target=".bd-example-modal-lg" style="color:#8028d8;">
-                    <h1>Buchi</h1>
+                    <h1 style="font-family:Segoe Script;font-weight:bolder;">Buchi</h1>
                 </b-link>
                 <h4>Price : &#x20B1; 19.00 / pcs</h4>
             </b-card>
@@ -76,92 +76,95 @@
 
 <script>
 export default {
-    data() {
-        return {
-            show: false,
-            quantity: 1
-        };
+  data() {
+    return {
+      show: false,
+      quantity: 1
+    };
+  },
+  methods: {
+    increment() {
+      this.quantity++;
     },
-    methods: {
-        increment() {
-            this.quantity++;
-        },
-        decrement() {
-            if (this.quantity === 1) {
-                alert("Negative quantity not allowed");
-            } else {
-                this.quantity--;
-            }
-        }
+    decrement() {
+      if (this.quantity === 1) {
+        alert("Negative quantity not allowed");
+      } else {
+        this.quantity--;
+      }
     }
+  }
 };
 </script>
 
 <style>
-.jumbotron h1 {
-    color: #8028d8;
-    font-size: 50px;
-    font-family: Segoe Script;
-    font-weight: bolder;
-    text-align: center;
-    padding-bottom: 2px;
+.jumbotron {
+  color: #8028d8;
+  font-size: 50px;
+  font-family: Segoe Script;
+  font-weight: bolder;
+  text-align: center;
+  padding-bottom: 2px;
+}
+
+#category {
+  font-size: 35px;
 }
 
 #cart {
-    background-color: white;
-    border: 2px solid #8028d8;
-    color: #8028d8;
-    font-family: Segoe Script;
-    font-weight: bolder;
-    border-radius: 8px;
-    font-stretch: narrower;
-    font-size: 16px;
-    width: 50%;
-    height: 40px;
-    margin-left: 100px;
-    margin-top: 20px;
+  background-color: white;
+  border: 2px solid #8028d8;
+  color: #8028d8;
+  font-family: Segoe Script;
+  font-weight: bolder;
+  border-radius: 8px;
+  font-stretch: narrower;
+  font-size: 16px;
+  width: 50%;
+  height: 40px;
+  margin-left: 100px;
+  margin-top: 20px;
 }
 
 #app {
-    /* display: flex; */
-    width: 100%;
-    /* height: 100vh; */
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
+  /* display: flex; */
+  width: 100%;
+  /* height: 100vh; */
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
 }
 
 input {
-    border: 0;
-    width: 8.5rem;
-    text-align: center;
-    padding: 0 0.5rem;
-    height: 35px;
-    border: 2px solid black;
-    color: black;
+  border: 0;
+  width: 8.5rem;
+  text-align: center;
+  padding: 0 0.5rem;
+  height: 35px;
+  border: 2px solid black;
+  color: black;
 }
 
 button {
-    border: 2px solid black;
-    padding: 0.5rem;
-    background: #f5f5f5;
-    color: black;
-    font-size: 1 rem, bold;
-    cursor: pointer;
-    width: 10%;
-    height: 35px;
+  border: 2px solid black;
+  padding: 0.5rem;
+  background: #f5f5f5;
+  color: black;
+  font-size: 1 rem, bold;
+  cursor: pointer;
+  width: 10%;
+  height: 35px;
 }
 
-#gallery{
+#gallery {
   display: block;
   box-shadow: 0 0px 1px 0 rgb(214, 195, 247), 0 0px 2px 0 rgb(214, 195, 247);
 }
 
 #gallery:hover {
   box-shadow: 0 0px 1px 0 rgb(128, 40, 216), 0 0px 9px 0 rgb(128, 40, 216);
-}
-
-#gallery img {
-  
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05);
 }
 </style>

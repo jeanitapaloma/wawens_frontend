@@ -2,7 +2,7 @@
 <div class="container">
     <h1>WAWEN'S UBE HALAYA : Cart</h1>
     <hr>
-    <div class="row">
+    <div class="row" v-for="i in 5" :key="i">
         <div class="column" style="border-right-color: #e5b1fd;border-style: solid;border-width: thin;border-left-color: white;border-top-color: white;border-bottom-color: white;">
             <div class="selected-item">
                 <div class="column" style="width:40%">
@@ -55,7 +55,7 @@ hr {
 .column {
     float: left;
     width: 50%;
-    padding: 10px;
+    padding: 5px;
     height: auto;
 }
 
