@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div>
       <b-modal v-model="modal" id="modal-tall" hide-header title="WAWEN's UBE HALAYA" hide-footer>
         <br>
         <h3
@@ -134,7 +133,6 @@
           </center>
         </form>
       </b-modal>
-    </div>
   </div>
 </template>
 <script>
