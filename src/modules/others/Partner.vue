@@ -65,7 +65,7 @@ export default {
 <style>
 .font-weight-bolder {
   color: darkviolet;
-  text-shadow: 2px 2px 4px violet;
+  text-shadow: 2px violet;
   font-family: "Muli-Bold";
   font-size: 40px;
   margin-top: 5%;
@@ -74,12 +74,7 @@ export default {
   font-size: 20px;
   font-style: italic;
 }
-/* #d1 {
-  height: 200px;
-  width: 250px;
-} */
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
-    color: darkviolet;
     font-size: 20px;
     font-weight: bold;
     border: 0;
@@ -88,8 +83,6 @@ export default {
 .nav {
     display: flex;
     flex-wrap: wrap;
-    /* padding-left: 0;
-    margin-bottom: 0; */
     list-style: none;
     border: 0;
     margin-top: 3%;
@@ -111,16 +104,4 @@ export default {
     margin-bottom: 1.5rem !important;
     border: none;
 }
-
-/* p{
-margin-left: 350px;
-} */
-/* #distributor {
-  color: darkviolet !important;
-  text-shadow: 1px 1px 2px violet;
-} */
-/* .shadow:hover {
-  box-shadow: 0 0 10px darkviolet;
-  transform: scale(1.1);
-} */
 </style>

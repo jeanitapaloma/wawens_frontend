@@ -1,40 +1,59 @@
 <template>
   <div>
-    <div>
-      <p class="porder">
-        Customer's Management
-      </p>
-    </div>
-    <table class="table table-purple">
-      <thead>
-        <tr>
-          <th class="thtable1"  scope="col" href="#">SORT</th>
-          <th class="thtable2" scope="col">Total Orders
-            
-          </th>
-          <th class="thtable3" scope="col">
-            <b-form-input  placeholder="Search here..."></b-form-input>
-          </th>
-        </tr>
-      </thead>
-    </table>
-    <div>
-      <b-table striped hover :items="items"></b-table>
-    </div>
+    <sidebar>
+      <div>
+        <p class="pcustomer">Customer's Management</p>
+      </div>
+      <table class="table table-white">
+        <thead>
+          <tr>
+            <th class="thtable1" scope="col">SORT</th>
+            <th class="thtable2" scope="col">Total Orders</th>
+            <th class="thtable3" scope="col">
+              <b-form-input placeholder="Search here..."></b-form-input>
+            </th>
+          </tr>
+        </thead>
+      </table>
+      <div>
+        <b-table :items="items" :fields="fields">
+          <template v-slot:cell(ACTIONS)="row">
+            <i @click="row.toggleDetails" class="fa fa-eye" style="font-size:20px;"></i>
+          </template>
+        </b-table>
+      </div>
+    </sidebar>
   </div>
 </template>
-
 <script>
+import sidebar from "../../components/frame/sidebar";
 export default {
+  components: {
+    sidebar
+  },
   data() {
     return {
+      fields: [
+        "USERNAME",
+        "TOTAL_ORDERS",
+        "COMPLETED_ORDERS",
+        " CANCELLED_ORDERS",
+        "ACTIONS"
+      ],
       items: [
         {
           USERNAME: "mingming",
           TOTAL_ORDERS: "",
           COMPLETED_ORDERS: "",
-          CANCELLED_ORDERS: "",
-          ACTIONS: ""
+          CANCELLED_ORDERS: ""
+          // ACTIONS: ""
+        },
+        {
+          USERNAME: "mingming",
+          TOTAL_ORDERS: "",
+          COMPLETED_ORDERS: "",
+          CANCELLED_ORDERS: ""
+          // ACTIONS: ""
         }
       ]
     };
@@ -49,15 +68,15 @@ td {
   border-collapse: collapse;
   text-align: center;
 }
-.porder {
+.pcustomer {
   color: purple;
   font-weight: bold;
   font-family: Segoe Script;
   font-style: italic;
   font-size: 20px;
-  margin-top: 6%;
+  margin-top: 1%;
 }
-.table-purple {
+.table-white {
   font-size: 15px;
   text-align: center;
   margin-bottom: 1rem;
@@ -80,8 +99,4 @@ td {
   font-weight: 12px;
   padding: 8px;
 }
-.table {
-  width: 80%;
-}
-
 </style>
