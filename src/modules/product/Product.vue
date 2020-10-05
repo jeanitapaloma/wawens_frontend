@@ -166,7 +166,7 @@ pre {
   
   button {
 
-     border: 2px solid black;
+   border: 2px solid black;
     padding: .5rem;
     background: #f5f5f5;
     color: black;

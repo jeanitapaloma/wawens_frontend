@@ -1,9 +1,10 @@
   <template>
   <div class="container">
     <center><h1 style="margin-top:80px;">HOW CAN WE HELP YOU?</h1></center>
-    <div class="container p-3 my-3 border">
-    <form>
-    <input type="text" id="form" class="form-control form-control-lg" placeholder="Start Typing..."></form></div>
+    <!-- <div class="container p-3 my-3 border"> -->
+    <!-- <form>
+    <input type="text" id="form" class="form-control form-control-lg" placeholder="Start Typing..."></form> -->
+    <!-- </div> -->
     <p style="font-size: 19px;"><center>You can also browse what are you looking for</center></p>
     
     <p style="font-size:20px"> <strong>FREQUENTLY ASKED QUESTIONS</strong></p>
