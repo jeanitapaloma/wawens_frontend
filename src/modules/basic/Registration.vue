@@ -32,7 +32,7 @@
         <p class="divider-text">
           <span class="bg-light">OR</span>
         </p>
-        <form>
+        <form @submit.prevent="onSubmit">
           <div class="form-group input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">
@@ -116,7 +116,7 @@
           <span v-else-if="!$v.form.conpassword.sameAsPassword">Passwords must match</span>
         </div>
           </div>
-          <button @submit="onSubmit">SIGN UP</button>
+          <button type="submit">SIGN UP</button>
           <center>
             <p>
               By clicking Sign Up, you agree to our
@@ -175,8 +175,10 @@ export default {
     togglePasswordVisibility () {
 			this.passwordVisible = !this.passwordVisible
     },
-    onSubmit(evt) {
-      evt.preventDefault();
+    onSubmit() {
+      // alert('sfsdf')
+      // evt.preventDefault();
+      
       this.submitted = true;
       if (this.$v.$invalid) {
          AUTH.register(this.form.username,this.form.email,this.form.password,this.form.conpassword)

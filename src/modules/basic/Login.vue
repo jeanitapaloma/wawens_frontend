@@ -40,7 +40,7 @@
               </span>
             </div>
 
-            <input type="email" v-model="form.email" class="form-control" placeholder="Email" required>
+            <input type="email" v-model="form.email" class="form-control" name="email" placeholder="Email" required>
           </div>
           <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -49,6 +49,7 @@
               </span>
             </div>
             <input
+              name="password"
               type="password"
               v-model="form.password"
               class="form-control"
@@ -59,7 +60,7 @@
               <i class="fa fa-eye" style="font-size:18px"></i>
             </span>
           </div>
-          <button @submit="onSubmit">LOGIN</button>
+          <button @submit="onSubmit" name="submit">LOGIN</button>
           <br>
           <p class="text-center">
             <a href>Forgot Password?</a>
