@@ -26,7 +26,7 @@
               <img :src="require('@/assets/buchi.jpg')" style="width:100%; height: 80%;margin-top:5px;margin-left:20px;" >
               <h5 style="font-size:20px; text-align:left; margin-left:20px;"><strong> Price : &#x20B1; 19.00 / order</strong></h5>
           </div>
-    <div class="col" >
+        <div class="col" >
           <p style="font-size:19px; text-align:left;" ><strong>DESCRIPTION</strong></p>
           <p style="font-size:14px;">
             An <strong>Ubechi </strong> is the best for all age to taste! <br>Children Multi Purpose Bowl Baby Food Supplement Rice 

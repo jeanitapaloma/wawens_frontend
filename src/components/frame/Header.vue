@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div>
+      
       <b-navbar toggleable="lg" variant="none" class="navbar" fixed="top">
         <b-navbar-brand style="padding-bottom:60px;">
           <img :src="require('@/assets/logo.png')" class="logo-brand">

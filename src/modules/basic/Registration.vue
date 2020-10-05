@@ -182,7 +182,7 @@ export default {
          AUTH.register(this.form.username,this.form.email,this.form.password,this.form.conpassword)
         return;
       }
-      alert("SUCCESS!! :-)" + JSON.stringify(this.mine)); 
+      alert("SUCCESS!! :-)" + JSON.stringify(this.form)); 
     }
   }
   
