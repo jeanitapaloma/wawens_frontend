@@ -16,25 +16,41 @@
             </span>
           </p>
           <div class="card">
-            <div class="card-header text-center" style="background-image: linear-gradient(#e5b1fd, #efe0f8);">Ube Halaya</div>
-            <div class="card-body">
-              <b-row>
-                <b-col lg="3" v-for="(item,i) in items" :key="i">
-                  <b-card
-                    :img-src="require(`@/assets/${item.img}`)"
-                    img-alt="Image"
-                    img-top
-                    img-height="200px"
-                    class="mb-5"
-                  >
-                    <b-link data-toggle="modal" data-target=".bd-example-modal-lg">
-                      <h1>{{item.text}}</h1>
-                    </b-link>
-                    <h4>Price : {{item.price}}</h4>
-                  </b-card>
-                </b-col>
-              </b-row>
-            </div>
+            <div
+              class="card-header text-center"
+              style="background-image: linear-gradient(#e5b1fd, #efe0f8);color:darkviolet;font-weight:bold"
+            >UBE HALAYA</div>
+            <b-row>
+              <b-col lg="3" v-for="(item,i) in items" :key="i">
+                <div class="card-header text-center" id="card1">{{item.text}}</div>
+                <b-card
+                  :img-src="require(`@/assets/${item.img}`)"
+                  img-alt="Image"
+                  img-top
+                  img-height="150px"
+                  class="mb-5">
+                  <p>Price : {{item.price}}/ {{item.type}}</p>
+                  <!-- <a v-readMore:0="msg"></a> -->
+                  <div>
+                  <button class="button" v-b-toggle.collapse-2>View More</button>
+                  <b-collapse id="collapse-2">
+                    <div class="card card-body">
+                      <p>Ajoc is Beautiful</p>
+                      <div class="row">
+                        <div class="col">
+                          <button class="btn">Update</button>
+                        </div>
+                        <div class="col">
+                          <button class="btn">Remove</button>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="button" v-b-toggle="'collapse-2'">View Less</button>
+                  </b-collapse>
+                  </div>
+                </b-card>
+              </b-col>
+            </b-row>
           </div>
         </div>
       </b-container>
@@ -48,17 +64,43 @@ import addProductModal from "../basic/addProduct_Modal";
 export default {
   components: {
     sidebar,
-    addProductModal,
+    addProductModal
   },
-   data() {
+  data() {
     return {
       show: false,
-          items: [
-      {img:"buchi.jpg", text:"Buchi", price:" Php 180.00 / pcs"},
-      {img:"cake.png", text:"Cake",price:" Php 890.00 / pcs"},
-      {img: "ubequencher.png", text:"UbeQuencher",price:" Php 200.00 / pcs"},
-      {img: "christmaspresent.jpg", text:"Gift Cake", price:" Php 100.00 / pcs"}
-    ]
+      msg: "All information of the product shall be put here",
+      msg1: "",
+      items: [
+        {
+          img: "UbeHalaya1.jpg",
+          text: "Ube Halaya in Square Bottle",
+          price: " Php 180.00 ",
+          type: "pieces",
+          desription: "All product description shall be put here"
+        },
+        {
+          img: "UbeHalaya2.jpg",
+          text: "Ube Halaya in Square Box",
+          price: " Php 890.00 ",
+          type: "pack",
+          desription: "All product description shall be put here"
+        },
+        {
+          img: "UbeHalaya2.jpg",
+          text: "Ube Halaya in rounded bottle",
+          price: " Php 200.00 ",
+          type: "pieces",
+          desription: "All product description shall be put here"
+        },
+        {
+          img: "UbeHalaya1.jpg",
+          text: "Ube Halaya in rounded bottle",
+          price: " Php 100.00 ",
+          type: "pieces",
+          desription: "All product description shall be put here"
+        }
+      ]
     };
   },
   methods: {
@@ -80,6 +122,9 @@ export default {
   font-size: 20px;
   /* margin-top: 1%; */
 }
+#card1 {
+  color: darkviolet;
+}
 .btn {
   background: #bb6bd9;
   height: calc(2.5em + 0.75rem + 2px);
@@ -87,6 +132,14 @@ export default {
   font-size: 1rem;
   color: white;
   /* font-size: 16; */
+}
+.button {
+  background: #bb6bd9;
+  height: calc(2.5em + 0.75rem + 2px);
+  width: 100%;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
 }
 div.gallery {
   display: block;
@@ -108,20 +161,6 @@ div.gallery img {
   border: 1px solid #8028d8;
 }
 
-div.desc {
-  padding: 10px;
-  height: 20%;
-  border: 1px solid #e5b1fd;
-}
-
-div u {
-  color: #8028d8;
-  font-size: 15px;
-  font-weight: bolder;
-  font-family: Tahoma;
-  font-size: 32px;
-}
-
 #app {
   /* display: flex; */
   width: 100%;
@@ -130,14 +169,15 @@ div u {
   align-items: center;
   font-size: 15px;
 }
-
 pre {
   background: #eee;
   padding: 1rem;
   border-radius: 5px;
-
 }
-
+p {
+  color: darkviolet;
+  text-align: center;
+}
 </style>
 
 

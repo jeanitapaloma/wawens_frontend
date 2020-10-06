@@ -2,26 +2,18 @@
   <div>
     <div>
       <b-modal
+        v-model="modal"
         class="modal fade text-center"
         id="addProduct"
         role="dialog"
         aria-labelledby="exampleModalCenterTitle"
-        title="Add Product"
-       
-      >
+        title="Add Product"  
+        >
         <div class="row">
           <div class="col">
             <div class="form-group">
               <label type="text">*Name of the Product:</label>
               <input class="form-control" id="name">
-            </div>
-            <div class="form-group">
-              <label type="text">*Category:</label>
-              <select id="inputState" class="form-control">
-                <option selected>Ube Halaya</option>
-                <option>Ube Cake</option>
-                <option>Ube Ubechi</option>
-              </select>
             </div>
             <div class="row">
               <div class="col">
@@ -45,9 +37,9 @@
             <textarea class="form-control" id="comment"></textarea>
           </div>
         </div>
-        <template v-slot:modal-footer="{ ok, cancel }">
+        <template v-slot:modal-footer="{ update, cancel }">
           <button type="button" class="btn1" @click="cancel()">Cancel</button>
-          <button type="button" class="btn1" @click="ok()">Submit</button>
+          <button type="button" class="btn1" @click="update()">Update</button>
         </template>
       </b-modal>
     </div>
@@ -55,13 +47,9 @@
 </template>
 <script>
 export default {
- 
-  methods: {
-    shown() {
-      this.$bvModal.show('addProduct')
-    },
-   
-  }
+    data: () => ({
+    modal: true,
+  }),
 };
 </script>
 <style>

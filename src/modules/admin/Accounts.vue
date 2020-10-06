@@ -3,13 +3,11 @@
     <sidebar>
       <b-container class="mt-5">
         <div>
-        <p class="d-flex justify-content-between  porder">
-          Accounts Management
-        </p>
-      </div>
-      <div>
-        <b-table></b-table>
-      </div>
+          <p class="d-flex justify-content-between porder">Account Management</p>
+        </div>
+        <div>
+          <b-table striped hover :items="items" :fields="fields"></b-table>
+        </div>
       </b-container>
     </sidebar>
   </div>
@@ -21,6 +19,34 @@ export default {
   components: {
     sidebar
   },
+  data() {
+    return {
+      fields: ["DATE", "USERNAME", "EMAIL", "TYPE", "ACTIONS"],
+      items: [
+        {
+          DATE: "2020-09-01 05:20:36",
+          USERNAME: "Admin_username",
+          EMAIL: "admin_username@gmail.com",
+          TYPE: "",
+          ACTION: ""
+        },
+        {
+          DATE: "2020-10-01 05:20:36",
+          USERNAME: "ajoc_gwapa",
+          EMAIL: "ajoc_gwapa@gmail.com",
+          TYPE: "",
+          ACTION: ""
+        },
+        {
+          DATE: "2020-10-01 05:20:36",
+          USERNAME: "jeanita_maot",
+          EMAIL: "jeanita_maot@gmail.com",
+          TYPE: "",
+          ACTION: ""
+        }
+      ]
+    };
+  }
 };
 </script>
 <style>

@@ -94,6 +94,11 @@ export default new Router({
             path:'/add_product',
             name:'add_product',
             component: () => import("@/modules/basic/addProduct_Modal.vue"),
+        },
+        {
+            path:'/update_product',
+            name:'update_product',
+            component: () => import("@/modules/basic/UpdateProduct_Modal.vue"),
         }
 
     ],
