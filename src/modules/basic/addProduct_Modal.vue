@@ -6,7 +6,7 @@
         id="addProduct"
         role="dialog"
         aria-labelledby="exampleModalCenterTitle"
-        title="Add Product"
+        title="ADD PRODUCT"
        
       >
         <div class="row">

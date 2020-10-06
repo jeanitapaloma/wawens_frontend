@@ -57,12 +57,19 @@ export default {
   font-weight: bold;
 }
 table,
-th,
 td {
-  border: 2px solid violet;
+  border: 1px solid lightgray;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+th 
+ {
+  border: 2px solid lightgray;
   border-collapse: collapse;
   text-align: center;
   font-weight: bold;
+  font-size: 20px;
+  color: darkviolet;
 }
 .porder {
   color: purple;
@@ -72,14 +79,7 @@ td {
   font-size: 20px;
   /* margin-top: 1%; */
 }
-.ptotal {
-  color: black;
-  font-weight: bold;
-  font-size: 20px;
-  font-family: Arial;
-  font-style: normal;
-  /* margin-left: 40%; */
-}
+
 .table-purple {
   background-color: blueviolet;
   font-size: 18px;
@@ -90,9 +90,5 @@ td {
   padding: 8px;
   color: white;
 }
-.table {
-  /* width: 80%; */
-  margin-bottom: 1rem;
-  color: purple;
-}
+
 </style>

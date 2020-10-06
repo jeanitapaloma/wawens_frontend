@@ -22,6 +22,7 @@
     "vue-router": "^3.4.3",
     "vue-sidebar": "0.0.2",
     "vue-sidebar-menu": "^4.7.3",
+    "vue-sweetalert2": "^3.0.8",
     "vuelidate": "^0.7.5"
   },
   "devDependencies": {

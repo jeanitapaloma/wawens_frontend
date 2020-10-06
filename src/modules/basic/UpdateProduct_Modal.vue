@@ -1,13 +1,12 @@
 <template>
   <div>
-    <div>
+    <div class="d-block text-center">
       <b-modal
-        v-model="modal"
-        class="modal fade text-center"
-        id="addProduct"
+        class="modal fade  text-center"
+        id="modal-center"
         role="dialog"
         aria-labelledby="exampleModalCenterTitle"
-        title="Add Product"  
+        title="UPDATE PRODUCT"  
         >
         <div class="row">
           <div class="col">
@@ -47,9 +46,12 @@
 </template>
 <script>
 export default {
-    data: () => ({
-    modal: true,
-  }),
+  methods: {
+    shown() {
+      this.$bvModal.show('modal-center')
+    },
+   
+  }
 };
 </script>
 <style>
