@@ -64,7 +64,16 @@
             <div class="row">
               <div class="col-md-8">
                 <p class="pleft">DELIVERY CONTACT:</p>
-                <p class="pright3">ACTUAL DELIVERY DATE:</p>
+                <p class="pright3">
+                  ACTUAL DELIVERY DATE:
+                  <button
+                    type="button"
+                    id="button1"
+                    class="btn btn-primary btn-sm"
+                  >APPROVED SELECTED DATE
+                  </button>
+                </p>
+                <i class="fa fa-edit" style="font-size: 28px; float: right; margin-right: -68%; color:purple;"></i>
               </div>
             </div>
             <div class="row">
@@ -79,12 +88,10 @@
               </div>
             </div>
             <div class="card">
-              <div class="card-body">
-                <p>For the cake can you write:</p>
-                <p>Happy 60th Birthday Mama!From: You Daughters!</p>
-              </div>
+              <div class="card-body"></div>
             </div>
-             <b-table :items1="filterProducts" :fields1="fields1"></b-table>
+            <br>
+            <!-- <b-table :items1="filterProducts" :fields1="fields1"> -->
           </div>
         </div>
       </div>
@@ -98,15 +105,9 @@ export default {
   components: {
     sidebar
   },
-  data() { 		  
+  data() {
     return {
-      fields1: [
-        "ITEMS",
-        "UNIT",
-        "QUANTITY",
-        "PRICE",
-        "SUBTOTAL",
-      ],
+      fields1: ["ITEMS", "UNIT", "QUANTITY", "PRICE", "SUBTOTAL"],
       fields: [
         "DATE_ORDERED",
         "ORDER_NO",
@@ -152,15 +153,6 @@ export default {
           status: "completed"
         }
       ],
-      items1: [
-        {
-          ITEMS	  : 0,
-          UNIT: "",
-          QUANTITY: "pending",
-          PRICE: 0,
-          SUBTOTAL: "",
-        },
-      ],
       products: [],
       status: "pending"
     };
@@ -180,7 +172,42 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
+.btn-sm,
+.btn-group-sm > .btn {
+  padding: 0.2rem 0.1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+.btn {
+  background: transparent;
+  height: calc(1.1em + 0.7rem + 5px);
+  width: 85%;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 48%;
+  border-radius: 5px;
+  border: 2px solid #bb6bd9;
+  color: purple;
+  text-align: center;
+  margin-top: -13%;
+  width: 60%;
+  cursor: pointer;
+  pointer-events: none;
+}
+.btn:hover {
+  color: #fff !important;
+  text-decoration: none;
+  
+}
+.table-borderless {
+  border: 0;
+  align-items: center;
+}
+.modal-dialog {
+  max-width: 1000px; /* New width for default modal */
+}
 .card {
   width: 95%;
   margin-left: 3%;
@@ -194,25 +221,25 @@ export default {
   font-size: 15px;
   font-weight: bold;
   float: right;
-  margin-right: 17%;
+  margin-right: 14%;
 }
 .pright2 {
   font-size: 15px;
   font-weight: bold;
   float: right;
-  margin-right: 27%;
+  margin-right: 22%;
 }
 .pright3 {
   font-size: 15px;
   font-weight: bold;
   float: right;
-  margin-right: 3%;
+  margin-right: -28%;
 }
 .pright4 {
   font-size: 15px;
   font-weight: bold;
   float: right;
-  margin-right: 25%;
+  margin-right: 21%;
 }
 .pright {
   font-size: 15px;
@@ -242,6 +269,9 @@ export default {
 }
 .thtable:hover {
   text-decoration: underline;
+  cursor: pointer;
+}
+.fa-eye:hover {
   cursor: pointer;
 }
 .porder {
@@ -274,6 +304,7 @@ th,
 td {
   border: 1px solid violet;
   align-items: center;
+  text-align: center;
 }
 hr {
   width: 100%;

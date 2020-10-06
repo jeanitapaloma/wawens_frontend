@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-5 pt-5">
     <div class="text-center mt-5">
-      <h1 class="font-weight-bolder">
+      <h1 id="partner1" class="font-weight-bolder">
         WAWEN's UBE HALAYA:
         <span>PARTNERS</span>
       </h1>
@@ -62,13 +62,12 @@ export default {
 };
 </script>
 
-<style>
-.font-weight-bolder {
+<style scoped>
+#partner1 {
   color: darkviolet;
   text-shadow: 2px violet;
   font-family: "Muli-Bold";
   font-size: 40px;
-  margin-top: 5%;
 }
 .tagline {
   font-size: 20px;
