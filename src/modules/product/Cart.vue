@@ -29,7 +29,62 @@
         class="column"
         style="border-right-color: white;border-style: solid;border-width: thin;border-left-color: #e5b1fd;border-top-color: white;border-bottom-color: white;"
       >
-        <h2 style="margin-left:10px;">Delivery Details</h2>
+        <div style="margin-left:10px;">
+          <h2>Delivery Details</h2>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="inputPassword4"
+                  placeholder="Password"
+                >
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Address 2</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputAddress2"
+                placeholder="Apartment, studio, or floor"
+              >
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>...</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">Check me out</label>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     <button id="submit" class="btn btn-primary btn-lg">Continue to Submit Order</button>
@@ -113,16 +168,16 @@ hr {
 }
 
 #submit {
-    float: right;
-    color: #8028d8;
-    border-radius: 10px;
-    border: 2px solid #8028d8;
-    background-color: #e5b1fd;
-    font-weight: bolder;
-    height: 50px;
-    font-size: 20px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+  float: right;
+  color: #8028d8;
+  border-radius: 10px;
+  border: 2px solid #8028d8;
+  background-color: #e5b1fd;
+  font-weight: bolder;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 </style>
 
