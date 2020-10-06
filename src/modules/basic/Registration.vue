@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div>
       <b-modal v-model="modal" id="modal-tall" hide-header title="WAWEN's UBE HALAYA" hide-footer>
         <br>
         <h3
@@ -134,7 +133,6 @@
           </center>
         </form>
       </b-modal>
-    </div>
   </div>
 </template>
 <script>
@@ -184,7 +182,7 @@ export default {
          AUTH.register(this.form.username,this.form.email,this.form.password,this.form.conpassword)
         return;
       }
-      alert("SUCCESS!! :-)" + JSON.stringify(this.mine)); 
+      alert("SUCCESS!! :-)" + JSON.stringify(this.form)); 
     }
   }
   
