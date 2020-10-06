@@ -29,6 +29,7 @@ export default new Router({
             path: '/product',
             name: 'product',
             component:  () => import("@/modules/product/Product.vue"),
+    
         },
         {   path: '/profile',
             name: 'profile',
