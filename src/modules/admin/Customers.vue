@@ -1,9 +1,10 @@
 <template>
+<sidebar>
   <div>
     <div>
-      <p class="porder">
-        Customer's Management
-      </p>
+     <p class="d-flex justify-content-between  porder">
+          Accounts Management
+        </p>
     </div>
     <table class="table table-purple">
       <thead>
@@ -22,10 +23,14 @@
       <b-table striped hover :items="items"></b-table>
     </div>
   </div>
+</sidebar>
 </template>
-
 <script>
+import sidebar from "../../components/frame/sidebar";
 export default {
+  components: {
+    sidebar
+  },
   data() {
     return {
       items: [

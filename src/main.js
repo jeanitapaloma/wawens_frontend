@@ -11,11 +11,16 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Vuelidate from 'vuelidate'
+// import ReadMore from 'vue-read-more';
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 library.add(faFacebook)
+// Vue.use(ReadMore);
+Vue.use(VueSweetalert2);
 Vue.use(Vuelidate)
 Vue.use(BootstrapVue)
 Vue.use(VueSidebarMenu)

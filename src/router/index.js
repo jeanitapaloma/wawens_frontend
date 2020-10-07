@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 
+
 Vue.use(Router);
 
 export default new Router({
@@ -56,9 +57,18 @@ export default new Router({
             component:  () => import("@/modules/admin/Orders.vue"),
         },
         {
+            path: '/accounts',
+            name: 'accounts',
+            component:  () => import("@/modules/admin/Accounts.vue"),
+        },
+        {
             path: '/customers',
             name: 'customers',
             component:  () => import("@/modules/admin/Customers.vue"),
+        },
+        {   path: '/others',
+            name: 'others',
+            component:  () => import("@/modules/admin/Others.vue"),
         },
         {
             path: '/submit_order',
@@ -75,6 +85,21 @@ export default new Router({
             name: 'order_status',
             component:  () => import("@/modules/product/OrderStatus.vue"),
         },
+        {
+            path:'/admin_product',
+            name:'admin_product',
+            component: () => import("@/modules/admin/AdminProduct.vue"),
+        },
+        {
+            path:'/add_product',
+            name:'add_product',
+            component: () => import("@/modules/basic/addProduct_Modal.vue"),
+        },
+        {
+            path:'/update_product',
+            name:'update_product',
+            component: () => import("@/modules/basic/UpdateProduct_Modal.vue"),
+        }
 
     ],
     mode: 'history'
