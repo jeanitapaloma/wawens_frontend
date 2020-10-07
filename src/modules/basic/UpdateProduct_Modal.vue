@@ -54,7 +54,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .pProducts {
   color: purple;
   font-weight: bold;

@@ -49,7 +49,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .p1 {
   font-size: 12px;
   font-style: italic;
