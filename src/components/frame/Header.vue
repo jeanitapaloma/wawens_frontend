@@ -35,7 +35,7 @@
     </div>
   </div>
 </template>
-<style scoped lang="scss">
+<style scoped>
 .navbar {
   background-image: linear-gradient(#e5b1fd, #efe0f8);
   height: 60px;
@@ -63,3 +63,14 @@
   font-size: 15px;
 }
 </style>
+<script>
+// import ROUTER from '@/router'
+// export default {
+//   methods: {
+//     redirect(parameter){
+//       ROUTER.push(parameter)
+//     },
+//   }
+// }
+</script>
+

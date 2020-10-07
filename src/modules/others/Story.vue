@@ -32,7 +32,7 @@ OUR STORY
     <img src="@/assets/sirimage.jpg" alt="Card image cap" id="image3" class="float-right">
   </div>
 </template>
-<style>
+<style scoped>
 .h5owner {
   float: right;
   margin-right: 5%;

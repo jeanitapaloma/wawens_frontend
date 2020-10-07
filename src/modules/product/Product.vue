@@ -97,7 +97,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .jumbotron {
   color: #8028d8;
   font-size: 50px;

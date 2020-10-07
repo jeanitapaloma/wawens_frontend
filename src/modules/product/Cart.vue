@@ -21,6 +21,8 @@
                 <input type="text" :value="quantity" disabled>
                 <button @click="increment()">&#xff0b;</button>
               </span>
+              <br>
+              <button style="margin-top:5px;background-color:#e5b1fd;color:white;" type="button" class="btn">Remove</button>
             </div>
           </div>
         </div>
@@ -91,7 +93,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .container {
   margin-top: 80px;
   width: 90%;
@@ -183,6 +185,9 @@ hr {
 
 <script>
 export default {
+  mounted(){
+    this.reload()
+  },
   data() {
     return {
       quantity: 1
