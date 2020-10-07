@@ -78,7 +78,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .img-thumbnail {
   height: 150px;
   width: 150px;

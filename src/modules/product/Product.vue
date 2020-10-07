@@ -5,7 +5,7 @@
         <b-col lg="4" v-for="i in 7" :key="i">
             <b-card id="gallery" :img-src="require('@/assets/cake.png')" img-alt="Image" img-top img-height="300px" class="mb-5">
                 <b-link data-toggle="modal" data-target=".bd-example-modal-lg" style="color:#8028d8;">
-                    <h1 style="font-family:Segoe Script;font-weight:bolder;">Buchi</h1>
+                    <h1 style="font-family:Segoe Script;font-weight:bolder;text-align:left;">Buchi</h1>
                 </b-link>
                 <h4>Price : &#x20B1; 19.00 / pcs</h4>
             </b-card>
@@ -97,7 +97,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .jumbotron {
   color: #8028d8;
   font-size: 50px;

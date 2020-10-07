@@ -187,7 +187,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .fa-eye-slash {
   font-size: 20px;
 }
