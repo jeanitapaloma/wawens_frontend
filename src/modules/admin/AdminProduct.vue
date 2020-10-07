@@ -15,41 +15,37 @@
               >+ ADD PRODUCT</button>
             </span>
           </p>
+
           <div class="card">
             <div
               class="card-header text-center"
               style="background-image: linear-gradient(#e5b1fd, #efe0f8);color:darkviolet;font-weight:bold"
-            >UBE HALAYA</div>
+            >Ube Halaya</div>
             <b-row>
-              <b-col lg="3" v-for="(item,i) in items" :key="i">
-                <div class="card-header text-center" id="card1">{{item.text}}</div>
-                <b-card
-                  :img-src="require(`@/assets/${item.img}`)"
-                  img-alt="Image"
-                  img-top
-                  img-height="150px"
-                  class="mb-5"
-                >
-                  <p>Price : {{item.price}}/ {{item.type}}</p>
-                  <!-- <a v-readMore:0="msg"></a> -->
-                  <div>
-                    <button class="button" v-b-toggle.collapse-2>View More</button>
-                    <b-collapse id="collapse-2">
-                      <div class="card card-body">
-                        <p>All product description shall be put here!</p>
-                        <div class="row">
-                          <div class="col">
-                            <button class="btn" @click="updatemodal">Update</button>
-                          </div>
-                          <div class="col">
-                            <button class="btn" @click="showAlert">Remove</button>
-                          </div>
-                        </div>
-                      </div>
-                      <button class="button" v-b-toggle="'collapse-2'">View Less</button>
-                    </b-collapse>
-                  </div>
-                </b-card>
+              <b-col lg="3" v-for="(item,i) in ubeHalaya" :key="i">
+                <ProductCard v-if="item.category == 'Ube Halaya'" :item="item"></ProductCard>
+              </b-col>
+            </b-row>
+          </div><br>
+          <div class="card">
+            <div
+              class="card-header text-center"
+              style="background-image: linear-gradient(#e5b1fd, #efe0f8);color:darkviolet;font-weight:bold"
+            >Ube Cake</div>
+            <b-row>
+              <b-col lg="3" v-for="(item,i) in ubeCake" :key="i">
+                <ProductCard v-if="item.category == 'Ube Cake'" :item="item"></ProductCard>
+              </b-col>
+            </b-row>
+          </div><br>
+          <div class="card">
+            <div
+              class="card-header text-center"
+              style="background-image: linear-gradient(#e5b1fd, #efe0f8);color:darkviolet;font-weight:bold"
+            >Ube Ubechi</div>
+            <b-row>
+              <b-col lg="3" v-for="(item,i) in ubeChi" :key="i">
+                <ProductCard v-if="item.category == 'Ube Ubechi'" :item="item"></ProductCard>
               </b-col>
             </b-row>
           </div>
@@ -57,31 +53,29 @@
       </b-container>
     </sidebar>
     <add-product-modal ref="childModal"/>
-    <update-product-modal ref="updateModal"/>
   </div>
 </template>
 <script>
 import sidebar from "../../components/frame/sidebar";
 import addProductModal from "../basic/addProduct_Modal";
-import updateProductModal from "../basic/UpdateProduct_Modal";
+import ProductCard from "./ProductCard";
 export default {
   components: {
     sidebar,
     addProductModal,
-    updateProductModal
+    ProductCard
   },
 
   data() {
     return {
       show: false,
-      msg: "All information of the product shall be put here",
-      msg1: "",
       items: [
         {
           img: "UbeHalaya1.jpg",
           text: "Ube Halaya in Square Bottle",
           price: " Php 180.00 ",
           type: "pieces",
+          category: "Ube Halaya",
           desription: "All product description shall be put here"
         },
         {
@@ -89,52 +83,62 @@ export default {
           text: "Ube Halaya in Square Box",
           price: " Php 890.00 ",
           type: "pack",
+          category: "Ube Halaya",
           desription: "All product description shall be put here"
         },
         {
-          img: "UbeHalaya2.jpg",
+          img: "ubequencher.png",
           text: "Ube Halaya in rounded bottle",
           price: " Php 200.00 ",
           type: "pieces",
+          category: "Ube Cake",
           desription: "All product description shall be put here"
         },
         {
-          img: "UbeHalaya1.jpg",
+          img: "ubequencher.png",
+          text: "Ube Halaya in rounded bottle",
+          price: " Php 200.00 ",
+          type: "pieces",
+          category: "Ube Cake",
+          desription: "All product description shall be put here"
+        },
+        {
+          img: "wawens.png",
           text: "Ube Halaya in rounded bottle",
           price: " Php 100.00 ",
           type: "pieces",
+          category: "Ube Ubechi",
           desription: "All product description shall be put here"
         }
-      ]
+      ],
+      ubeHalaya: [],
+      ubeCake: [],
+      ubeChi: []
     };
   },
+  computed: {},
   methods: {
     openModal() {
       this.$refs.childModal.shown();
-    },
-    updatemodal() {
-      this.$refs.updateModal.shown();
-    },
-    showAlert() {
-      this.$swal({
-        title: "Are you sure?",
-        text: "You will not be able to recover this file!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, remove it!"
-      }).then(result => {
-        if (result.isConfirmed) {
-          this.$swal("Deleted!", "Your file has been deleted.", "success");
-        } else {
-          this.$swal("Cancelled", "Your imaginary file is safe :)", "error");
-  }
-      });
     }
   },
   mounted() {
     console.log("sadas");
+
+    let ubeHalaya = this.items.filter(item => {
+      return item.category == "Ube Halaya";
+    });
+    this.ubeHalaya = ubeHalaya;
+
+    let ubeCake = this.items.filter(item => {
+      return item.category == "Ube Cake";
+    });
+    this.ubeCake = ubeCake;
+
+    let ubeChi = this.items.filter(item => {
+      return item.category == "Ube Ubechi";
+    });
+    this.ubeChi = ubeChi;
   }
 };
 </script>
@@ -204,5 +208,3 @@ p {
   text-align: center;
 }
 </style>
-
-
