@@ -36,7 +36,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .active{
   background-color: #bb6bd9!important;
 }

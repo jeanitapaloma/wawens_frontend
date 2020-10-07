@@ -62,7 +62,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .font-weight-bolder {
   color: darkviolet;
   text-shadow: 2px 2px 4px violet;
