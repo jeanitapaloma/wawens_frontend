@@ -13,7 +13,7 @@
 
 h1 {
   color: #8028d8;
-  font-family: Segoe Script;
+  font-family: Segoe Print;
   font-weight: bolder;
   text-align: center;
   padding-bottom: 2%;
