@@ -59,6 +59,7 @@ export default {
 .side-nav-border {
   border-right: 3px solid rgba(209, 119, 236, 0.5);
   height: 100vh !important;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
 }
 
 .rounded {

@@ -40,6 +40,7 @@
               </div>
             </div>
           </div>
+          <hr>
         </div>
         <div
           class="column"
