@@ -70,10 +70,12 @@
                     type="button"
                     id="button1"
                     class="btn btn-primary btn-sm"
-                  >APPROVED SELECTED DATE
-                  </button>
+                  >APPROVED SELECTED DATE</button>
                 </p>
-                <i class="fa fa-edit" style="font-size: 28px; float: right; margin-right: -68%; color:purple;"></i>
+                <i
+                  class="fa fa-edit"
+                  style="font-size: 28px; float: right; margin-right: -68%; color:purple;"
+                ></i>
               </div>
             </div>
             <div class="row">
@@ -154,17 +156,20 @@ export default {
         }
       ],
       products: [],
+      products1: [],
       status: "pending"
     };
   },
   computed: {
     filterProducts() {
       return this.products;
+      // return this.products1;
     }
   },
   methods: {
     filter() {
       this.products = this.items.filter(item => item.status === this.status);
+      // this.products1 = this.items1.filter
     }
   },
   mounted() {
@@ -180,6 +185,9 @@ export default {
   line-height: 1.5;
   border-radius: 0.2rem;
 }
+.btn-sm:focus {
+  color: none;
+}
 .btn {
   background: transparent;
   height: calc(1.1em + 0.7rem + 5px);
@@ -194,16 +202,6 @@ export default {
   margin-top: -13%;
   width: 60%;
   cursor: pointer;
-  pointer-events: none;
-}
-.btn:hover {
-  color: #fff !important;
-  text-decoration: none;
-  
-}
-.table-borderless {
-  border: 0;
-  align-items: center;
 }
 .modal-dialog {
   max-width: 1000px; /* New width for default modal */
@@ -274,6 +272,9 @@ export default {
 .fa-eye:hover {
   cursor: pointer;
 }
+.fa-edit:hover {
+  cursor: pointer;
+}
 .porder {
   color: purple;
   font-weight: bold;
@@ -302,9 +303,9 @@ export default {
 table,
 th,
 td {
-  border: 1px solid violet;
   align-items: center;
   text-align: center;
+  border: 2px solid violet;
 }
 hr {
   width: 100%;

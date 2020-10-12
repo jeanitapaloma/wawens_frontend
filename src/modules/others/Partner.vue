@@ -62,7 +62,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 #partner1 {
   color: darkviolet;
   text-shadow: 2px violet;
