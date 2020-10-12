@@ -23,21 +23,23 @@
             >Ube Halaya</div>
             <b-row>
               <b-col lg="3" v-for="(item,i) in ubeHalaya" :key="i">
-                <ProductCard v-if="item.category == 'Ube Halaya'" :item="item"></ProductCard>
+                <ProductCard v-if="item.category == 'Ube Halaya'" :item="item" :id="item.id"></ProductCard>
               </b-col>
             </b-row>
-          </div><br>
+          </div>
+          <br>
           <div class="card">
             <div
               class="card-header text-center"
-              style="background-image: linear-gradient(#e5b1fd, #efe0f8);color:darkviolet;font-weight:bold"
+              style="background-image: linear-gradient(#e5b1fd, #efe0f8); color:darkviolet; font-weight:bold"
             >Ube Cake</div>
             <b-row>
               <b-col lg="3" v-for="(item,i) in ubeCake" :key="i">
-                <ProductCard v-if="item.category == 'Ube Cake'" :item="item"></ProductCard>
+                <ProductCard v-if="item.category == 'Ube Cake'" :item="item" :id="item.id"></ProductCard>
               </b-col>
             </b-row>
-          </div><br>
+          </div>
+          <br>
           <div class="card">
             <div
               class="card-header text-center"
@@ -45,7 +47,7 @@
             >Ube Ubechi</div>
             <b-row>
               <b-col lg="3" v-for="(item,i) in ubeChi" :key="i">
-                <ProductCard v-if="item.category == 'Ube Ubechi'" :item="item"></ProductCard>
+                <ProductCard v-if="item.category == 'Ube Ubechi'" :item="item" :id="item.id"></ProductCard>
               </b-col>
             </b-row>
           </div>
@@ -71,44 +73,63 @@ export default {
       show: false,
       items: [
         {
+          id: 1,
           img: "UbeHalaya1.jpg",
           text: "Ube Halaya in Square Bottle",
           price: " Php 180.00 ",
           type: "pieces",
           category: "Ube Halaya",
-          desription: "All product description shall be put here"
+          desription:
+            "Ube Halaya is one of the delicious jam created by wawens."
         },
         {
+          id: 2,
           img: "UbeHalaya2.jpg",
           text: "Ube Halaya in Square Box",
           price: " Php 890.00 ",
           type: "pack",
           category: "Ube Halaya",
-          desription: "All product description shall be put here"
+          desription: "Ube Halaya is very yummy and delicious."
         },
         {
-          img: "ubequencher.png",
-          text: "Ube Halaya in rounded bottle",
+          id: 3,
+          img: "cake.png",
+          text: "Ube Cake for our Dreams",
           price: " Php 200.00 ",
           type: "pieces",
           category: "Ube Cake",
-          desription: "All product description shall be put here"
+          desription:
+            "Made with fresh Ube, this pretty pink and purple cake has a swirl of fresh ube sauce in the cake."
         },
         {
-          img: "ubequencher.png",
-          text: "Ube Halaya in rounded bottle",
+          id: 4,
+          img: "cake.png",
+          text: "Ube Cake for our Success",
           price: " Php 200.00 ",
           type: "pieces",
           category: "Ube Cake",
-          desription: "All product description shall be put here"
+          desription:
+            "Ube Halaya Cake are decorated with sparkly clear crystal sprinkles and pearl sprinkles. "
         },
         {
+          id: 5,
           img: "wawens.png",
-          text: "Ube Halaya in rounded bottle",
+          text: "Ubechi with tender care and love",
           price: " Php 100.00 ",
           type: "pieces",
           category: "Ube Ubechi",
-          desription: "All product description shall be put here"
+          desription:
+            "Ube Ubechi is one of the popular ubechi in the philippines,with mixture of ube and cheeze."
+        },
+        {
+          id: 6,
+          img: "wawens.png",
+          text: "Ubechi with Cheeze",
+          price: " Php 100.00 ",
+          type: "pieces",
+          category: "Ube Ubechi",
+          desription:
+            "Ube Ubechi is one of the popular ubechi in the philippines,with mixture of ube and cheeze."
         }
       ],
       ubeHalaya: [],
@@ -149,7 +170,7 @@ export default {
   font-family: Segoe Script;
   font-style: italic;
   font-size: 20px;
-  /* margin-top: 1%; */
+  margin-top: 1%;
 }
 #card1 {
   color: darkviolet;
@@ -206,5 +227,6 @@ pre {
 p {
   color: darkviolet;
   text-align: center;
+  font-weight: bold;
 }
 </style>

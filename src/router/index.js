@@ -99,6 +99,11 @@ export default new Router({
             path:'/update_product',
             name:'update_product',
             component: () => import("@/modules/basic/UpdateProduct_Modal.vue"),
+        },
+        {
+            path:'/account_info',
+            name:'account_info',
+            component: () => import("@/modules/basic/AccountInfo_Modal.vue"),
         }
 
     ],
