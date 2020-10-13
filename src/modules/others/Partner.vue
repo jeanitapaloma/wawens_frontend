@@ -1,14 +1,14 @@
 <template>
   <div class="container mt-5 pt-5">
     <div class="text-center mt-5">
-      <h1 class="font-weight-bolder">
+      <h1 id="partner1" class="font-weight-bolder">
         WAWEN's UBE HALAYA:
         <span>PARTNERS</span>
       </h1>
       <p class="tagline">Know your nearest ube halaya source and you can directly buy to them.</p>
     </div>
     <b-tabs>
-      <b-tab  v-for="(tab,i) in tabs" :key="i" :id="tab.id" :title="tab.title">
+      <b-tab @click="testEvent(i)"  v-for="(tab,i) in tabs" :key="i" :id="tab.id" :title="tab.title">
         <b-row class="pt-3">
           <b-col lg="3" v-for="(item,j) in tab.items" :key="j">
               <b-card
@@ -58,28 +58,32 @@ export default {
         }
       ]
     };
+  },
+  methods:{
+    testEvent(index){
+      this.$emit('changeTab',index)
+    }
   }
 };
 </script>
 
+<<<<<<< HEAD
+<style >
+#partner1 {
+=======
 <style scoped>
 .font-weight-bolder {
+>>>>>>> fe9c875d6ebe37c931adfd890311fbe2d85d8a6a
   color: darkviolet;
-  text-shadow: 2px 2px 4px violet;
+  text-shadow: 2px violet;
   font-family: "Muli-Bold";
   font-size: 40px;
-  margin-top: -2%;
 }
 .tagline {
   font-size: 20px;
   font-style: italic;
 }
-/* #d1 {
-  height: 200px;
-  width: 250px;
-} */
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
-    color: darkviolet;
     font-size: 20px;
     font-weight: bold;
     border: 0;
@@ -88,8 +92,6 @@ export default {
 .nav {
     display: flex;
     flex-wrap: wrap;
-    /* padding-left: 0;
-    margin-bottom: 0; */
     list-style: none;
     border: 0;
     margin-top: 3%;
@@ -111,16 +113,4 @@ export default {
     margin-bottom: 1.5rem !important;
     border: none;
 }
-
-/* p{
-margin-left: 350px;
-} */
-/* #distributor {
-  color: darkviolet !important;
-  text-shadow: 1px 1px 2px violet;
-} */
-/* .shadow:hover {
-  box-shadow: 0 0 10px darkviolet;
-  transform: scale(1.1);
-} */
 </style>

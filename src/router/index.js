@@ -71,6 +71,11 @@ export default new Router({
             component:  () => import("@/modules/admin/Others.vue"),
         },
         {
+            path: '/others',
+            name: 'others',
+            component:  () => import("@/modules/admin/Others.vue"),
+        },
+        {
             path: '/submit_order',
             name: 'submit_order',
             component:  () => import("@/modules/product/SubmitOrder.vue"),
