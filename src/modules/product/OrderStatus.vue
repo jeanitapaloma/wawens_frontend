@@ -3,7 +3,7 @@
         <h1>ORDER STATUS</h1>
     </div>
 </template>
-<style>
+<style scoped>
 .container {
   margin-top: 80px;
   width: 90%;

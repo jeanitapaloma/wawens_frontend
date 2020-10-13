@@ -1,4 +1,5 @@
 <template>
+<sidebar>
   <div>
     <sidebar>
       <div>
@@ -82,6 +83,7 @@
       </div>
     </sidebar>
   </div>
+</sidebar>
 </template>
 <script>
 import sidebar from "../../components/frame/sidebar";

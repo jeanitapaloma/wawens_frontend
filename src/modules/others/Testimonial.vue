@@ -106,6 +106,7 @@
   margin-right: 2%;
   font-style: italic;
   font-size: 15px;
+  font-weight: bold;
 }
 #style {
   color: darkviolet;

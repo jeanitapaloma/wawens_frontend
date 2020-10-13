@@ -7,7 +7,7 @@
           style="text-align: center;font-style:Segoe Script;font-size: 28px;color:black"
         >WAWEN's UBE HALAYA</h3>
         <span>
-          <p style="text-align: center; color:black">Sign in to your Account.</p>
+          <p style="text-align: center; color:black ; font-size:15px;">Sign in to your Account.</p>
         </span>
         <div class="row">
           <div class="col">
@@ -61,7 +61,7 @@
           </div>
           <button @submit="onSubmit">LOGIN</button>
           <br>
-          <p class="text-center">
+          <p style="text-align: center; color:black ; font-size:15px;">
             <a href>Forgot Password?</a>
             <br>Don't have yet an account?
             <a v-on:click="redirect('/register')">Sign Up</a>
@@ -98,7 +98,7 @@ mounted(){
 }
 </script>
 
-<style>
+<style scoped>
 .fa-eye-slash {
   font-size: 20px;
 }
@@ -154,7 +154,7 @@ button {
 
 .form-control {
   border: 1px solid darkviolet;
-  width: 150%;
+  width: 20%;
   height: 40px;
   padding: 0 10px;
   font-family: "Muli-Bold";
