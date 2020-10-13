@@ -18,10 +18,10 @@
                 </b-nav-item-dropdown>
 
                 <b-nav-item-dropdown text="PRODUCT" style="padding:5px;" right>
-                    <b-dropdown-item class="drop" to="product">All Product</b-dropdown-item>
-                    <b-dropdown-item class="drop" to="bottle">Ube Halaya Bottle</b-dropdown-item>
-                    <b-dropdown-item class="drop" to="ubechi">Ube Ubechi</b-dropdown-item>
-                    <b-dropdown-item class="drop" to="cake">Ube Cake</b-dropdown-item>
+                    <b-dropdown-item class="drop" @click="redirect('All Products')">All Products</b-dropdown-item>
+                    <b-dropdown-item class="drop" @click="redirect('Ube Halaya Bottle')">Ube Halaya Bottle</b-dropdown-item>
+                    <b-dropdown-item class="drop" @click="redirect('Ube Ubechi')">Ube Ubechi</b-dropdown-item>
+                    <b-dropdown-item class="drop" @click="redirect('Ube Cake')">Ube Cake</b-dropdown-item>
                 </b-nav-item-dropdown>
 
                 <b-nav-item to="faq" style="padding:5px;">FAQs</b-nav-item>
@@ -83,7 +83,9 @@ export default {
     },
     methods: {
         redirect(parameter) {
-            ROUTER.push(parameter)
+            ROUTER.push('/product')
+            localStorage.setItem('category', parameter)
+            this.refresh()
         },
     }
 }

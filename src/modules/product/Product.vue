@@ -1,7 +1,7 @@
 <template>
-<div class="container mt-5 pt-5">
+<div class="container mt-5 pt-5" id="app">
     <b-jumbotron bg-variant="transparent">WAWEN'S UBE HALAYA : <br>
-        <p id="category">{{category ? category : 'All Products'}}</p>
+        <p id="category">{{category}}</p>
     </b-jumbotron>
     <b-row>
         <b-col lg="4" v-for="(item, index) in products" :key="index">
@@ -91,7 +91,12 @@ export default {
             selectedProducts: {},
         };
     },
-    props: ['category'],
+    computed:{
+        category(){
+            var category =  localStorage.getItem('category')
+            return category
+        }
+    },
     methods: {
         toCart(object) {
             var carts = JSON.parse(localStorage.getItem('carts'))
@@ -114,7 +119,7 @@ export default {
         },
         decrement(object) {
             if (object.quantity === 1) {
-                object.quanity = 1;
+                object.quantity = 1;
             } else {
                 object.quantity--;
             }

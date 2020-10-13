@@ -1,7 +1,12 @@
 <template>
 <div class="container">
-    <form @submit.prevent="submit()" method="get">
-        <h1>WAWEN'S UBE HALAYA : Cart</h1>
+    <h1>WAWEN'S UBE HALAYA : Cart</h1>
+    <div class="empty" v-if="selectedProducts.length == 0">
+        <i class="fa fa-shopping-cart" style="color: #8028d8"></i>
+        <span class="description"><b>Your Cart Is Empty!</b></span>
+        <span style="font-size: 15px;">Start adding your UBEfavorites.</span>
+    </div>
+    <form @submit.prevent="submit()" method="get" v-if="selectedProducts.length > 0">
         <hr>
         <div class="row">
             <div class="column" style="border-right-color: #e5b1fd;border-style: solid;border-width: thin;border-left-color: white;border-top-color: white;border-bottom-color: white;">
@@ -102,8 +107,7 @@
 
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" v-model="address.province" placeholder="Province" required>
-
+                                <input type="text" class="form-control" v-model="province" placeholder="Province" required>
                             </div>
                         </div>
                     </div>
@@ -118,7 +122,7 @@
                         </div>
                         <div class="form-group col-md-6" style="text-align:right;">
                             <label>
-                                &#x20B1; {{total}}
+                                &#x20B1; {{order.total}}
                             </label>
                         </div>
                     </div>
@@ -244,6 +248,30 @@ hr {
 #municipality {
     display: none;
 }
+
+.empty {
+    width: 100%;
+    margin-bottom: 25px;
+    float: left;
+    min-height: 450px;
+    overflow-y: hidden;
+    text-align: center;
+    border: solid 2px #e5b1fd;
+}
+
+.empty i {
+    font-size: 100px;
+    padding-top: 150px;
+}
+
+.empty span {
+    width: 100%;
+    float: left;
+}
+
+.empty .description {
+    font-size: 24px;
+}
 </style>
 
 <script>
@@ -262,8 +290,8 @@ export default {
                 brgy: '',
                 municipality: '',
                 city: '',
-                province: ''
             },
+            province: '',
             order: {
                 date: null,
                 time: null,
@@ -272,50 +300,67 @@ export default {
                 receiver: null,
                 address: '',
                 message: null, //optional
-                products: []
+                products: [],
+                total: 0.00
             },
             selectedProducts: []
 
         };
     },
     computed: {
-        total() {
-            var total = 0
-            if (localStorage.getItem('orders')) {
-                JSON.parse(localStorage.getItem('orders')).products.forEach(item => {
-                    total += (item.quantity * item.price)
-                });
-            }
-            return total
-
-        }
+        // total() {
+        //     var total = 0
+        //     if (localStorage.getItem('orders')) {
+        //         JSON.parse(localStorage.getItem('orders')).products.forEach(item => {
+        //             total += (item.quantity * item.price)
+        //         });
+        //     }
+        //     return total
+        // }
     },
     methods: {
+        itemTotal() {
+            for (let i = 0, l = this.selectedProducts.length; i < l; i++) {
+                this.order.total += (this.selectedProducts[i].price * this.selectedProducts[i].quantity)
+            }
+        },
         submit() {
             for (var add in this.address) {
                 if (this.address[add] != '') {
                     this.address[add] += ','
                 }
             }
-            this.order.address = this.address
+            this.order.address = this.address.company + this.address.building + this.address.brgy + this.address.municipality + this.address.city + this.province
             this.order.products = this.selectedProducts
             localStorage.setItem('orders', JSON.stringify(this.order))
             console.log(this.order.address)
             ROUTER.push("/submit_order");
         },
         increment(item) {
+            let price = item.price
+            let prev = item.quantity
             item.quantity++;
+            let inc = item.quantity - prev
+            let addon = price * inc
+            this.order.total += addon
             localStorage.setItem('carts', JSON.stringify(this.selectedProducts))
         },
         decrement(item) {
+            let price = item.price
+            let prev = item.quantity
             if (item.quantity === 1) {
                 item.quantity = 1;
             } else {
                 item.quantity--;
             }
+            let dec = prev - item.quantity
+            let deduct = price * dec
+            this.order.total -= deduct
             localStorage.setItem('carts', JSON.stringify(this.selectedProducts))
         },
         remove(item) {
+            let deduct = item.price * item.quantity
+            this.order.total -= deduct
             let index = this.selectedProducts.indexOf(item);
             this.selectedProducts.splice(index, 1);
             localStorage.setItem('carts', JSON.stringify(this.selectedProducts))
@@ -323,6 +368,7 @@ export default {
         retrieve() {
             //this is where api from carts should be
             this.selectedProducts = JSON.parse(localStorage.getItem('carts'));
+            this.itemTotal()
         },
         today() {
             var today = new Date();
