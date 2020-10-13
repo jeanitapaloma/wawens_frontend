@@ -3,7 +3,7 @@ OUR STORY
   <div>
     <br>
     <div class="text-center mt-5">
-      <h2 class="font-weight-bolder">
+      <h2 id="h2title" class="font-weight-bolder">
         WAWEN's UBE HALAYA:
         <span id="style">The Making</span>
       </h2>
@@ -95,11 +95,12 @@ OUR STORY
   font-size: 2em;
   margin-top: 2%;
 }
-.font-weight-bolder {
+#h2title {
   color: darkviolet;
   text-shadow: 2px 2px 4px violet;
   font-family: "Muli-Bold";
   font-size: 30px;
+  margin-top: 5%;
 }
 
 #style {

@@ -1,36 +1,35 @@
-<template>
+  <template>
   <div>
     <b-col>
-      <div class="card-header text-center" id="card1">{{item.text}}</div>
-      <b-card
+      <div class="card-header text-center" id="card1" style="font-weight:bold">{{item.text}}</div>
+      <b-card  
         :img-src="require(`@/assets/${item.img}`)"
         img-alt="Image"
         img-top
         img-height="150px"
         class="mb-5"
       >
-        <p>Price : {{item.price}}/ {{item.type}}</p>
-        <!-- <a v-readMore:0="msg"></a> -->
+        <p style="color:darkviolet;">Price : {{item.price}}/ {{item.type}}</p>
         <div>
-          <button class="button" v-b-toggle.collapse-2>View More</button>
-          <b-collapse id="collapse-2">
+          <button v-show="show" class="button" v-b-toggle="'collapse-' + (id +1)" >View More</button>
+          <b-collapse :id="`collapse-${id+1}`" >
             <div class="card card-body">
-              <p>All product description shall be put here!</p>
+              <p>{{item.desription}}</p>
               <div class="row">
                 <div class="col">
-                  <button class="btn" @click="updatemodal">Update</button>
+                  <button class="btn" @click="update">Update</button>
                 </div>
                 <div class="col">
                   <button class="btn" @click="showAlert">Remove</button>
                 </div>
               </div>
             </div>
-            <button class="button" v-b-toggle="'collapse-2'">View Less</button>
+            <button  class="button" v-b-toggle="'collapse-' + (id +1)">View Less</button>
           </b-collapse>
         </div>
       </b-card>
     </b-col>
-    <update-product-modal ref="updateModal"/>
+    <update-product-modal :id="id" ref="updateModal"/>
   </div>
 </template>
 
@@ -40,11 +39,13 @@ export default {
   components: {
     updateProductModal
   },
-  props: ["item"],
-  data: () => ({}),
+  props: ["item","id"],
+  data: () => ({
+    show:true
+  }),
   methods: {
     showAlert() {
-      this.$swal({
+      this.$swal({ 
         title: "Are you sure?",
         text: "You will not be able to recover this file!",
         icon: "warning",
@@ -60,12 +61,85 @@ export default {
         }
       });
     },
-    updatemodal() {
+    update() {
       this.$refs.updateModal.shown();
     }
   }
 };
 </script>
+<style scoped>
+.pProducts {
+  color: purple;
+  font-weight: bold;
+  font-family: Segoe Script;
+  font-style: italic;
+  font-size: 20px;
+  margin-top: 1%;
+}
+#card1 {
+  color: darkviolet;
+}
+.btn {
+  /* background: #bb6bd9; */
+  border: 1px solid#bb6bd9;
+  height: calc(1.5em + 0.75rem + 2px);
+  width: 110%;
+  font-size: 1rem;
+  color: black;
+  border-radius: 4px;
+  /* font-size: 16; */
+}
+.button {
+  background: #bb6bd9;
+  height: calc(2.5em + 0.75rem + 2px);
+  width: 100%;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+}
+.button1 {
+  background: #bb6bd9;
+  height: calc(2.5em + 0.75rem + 2px);
+  width: 100%;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+}
+div.gallery {
+  display: block;
+  margin: 1%;
+  border: 1px solid #ccc;
+  float: left;
+  width: 30%;
+  border-style: outset;
+  height: 350px;
+}
 
-<style>
+div.gallery:hover {
+  border: 2px solid white;
+}
+
+div.gallery img {
+  width: 50%;
+  height: 50%;
+  border: 1px solid #8028d8;
+}
+
+#app {
+  /* display: flex; */
+  width: 100%;
+  /* height: 100vh; */
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+pre {
+  background: #eee;
+  padding: 1rem;
+  border-radius: 5px;
+}
+p {
+  text-align: center;
+  font-weight: bold;
+}
 </style>

@@ -71,6 +71,11 @@ export default new Router({
             component:  () => import("@/modules/admin/Others.vue"),
         },
         {
+            path: '/others',
+            name: 'others',
+            component:  () => import("@/modules/admin/Others.vue"),
+        },
+        {
             path: '/submit_order',
             name: 'submit_order',
             component:  () => import("@/modules/product/SubmitOrder.vue"),
@@ -99,6 +104,11 @@ export default new Router({
             path:'/update_product',
             name:'update_product',
             component: () => import("@/modules/basic/UpdateProduct_Modal.vue"),
+        },
+        {
+            path:'/account_info',
+            name:'account_info',
+            component: () => import("@/modules/basic/AccountInfo_Modal.vue"),
         }
 
     ],

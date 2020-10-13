@@ -6,7 +6,7 @@
           style="text-align: center;font-style:Segoe Script;font-size: 28px;color:black"
         >WAWEN's UBE HALAYA</h3>
         <span>
-          <p style="text-align: center; color:black">Create your Account.</p>
+          <p style="text-align: center; color:black ; font-size:15px;">Create your Account.</p>
         </span>
         <div class="row">
           <div class="col">
@@ -115,16 +115,16 @@
           <span v-else-if="!$v.form.conpassword.sameAsPassword">Passwords must match</span>
         </div>
           </div>
-          <button @submit="onSubmit">SIGN UP</button>
+          <button @submit="onSubmit">SIGN UP</button><br>
           <center>
-            <p>
+            <p style="color:black ; font-size:12px;">
               By clicking Sign Up, you agree to our
               <a
                 href="#"
               >Terms & Conditions</a>
             </p>
             <hr style="width:60%;text-align:center;height:px;background-color:black;">
-            <p>
+            <p style="color:black ; font-size:12px;">
               Already have an account?
               <a href>Login here</a>
             </p>
@@ -243,7 +243,7 @@ button {
 
 .form-control {
   border: 1px solid darkviolet;
-  width: 150%;
+  width: 20%;
   height: 40px;
   padding: 0 10px;
   font-family: "Muli-Bold";
@@ -281,5 +281,8 @@ i {
     padding-top: 0;
     padding-bottom: 0;
   }
+p{
+  font-size: 12px;
+}
 }
 </style>
