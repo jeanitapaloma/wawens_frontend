@@ -5,6 +5,7 @@
         <div>
           <p class="d-flex justify-content-between pothers">
             Others
+            <!-- Testtimonial AddButton -->
             <button
               data-toggle="modal"
               data-target="#AddTestimonial"
@@ -14,14 +15,24 @@
               class="btn btn-light"
               aria-hidden="true"
             >+ Add Testimonial</button>
+            <!-- Partner AddButton -->
             <button
               data-toggle="modal"
-              data-target="#AddPartner"
+              data-target="#AddDistributor"
               type="button"
               id="addbutton"
-              v-show="categories[1].show"
+              v-show="categories[1].show && index == 0"
               class="btn btn-light"
-            >+ Add Partner</button>
+            >+ Add Distributor</button>
+            <button
+              data-toggle="modal"
+              data-target="#AddReseller"
+              type="button"
+              id="addbutton"
+              v-show="categories[1].show && index == 1"
+              class="btn btn-light"
+            >+ Add Reseller</button>
+            <!-- FAQ AddButton -->
             <button
               data-toggle="modal"
               data-target="#AddFaqs"
@@ -31,48 +42,189 @@
               class="btn btn-light"
             >+ Add FAQ</button>
           </p>
-          <!-- Modal -->
+          <!--Testimonial Modal-->
           <div
-            class="modal fade"
+            class="modal fade bd-example-modal-lg"
             id="AddTestimonial"
             tabindex="-1"
             role="dialog"
-            aria-labelledby="exampleModalCenterTitle"
+            aria-labelledby="TestimonialModal"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" style="font-size: 20px;color: purple;margin-left: 35%;">ADD NEW TESTIMONY</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <label for="NameLabel" style="margin-left: 3%;">Name:</label>
+                    <label for="PhotoLabel" style="margin-left: 40%;">Photo:</label>
+                  </div>
+                  <div class="row">
+                    <b-form-input class="nameinput"></b-form-input>
+                    <b-form-group
+                      class="upload1"
+                      label-for="file-default"
+                      label-cols-sm="2"
+                    >
+                      <br>
+                      <b-form-file class="file" id="file-default"></b-form-file>
+                    </b-form-group>
+                  </div>
+
+                  <label for="labelanswer">Comment:</label>
+                  <b-form-textarea rows="8" style="font-size: 10px;"></b-form-textarea>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    id="bclose"
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >CANCEL</button>
+                  <button type="button" class="btn btn-primary" style="width: 20%;color: white;background-color: purple;">SUBMIT</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Testimonial End-->
+          <!-- Distributor Modal -->
+          <div
+            class="modal fade"
+            id="AddDistributor"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="PartnerModal"
             aria-hidden="true"
           >
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                  <h5 class="modal-title" style="font-size: 20px;color: purple;margin-left: 27%;">ADD NEW DISTRIBUTOR</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">...</div>
+                <div class="modal-body">
+                  <b-form-group
+                    class="upload"
+                    label="Upload:"
+                    label-for="file-default"
+                    label-cols-sm="2"
+                  >
+                    <br>
+                    <b-form-file class="file" id="file-default"></b-form-file>
+                  </b-form-group>
+                </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button
+                    id="bclose"
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >CANCEL</button>
+                  <button type="button" class="btn btn-primary" style="width: 20%;color: white;background-color: purple;">ADD</button>
                 </div>
               </div>
             </div>
           </div>
+          <!-- Distributor End -->
+          <!-- Reseller Modal -->
+          <div
+            class="modal fade"
+            id="AddReseller"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="PartnerModal"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" style="font-size: 20px;color: purple;margin-left: 27%;">ADD NEW RESELLER</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <b-form-group
+                    class="upload"
+                    label="Upload:"
+                    label-for="file-default"
+                    label-cols-sm="2"
+                  >
+                    <br>
+                    <b-form-file class="file" id="file-default"></b-form-file>
+                  </b-form-group>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    id="bclose"
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >CANCEL</button>
+                  <button type="button" class="btn btn-primary" style="width: 20%;color: white;background-color: purple;">ADD</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Reseller End -->
+          <!-- FAQ Modal -->
+          <div
+            class="modal fade bd-example-modal-lg"
+            id="AddFaqs"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="FAQModal"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" style="font-size: 20px;color: purple;margin-left: 28%;">ADD FREQUENTLY ASKED QUESTIONS</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <label for="labelquestion">Question:</label>
+                  <b-form-textarea rows="8" style="font-size: 10px;"></b-form-textarea>
+                  <label for="labelanswer">Answer:</label>
+                  <b-form-textarea rows="8" style="font-size: 10px;"></b-form-textarea>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    id="bclose"
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >CANCEL</button>
+                  <button type="button" class="btn btn-primary" style="width: 20%;color: white;background-color: purple;">SUBMIT</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FAQ End -->
         </div>
-        <div class="btn-group btn-group-lg">
-          <button
-            type="button"
-            class="btn btn-primary"
-            @click="showCategoryInfo('testimonial');"
-          >TESTIMONIALs</button>
-          <button
-            type="button"
-            class="btn btn-primary"
-            @click="showCategoryInfo('partner')"
-          >PARTNERs</button>
-          <button type="button" class="btn btn-primary" @click="showCategoryInfo('faqs')">FAQs</button>
+        <table class="table table-purple" style="text-align: center;">
+          <thead>
+            <tr>
+              <th class="thtable1" @click="showCategoryInfo('testimonial')">TESTIMONIALs</th>
+              <th class="thtable" @click="showCategoryInfo('partner')" scope="col">PARTNERs</th>
+              <th class="thtable" @click="showCategoryInfo('faqs')" scope="col">FAQs</th>
+            </tr>
+          </thead>
+        </table>
+        <div class="component" style="margin-top: -6%;">
+          <Testimonial v-show="categories[0].show"></Testimonial>
+          <Partner v-show="categories[1].show" @changeTab="changeTab"></Partner>
+          <FAQ v-show="categories[2].show"></FAQ>
         </div>
-        <Testimonial class="testimonials" v-show="categories[0].show"></Testimonial>
-        <Partner class="partner" v-show="categories[1].show"></Partner>
-        <FAQ class="faqs" v-show="categories[2].show"></FAQ>
       </b-container>
     </sidebar>
   </div>
@@ -97,7 +249,8 @@ export default {
       { name: "testimonial", show: true },
       { name: "partner", show: false },
       { name: "faqs", show: false }
-    ]
+    ],
+    index : 0,
   }),
   methods: {
     showCategoryInfo(category) {
@@ -107,13 +260,70 @@ export default {
         } else {
           component.show = false;
         }
+       
       });
+    },
+    changeTab(index){
+      this.index = index
     }
   }
 };
 </script>
 
 <style scoped>
+.nameinput {
+  font-size: 15px;
+  width: 40%;
+  margin-left: 3%;
+}
+label {
+  font-size: 15px;
+}
+.upload {
+  font-size: 15px;
+}
+.upload1{
+  font-size: 15px;
+  margin-left: 6%;
+  margin-top: -4%;
+}
+.file {
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  margin-top: 3%;
+  margin-left: -15%;
+}
+#bclose {
+  width: 20%;
+  color: purple;
+  background-color: white;
+}
+.thtable1 {
+  width: 30%;
+  padding: 8px;
+  color: purple;
+  border: 2px solid violet;
+  font-size: 20px;
+}
+.thtable:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.thtable1:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.thtable {
+  padding: 8px;
+  color: purple;
+  border: 2px solid violet;
+  font-size: 20px;
+}
 #addbutton {
   width: 25%;
   background-color: blueviolet;
@@ -121,45 +331,6 @@ export default {
   margin-top: -0.5%;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-}
-.testimonials {
-  margin-top: -5%;
-}
-.faqs {
-  margin-top: -5%;
-}
-.btn-group,
-.btn-group-vertical {
-  position: relative;
-  display: inline-flex;
-  vertical-align: middle;
-  width: 100%;
-  margin-top: -5%;
-}
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-  font-size: 18px;
-  color: purple;
-  font-weight: bold;
-}
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
-  border-radius: 0;
-  font-size: 18px;
-  color: purple;
-  font-weight: bold;
-}
-.btn-group > .btn:last-child:not(:first-child),
-.btn-group > .dropdown-toggle:not(:first-child) {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-  font-size: 18px;
-  color: purple;
-  font-weight: bold;
-}
-.btn-primary:hover {
-  text-decoration: underline;
-  background-color: transparent !important;
 }
 .p1 {
   font-size: 12px;
@@ -182,28 +353,4 @@ td {
   margin-top: -2%;
   font-size: 20px;
 }
-.table-white {
-  font-size: 18px;
-  text-align: center;
-  color: purple;
-}
-.table > thead > tr > th {
-  vertical-align: bottom;
-  border-bottom: 2px solid violet;
-}
-/* .thothers {
-  border: 1px solid #ddd;
-  padding: 8px;
-  color: purple;
-  width: 30%;
-} */
-.table {
-  margin-bottom: 1rem;
-  color: purple;
-}
-/* .thothers:hover {
-  text-decoration: underline;
-  cursor: pointer;
-  pointer-events: none;
-} */
 </style>

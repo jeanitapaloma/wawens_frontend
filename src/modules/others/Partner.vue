@@ -8,7 +8,7 @@
       <p class="tagline">Know your nearest ube halaya source and you can directly buy to them.</p>
     </div>
     <b-tabs>
-      <b-tab  v-for="(tab,i) in tabs" :key="i" :id="tab.id" :title="tab.title">
+      <b-tab @click="testEvent(i)"  v-for="(tab,i) in tabs" :key="i" :id="tab.id" :title="tab.title">
         <b-row class="pt-3">
           <b-col lg="3" v-for="(item,j) in tab.items" :key="j">
               <b-card
@@ -58,6 +58,11 @@ export default {
         }
       ]
     };
+  },
+  methods:{
+    testEvent(index){
+      this.$emit('changeTab',index)
+    }
   }
 };
 </script>

@@ -2,13 +2,21 @@
   <div>
     <sidebar>
       <div>
-        <p class="pcustomer">Customer's Management</p>
+        <p
+          style="color: purple;font-weight: bold;font-family: Segoe Script;font-style: italic;font-size: 20px;margin-top: 1%;"
+        >Customer's Management</p>
       </div>
-      <table class="table table-white">
+      <table
+        class="table table-purple"
+        style="font-size: 15px;-align: center;margin-bottom: 1rem;width: 40%;"
+      >
         <thead>
           <tr>
-            <th class="thtable1" scope="col">SORT</th>
-            <th class="dropdown">
+            <th
+              scope="col"
+              style="padding: 8px;color: white;background-color: blueviolet;width: 10%;border: 2px solid violet;"
+            >SORT</th>
+            <th class="dropdown" style="background-color: violet;color:purple;">
               <a
                 data-toggle="dropdown"
                 class="dropdown-toggle"
@@ -30,9 +38,47 @@
       <div>
         <b-table :items="items" :fields="fields">
           <template v-slot:cell(ACTIONS)="row">
-            <i @click="row.toggleDetails" class="fa fa-eye" style="font-size:20px;"></i>
+            <i
+              @click="row.toggleDetails"
+              class="fa fa-eye"
+              data-toggle="modal"
+              data-target="#ViewHistory"
+              style="font-size:20px;"
+              aria-hidden="true"
+            ></i>
           </template>
         </b-table>
+        <!-- History Modal -->
+        <div
+          class="modal fade bd-example-modal-lg"
+          id="ViewHistory"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="CustomerHistoryModal"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header" style="background-color: violet;">
+                <h5
+                  class="modal-title"
+                  style="margin-left: 26%;font-size: 20px;"
+                >CUSTOMER TRANSACTION HISTORY</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  style=" width: 15%;color: red;font-weight: bold;float: right;background-color: violet;"
+                >CLOSE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- History Modal End -->
       </div>
     </sidebar>
   </div>
@@ -78,18 +124,7 @@ export default {
 };
 </script>
 <style scoped>
-/* .dropdown {
-  color: purple;
-  background-color: violet;
-  border: 2px solid violet;
-  height: calc(2em + 0.75rem + 2px);
-  margin-top: -5.3%;
-  padding: 0.1rem 4rem;
-}
-.drop {
-  font-size: 15px;
-} */
-.dropdown-toggle{
+.dropdown-toggle {
   cursor: pointer;
 }
 a {
@@ -105,50 +140,27 @@ a {
   position: absolute;
   top: 100%;
   display: none;
-  float: left;
   width: 100%;
   font-size: 1.5rem;
   color: purple;
   text-align: center;
   list-style: none;
   background-color: violet;
-  border-radius: 0.25rem;
+  margin-left: -35%;
+  margin-top: 3.5%;
 }
 .dropdown-menu:hover {
+  cursor: pointer;
   background-color: violet;
 }
 table,
+tr,
 th,
-td {
+tbody {
   border: 2px solid violet;
   text-align: center;
-}
-.pcustomer {
-  color: purple;
-  font-weight: bold;
-  font-family: Segoe Script;
-  font-style: italic;
-  font-size: 20px;
-  margin-top: 1%;
-}
-.table-white {
-  font-size: 15px;
-  text-align: center;
-  margin-bottom: 1rem;
-  width: 40%;
-}
-.thtable1 {
-  padding: 8px;
-  color: white;
-  background-color: blueviolet;
-  width: 10%;
-  border: 2px solid violet;
-}
-#thtable2 {
-  padding: 8px;
-  color: purple;
-  background-color: violet;
-  border: 2px solid violet;
+  vertical-align: bottom;
+  border-bottom: 2px solid violet;
 }
 .form-control {
   width: 60%;
@@ -162,5 +174,8 @@ td {
   border-radius: 0.25rem;
   float: right;
   margin-top: -5.3%;
+}
+.fa-eye:hover {
+  cursor: pointer;
 }
 </style>
