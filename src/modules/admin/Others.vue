@@ -89,6 +89,8 @@
                   <button
                     type="button"
                     class="btn btn-primary"
+                    data-toggle="modal"
+                    data-target=".bd-example-modal-lg"
                     style="width: 20%;color: white;background-color: purple;"
                   >SUBMIT</button>
                 </div>

@@ -30,36 +30,19 @@
             style="border: 2px solid violet;"
           >
             <template v-slot:cell(ACTIONS)>
-              <i
-                class="fa fa-eye"
-                style="font-size:20px;"
-                data-toggle="modal"
-                data-target=".bd-example-modal-lg"
-              ></i>
+              <i class="fa fa-eye" style="font-size:20px;" @click="OrderDetails"></i>
             </template>
           </b-table>
         </div>
       </b-container>
-      <!-- MODAL -->
-      <div
-        class="modal fade bd-example-modal-lg"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="myLargeModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-lg" style="max-width: 1000px;">
-          <!-- component -->
-          <OrderDetails/>
-        </div>
-      </div>
     </sidebar>
+    <order-details ref="orderModal"></order-details>
   </div>
 </template>
 
 <script>
-import sidebar from "../../components/frame/sidebar";
 import OrderDetails from "./OrderDetails";
+import sidebar from "../../components/frame/sidebar";
 export default {
   components: {
     sidebar,
@@ -134,6 +117,9 @@ export default {
   methods: {
     filter() {
       this.products = this.items.filter(item => item.status === this.status);
+    },
+    OrderDetails() {
+      this.$refs.orderModal.shown();
     }
   },
   mounted() {
@@ -162,13 +148,5 @@ export default {
   color: white;
   border: 2px solid violet;
   font-size: 20px;
-}
-#confirm {
-  color: purple;
-  font-weight: bold;
-  height: 60%;
-  width: 20%;
-  margin-top: -7%;
-  margin-left: 120%;
 }
 </style>
