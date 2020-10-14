@@ -54,28 +54,28 @@
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" style="font-size: 20px;color: purple;margin-left: 35%;">ADD NEW TESTIMONY</h5>
+                  <h5
+                    class="modal-title"
+                    style="font-size: 20px;color: purple;margin-left: 35%;"
+                  >ADD NEW TESTIMONY</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <div class="row">
-                    <label for="NameLabel" style="margin-left: 3%;">Name:</label>
-                    <label for="PhotoLabel" style="margin-left: 40%;">Photo:</label>
-                  </div>
+                  <b-container class="testimonial-modal mb-3">
+                    <b-row class="font-weight-bold" cols="2">
+                      <b-col style="font-size: 15px;">Name:</b-col>
+                      <b-col style="font-size: 15px;">Photo:</b-col>
+                    </b-row>
+                  </b-container>
                   <div class="row">
                     <b-form-input class="nameinput"></b-form-input>
-                    <b-form-group
-                      class="upload1"
-                      label-for="file-default"
-                      label-cols-sm="2"
-                    >
+                    <b-form-group class="upload1" label-for="file-default" label-cols-sm="2">
                       <br>
                       <b-form-file class="file" id="file-default"></b-form-file>
                     </b-form-group>
                   </div>
-
                   <label for="labelanswer">Comment:</label>
                   <b-form-textarea rows="8" style="font-size: 10px;"></b-form-textarea>
                 </div>
@@ -86,7 +86,11 @@
                     class="btn btn-secondary"
                     data-dismiss="modal"
                   >CANCEL</button>
-                  <button type="button" class="btn btn-primary" style="width: 20%;color: white;background-color: purple;">SUBMIT</button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    style="width: 20%;color: white;background-color: purple;"
+                  >SUBMIT</button>
                 </div>
               </div>
             </div>
@@ -104,7 +108,10 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" style="font-size: 20px;color: purple;margin-left: 27%;">ADD NEW DISTRIBUTOR</h5>
+                  <h5
+                    class="modal-title"
+                    style="font-size: 20px;color: purple;margin-left: 27%;"
+                  >ADD NEW DISTRIBUTOR</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -127,7 +134,11 @@
                     class="btn btn-secondary"
                     data-dismiss="modal"
                   >CANCEL</button>
-                  <button type="button" class="btn btn-primary" style="width: 20%;color: white;background-color: purple;">ADD</button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    style="width: 20%;color: white;background-color: purple;"
+                  >ADD</button>
                 </div>
               </div>
             </div>
@@ -145,7 +156,10 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" style="font-size: 20px;color: purple;margin-left: 27%;">ADD NEW RESELLER</h5>
+                  <h5
+                    class="modal-title"
+                    style="font-size: 20px;color: purple;margin-left: 27%;"
+                  >ADD NEW RESELLER</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -168,7 +182,11 @@
                     class="btn btn-secondary"
                     data-dismiss="modal"
                   >CANCEL</button>
-                  <button type="button" class="btn btn-primary" style="width: 20%;color: white;background-color: purple;">ADD</button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    style="width: 20%;color: white;background-color: purple;"
+                  >ADD</button>
                 </div>
               </div>
             </div>
@@ -186,7 +204,10 @@
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" style="font-size: 20px;color: purple;margin-left: 28%;">ADD FREQUENTLY ASKED QUESTIONS</h5>
+                  <h5
+                    class="modal-title"
+                    style="font-size: 20px;color: purple;margin-left: 28%;"
+                  >ADD FREQUENTLY ASKED QUESTIONS</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -204,7 +225,11 @@
                     class="btn btn-secondary"
                     data-dismiss="modal"
                   >CANCEL</button>
-                  <button type="button" class="btn btn-primary" style="width: 20%;color: white;background-color: purple;">SUBMIT</button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    style="width: 20%;color: white;background-color: purple;"
+                  >SUBMIT</button>
                 </div>
               </div>
             </div>
@@ -250,7 +275,7 @@ export default {
       { name: "partner", show: false },
       { name: "faqs", show: false }
     ],
-    index : 0,
+    index: 0
   }),
   methods: {
     showCategoryInfo(category) {
@@ -260,11 +285,10 @@ export default {
         } else {
           component.show = false;
         }
-       
       });
     },
-    changeTab(index){
-      this.index = index
+    changeTab(index) {
+      this.index = index;
     }
   }
 };
@@ -282,7 +306,7 @@ label {
 .upload {
   font-size: 15px;
 }
-.upload1{
+.upload1 {
   font-size: 15px;
   margin-left: 6%;
   margin-top: -4%;

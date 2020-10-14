@@ -23,7 +23,12 @@
           style=" font-size: 12px;font-style: italic;color: purple;font-weight: bold;"
         >This section displays all the {{status}} orders.</p>
         <div>
-          <b-table class="tabledata" :items="filterProducts" :fields="fields">
+          <b-table
+            class="table table-bordered text-center"
+            :items="filterProducts"
+            :fields="fields"
+            style="border: 2px solid violet;"
+          >
             <template v-slot:cell(ACTIONS)>
               <i
                 class="fa fa-eye"
@@ -44,68 +49,8 @@
         aria-hidden="true"
       >
         <div class="modal-dialog modal-lg" style="max-width: 1000px;">
-          <div class="modal-content">
-            <h2 class="modal-title">ORDER DETAILS</h2>
-            <hr style="width: 100%;border-width: 2px;border-color: violet;">
-            <div class="row">
-              <div class="col-md-8 text-justify" style="margin-top: 1%;">
-                <p class="font-weight-bold ml-5" style="font-size: 15px;">USERNAME:</p>
-                <p class="font-weight-bold" style="font-size: 15px;float: right;margin-top:-5%;">DATE AND TIME ORDERED:</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-8">
-                <p class="font-weight-bold ml-5" style="font-size: 15px;">RECEIVER'S ADDRESS:</p>
-                <p class="font-weight-bold" style=" font-size: 15px;float: right;margin-right: 14%;margin-top:-5%;">ORDERED NO:</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-8">
-                <p class="font-weight-bold ml-5" style="font-size: 15px;">DELIVERY ADDRESS:</p>
-                <p
-                  lass="font-weight-bold"
-                  style=" font-size: 15px;font-weight: bold;float: right;margin-right: 22%;margin-top:-5%;">LABEL:</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-8">
-                <p class="font-weight-bold ml-5" style="font-size: 15px;">DELIVERY CONTACT:</p>
-                <p class="font-weight-bold" style="font-size: 15px;float: right;margin-right: -28%;margin-top:-5%;"
-                >
-                  ACTUAL DELIVERY DATE:
-                  <button
-                    type="button"
-                    id="button1"
-                    class="btn btn-primary btn-sm"
-                  >APPROVED SELECTED DATE</button>
-                </p>
-                <i
-                  class="fa fa-edit"
-                  style="font-size: 28px; float: right; margin-right: -68%; color:purple;margin-top:-5%;"
-                ></i>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-8">
-                <p class="font-weight-bold ml-5" style="font-size: 15px;float: left;">PAYMENT MODE:</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-8">
-                <p
-                  class="font-weight-bold ml-5"
-                  style="font-size: 15px;"
-                >Message/Delivery Instructions:</p>
-                <p
-                  class="font-weight-bold ml-5"
-                  style="font-size: 15px;float: right;margin-right: 21%;margin-top:-5%;"
-                >STATUS:</p>
-                <button type="button" id="confirm" class="btn btn-primary btn-sm">CONFIRM</button>
-              </div>
-            </div>
-            <b-form-textarea class="ml-5" rows="8" style="width: 90%;font-size: 12px;"></b-form-textarea>
-            <br>
-          </div>
+          <!-- component -->
+          <OrderDetails/>
         </div>
       </div>
     </sidebar>
@@ -114,13 +59,15 @@
 
 <script>
 import sidebar from "../../components/frame/sidebar";
+import OrderDetails from "./OrderDetails";
 export default {
   components: {
-    sidebar
+    sidebar,
+    OrderDetails
   },
   data() {
     return {
-      fields1: ["ITEMS", "UNIT", "QUANTITY", "PRICE", "SUBTOTAL"],
+      modalfields: ["ITEMS", "UNIT", "QUANTITY", "PRICE", "SUBTOTAL"],
       fields: [
         "DATE_ORDERED",
         "ORDER_NO",
@@ -166,21 +113,27 @@ export default {
           status: "completed"
         }
       ],
+      modalitems: [
+        {
+          ITEMS: "",
+          UNIT: "",
+          QUANTITY: 0,
+          PRICE: 0,
+          SUBTOTAL: 0
+        }
+      ],
       products: [],
-      products1: [],
       status: "pending"
     };
   },
   computed: {
     filterProducts() {
       return this.products;
-      // return this.products1;
     }
   },
   methods: {
     filter() {
       this.products = this.items.filter(item => item.status === this.status);
-      // this.products1 = this.items1.filter
     }
   },
   mounted() {
@@ -189,29 +142,11 @@ export default {
 };
 </script>
 <style scoped>
-.card {
-  width: 95%;
-  margin-left: 3%;
-  border-width: 2px;
-  border-color: violet;
-}
-.modal-title {
-  font-size: 20px;
-  color: purple;
-  font-weight: bold;
-  font-family: Segoe Script;
-  font-style: italic;
-  text-align: center;
-  margin-top: 2%;
-}
 .thtable:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 .fa-eye:hover {
-  cursor: pointer;
-}
-.fa-edit:hover {
   cursor: pointer;
 }
 .porder {
@@ -227,18 +162,6 @@ export default {
   color: white;
   border: 2px solid violet;
   font-size: 20px;
-}
-.tabledata {
-  border: 2px solid violet;
-  padding: 8px;
-}
-#button1 {
-  color: purple;
-  font-weight: bold;
-  height: 1%;
-  margin-left: 46%;
-  width: 60%;
-  margin-top: -12%;
 }
 #confirm {
   color: purple;

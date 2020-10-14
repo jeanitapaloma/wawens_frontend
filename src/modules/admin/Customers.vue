@@ -1,7 +1,6 @@
 <template>
-<sidebar>
-  <div>
-    <sidebar>
+  <sidebar>
+    <div>
       <div>
         <p
           style="color: purple;font-weight: bold;font-family: Segoe Script;font-style: italic;font-size: 20px;margin-top: 1%;"
@@ -17,7 +16,7 @@
               scope="col"
               style="padding: 8px;color: white;background-color: blueviolet;width: 10%;border: 2px solid violet;"
             >SORT</th>
-            <th class="dropdown" style="background-color: violet;color:purple;">
+            <th class="dropdown text-center" style="background-color: violet;color:purple;border: 2px solid violet;">
               <a
                 data-toggle="dropdown"
                 class="dropdown-toggle"
@@ -36,19 +35,19 @@
         </thead>
       </table>
       <b-form-input class="searchbar" placeholder="Search here..."></b-form-input>
-      <div>
-        <b-table :items="items" :fields="fields">
-          <template v-slot:cell(ACTIONS)="row">
-            <i
-              @click="row.toggleDetails"
-              class="fa fa-eye"
-              data-toggle="modal"
-              data-target="#ViewHistory"
-              style="font-size:20px;"
-              aria-hidden="true"
-            ></i>
-          </template>
-        </b-table>
+        <div>
+          <b-table class="table table-bordered text-center" :items="items" :fields="fields" style="border: 2px solid violet;">
+            <template v-slot:cell(ACTIONS)="row">
+              <i
+                @click="row.toggleDetails"
+                class="fa fa-eye"
+                data-toggle="modal"
+                data-target="#ViewHistory"
+                style="font-size:20px;"
+                aria-hidden="true"
+              ></i>
+            </template>
+          </b-table>
         <!-- History Modal -->
         <div
           class="modal fade bd-example-modal-lg"
@@ -70,9 +69,22 @@
                 </button>
               </div>
               <div class="modal-body">
+                <b-container class="modal-history-row mb-3">
+                  <b-row class="font-weight-bold" cols="2">
+                    <b-col style="font-size: 15px;">USERNAME:</b-col>
+                    <b-col style="font-size: 15px;">FULL NAME:</b-col>
+                  </b-row>
+                </b-container>
+                <table class="modal-table">
+                  <tr>
+                    <th>COMPLETED ORDERS</th>
+                    <th>CANCELLED ORDERS</th>
+                  </tr>
+                </table>
                 <button
                   type="button"
                   class="btn btn-primary"
+                  data-dismiss="modal"
                   style=" width: 15%;color: red;font-weight: bold;float: right;background-color: violet;"
                 >CLOSE</button>
               </div>
@@ -81,9 +93,8 @@
         </div>
         <!-- History Modal End -->
       </div>
-    </sidebar>
-  </div>
-</sidebar>
+    </div>
+  </sidebar>
 </template>
 <script>
 import sidebar from "../../components/frame/sidebar";
@@ -116,11 +127,6 @@ export default {
           // ACTIONS: ""
         }
       ]
-      //       $(function(){
-      //    $(".dropdown-menu").on('click', 'a', function(){
-      //        $(this).parents('.dropdown').find('button').text($(this).text());
-      //    });
-      // });
     };
   }
 };
@@ -154,15 +160,6 @@ a {
 .dropdown-menu:hover {
   cursor: pointer;
   background-color: violet;
-}
-table,
-tr,
-th,
-tbody {
-  border: 2px solid violet;
-  text-align: center;
-  vertical-align: bottom;
-  border-bottom: 2px solid violet;
 }
 .form-control {
   width: 60%;
