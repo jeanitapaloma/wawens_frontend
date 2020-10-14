@@ -104,7 +104,7 @@
             v-b-tooltip.hover.top
             title="Change your Avatar"
             id="userIcon"
-            src="require('~@/assets/wallpaper.png')"
+            :src="require('@/assets/user.png')"
             @click="$refs.file.click()"
           ></b-img>
           <div>

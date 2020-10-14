@@ -67,13 +67,8 @@ export default {
 };
 </script>
 
-<<<<<<< HEAD
-<style >
-#partner1 {
-=======
 <style scoped>
 .font-weight-bolder {
->>>>>>> fe9c875d6ebe37c931adfd890311fbe2d85d8a6a
   color: darkviolet;
   text-shadow: 2px violet;
   font-family: "Muli-Bold";
