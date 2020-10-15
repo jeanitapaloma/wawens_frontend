@@ -73,7 +73,7 @@
                     <b-form-input class="nameinput"></b-form-input>
                     <b-form-group class="upload1" label-for="file-default" label-cols-sm="2">
                       <br>
-                      <b-form-file class="file" id="file-default"></b-form-file>
+                      <b-form-file browse-text="Upload File" placeholder="Choose File" class="file" id="file-default"></b-form-file>
                     </b-form-group>
                   </div>
                   <label for="labelanswer">Comment:</label>
@@ -126,7 +126,7 @@
                     label-cols-sm="2"
                   >
                     <br>
-                    <b-form-file class="file" id="file-default"></b-form-file>
+                    <b-form-file placeholder="Choose File" browse-text="Upload File" class="file" id="file-default"></b-form-file>
                   </b-form-group>
                 </div>
                 <div class="modal-footer">
@@ -174,7 +174,7 @@
                     label-cols-sm="2"
                   >
                     <br>
-                    <b-form-file class="file" id="file-default"></b-form-file>
+                    <b-form-file browse-text="Upload File" placeholder="Choose File" class="file" id="file-default"></b-form-file>
                   </b-form-group>
                 </div>
                 <div class="modal-footer">

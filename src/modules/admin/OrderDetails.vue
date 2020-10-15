@@ -83,8 +83,8 @@
             </b-row>
             <b-button
               id="bfree"
-              @click="FreeOrderDetails"
               class="text-align center font-weight-bold"
+              @click="FreeOrderDetails"
               style="color:blueviolet;width:10%;float:right;margin:right: 3%;margin-top: -2.5%;"
             >FREE</b-button>
             <i
@@ -137,9 +137,6 @@ export default {
     shown() {
       this.$bvModal.show("modal-multi-1");
     },
-    FreeOrderDetails(){
-      this.$refs.FreeModal.shown();
-    }
   }
 };
 </script>
