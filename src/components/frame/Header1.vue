@@ -49,6 +49,7 @@
   height: 60px;
   width: 100%;
   border-radius: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
 }
 
 #navbar-nav {
