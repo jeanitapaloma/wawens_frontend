@@ -37,9 +37,8 @@
       <b-form-input class="searchbar" placeholder="Search here..."></b-form-input>
         <div>
           <b-table class="table table-bordered text-center" :items="items" :fields="fields" style="border: 2px solid violet;">
-            <template v-slot:cell(ACTIONS)="row">
+            <template v-slot:cell(ACTIONS)>
               <i
-                @click="row.toggleDetails"
                 class="fa fa-eye"
                 data-toggle="modal"
                 data-target="#ViewHistory"
@@ -69,7 +68,7 @@
 </template>
 <script>
 import sidebar from "../../components/frame/sidebar";
-import CustomerTransactionHistory from "./CustomerTransactionHistory.vue";
+import CustomerTransactionHistory from "../../modules/basic/CustomerTransactionHistory.vue";
 export default {
   components: {
     sidebar,

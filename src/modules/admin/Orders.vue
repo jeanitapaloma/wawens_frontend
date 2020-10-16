@@ -13,127 +13,59 @@
         <table class="table table-purple" style="background-color: blueviolet;text-align: center;">
           <thead>
             <tr>
-              <th class="thtable" scope="col" @click="filter(status = 'pending')">PENDING</th>
-              <th class="thtable" scope="col" @click="filter(status ='confirmed')">CONFIRMED</th>
-              <th class="thtable" scope="col" @click="filter(status = 'completed')">HISTORY</th>
+              <th class="thtable" scope="col" @click="showComponent('pending')">PENDING</th>
+              <th class="thtable" scope="col" @click="showComponent('confirmed')">CONFIRMED</th>
+              <th class="thtable" scope="col" @click="showComponent('history')">HISTORY</th>
             </tr>
           </thead>
         </table>
-        <p
-          style=" font-size: 12px;font-style: italic;color: purple;font-weight: bold;"
-        >This section displays all the {{status}} orders.</p>
-        <div>
-          <b-table
-            class="table table-bordered text-center"
-            :items="filterProducts"
-            :fields="fields"
-            style="border: 2px solid violet;"
-          >
-            <template v-slot:cell(ACTIONS)>
-              <i class="fa fa-eye" style="font-size:20px;" @click="OrderDetails"></i>
-            </template>
-          </b-table>
-        </div>
+        <PendingOrders v-show="categories[0].show"></PendingOrders>
+        <ConfirmedOrders v-show="categories[1].show"></ConfirmedOrders>
+        <OrderHistory v-show="categories[2].show"></OrderHistory>
       </b-container>
     </sidebar>
-    <order-details ref="orderModal"></order-details>
   </div>
 </template>
 
 <script>
-import OrderDetails from "./OrderDetails";
+import PendingOrders from "../../modules/basic/PendingOrders.vue";
+import ConfirmedOrders from "../../modules/basic/ConfirmedOrders.vue";
+import OrderHistory from "../../modules/basic/OrderHistory.vue";
 import sidebar from "../../components/frame/sidebar";
 export default {
   components: {
     sidebar,
-    OrderDetails
+    PendingOrders,
+    ConfirmedOrders,
+    OrderHistory
   },
-  data() {
-    return {
-      modalfields: ["ITEMS", "UNIT", "QUANTITY", "PRICE", "SUBTOTAL"],
-      fields: [
-        "DATE_ORDERED",
-        "ORDER_NO",
-        "USERNAME",
-        "DELIVERY_ADDRESS",
-        "PAYMENT",
-        "DELIVERY_DATE",
-        "LABEL",
-        "ACTIONS"
-      ],
-      items: [
-        {
-          DATE_ORDERED: 0,
-          ORDER_NO: "",
-          USERNAME: "pending",
-          DELIVERY_ADDRESS: 0,
-          PAYMENT: "",
-          DELIVERY_DATE: "",
-          LABEL: "",
-          ACTIONS: "",
-          status: "pending"
-        },
-        {
-          DATE_ORDERED: 0,
-          ORDER_NO: "",
-          USERNAME: "confirm",
-          DELIVERY_ADDRESS: 0,
-          PAYMENT: "",
-          DELIVERY_DATE: "",
-          LABEL: "",
-          ACTIONS: "",
-          status: "confirmed"
-        },
-        {
-          DATE_ORDERED: 0,
-          ORDER_NO: "",
-          USERNAME: "completed",
-          DELIVERY_ADDRESS: 0,
-          PAYMENT: "",
-          DELIVERY_DATE: "",
-          LABEL: "",
-          ACTIONS: "",
-          status: "completed"
-        }
-      ],
-      modalitems: [
-        {
-          ITEMS: "",
-          UNIT: "",
-          QUANTITY: 0,
-          PRICE: 0,
-          SUBTOTAL: 0
-        }
-      ],
-      products: [],
-      status: "pending"
-    };
-  },
-  computed: {
-    filterProducts() {
-      return this.products;
-    }
-  },
+  data: () => ({
+    pending: true,
+    confirmed: false,
+    history: false,
+    categories: [
+      { name: "pending", show: true },
+      { name: "confirmed", show: false },
+      { name: "history", show: false }
+    ]
+  }),
   methods: {
-    filter() {
-      this.products = this.items.filter(item => item.status === this.status);
+    showComponent(category) {
+      this.categories.forEach(component => {
+        if (component.name == category) {
+          component.show = true;
+        } else {
+          component.show = false;
+        }
+      });
     },
-    OrderDetails() {
-      this.$refs.orderModal.shown();
-    }
   },
-  mounted() {
-    this.filter();
-  }
 };
 </script>
 <style scoped>
 .thtable:hover {
+  cursor: pointer;
   text-decoration: underline;
-  cursor: pointer;
-}
-.fa-eye:hover {
-  cursor: pointer;
 }
 .porder {
   color: purple;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-modal id="modal-multi-2" size="xl" hide-footer hide-header>
+    <b-modal id="freeorderdetails" size="xl" hide-footer hide-header>
         <h2 class="modal-title">ORDER DETAILS</h2>
         <hr style="border-width: 2px;border-color: violet;">
         <b-container class="modal-history-row mb-3">
@@ -113,8 +113,8 @@ export default {
     };
   },
   methods:{
-      shown(){
-          this.$bvModal.show("modal-multi-2");
+      shown (){
+          this.$bvModal.show("freeorderdetails");
       }
   }
 };
