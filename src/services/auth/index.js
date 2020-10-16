@@ -1,5 +1,13 @@
 import ROUTER from 'router';
+import axios from 'axios'
 
+
+const http = axios.create({
+    baseURL :'http://127.0.0.1:8000',
+    headers: {
+        'Content-Type': 'application/json',
+    }
+});
 export default {
     user: null,
     registeredUser: [],
@@ -10,15 +18,25 @@ export default {
     getUser(user) {
         return this.user = user;
     },
-    register(username, email, password ,conpassword) {
+    register(username, email, password,conpassword ) {
         this.registeredUser.push({
             username: username,
             email: email,
             password: password,
             conpassword: conpassword, 
         })
+        console.log(username,email,password)
+        http.post('/api/register',{
+            username: username,
+            email: email,
+            password: password
+        }).then(res => {
+            console.log(res)
+            ROUTER.push({path: '/dashboard'})
+        })
+        .catch(err => console.log(err))
         
-        ROUTER.push('/dashboard')
+        
     },
 
     login(email, password) {

@@ -40,7 +40,7 @@
               </span>
             </div>
 
-            <input type="email" v-model="form.email" class="form-control" placeholder="Email" required>
+            <input type="email" v-model="form.email" class="form-control" name="email" placeholder="Email" required>
           </div>
           <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -62,7 +62,7 @@
               <i :class="['fa' , passwordVisible ? 'fa-eye-slash':'fa-eye' ]"></i>
             </span>
           </div>
-          <button @submit="onSubmit">LOGIN</button>
+          <button @submit="onSubmit" name="submit">LOGIN</button>
           <br>
           <p style="text-align: center; color:black ; font-size:15px;">
             <a href>Forgot Password?</a>
@@ -89,6 +89,16 @@ export default {
     },
     passwordVisible: false,
   }),
+
+  //  methods:{
+  //   onSubmit(evt) {
+  //    this.submitted = true;
+  //     if (this.$v.$invalid) {
+  //        AUTH.register(this.form.username,this.form.email,this.form.password,this.form.conpassword)
+  //       return;
+  //     }
+  //     alert("SUCCESS!! :-)" + JSON.stringify(this.form)); 
+  //   }
   methods:{
      togglePasswordVisibility () {
 			this.passwordVisible = !this.passwordVisible
@@ -96,10 +106,13 @@ export default {
     onSubmit(evt) {
       evt.preventDefault();
       AUTH.login(this.form.email, this.form.password);
-  }
-},
+    },
+      redirect: ('/dashboard')
+  },
 mounted(){
-  this.$http.post('api/users').then(res => console.log(res)).catch(err => console.log(err));
+  // axios.post("http://172.16.32.14:8000/api/customers/1/carts", {id:19,sub_total:1000, sub_quantity:10000
+
+  this.$http.post('api/login').then(res => console.log(res)).catch(err => console.log(err));
   
 }
 }

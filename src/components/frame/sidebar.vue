@@ -1,5 +1,5 @@
 <template>
-  <b-container class="mt-5 pt-5 h-100" fluid >
+  <b-container class="mt-5 pt-5 h-100" fluid  >
     <b-row >
       <b-col lg="2" class="pt-5 side-nav-border">
         <div class="text-center mb-5">
@@ -8,9 +8,9 @@
           <h3>{{message}}</h3>
         </div>
         <b-list-group>
-          <div class="d-flex justify-content-between align-items-center py-2 text " v-for="(item,i) in sidenav" :key="i">
+          <div class="d-flex justify-content-between align-items-center py-2 text  " v-for="(item,i) in sidenav" :key="i">
             <i :class="'fa ' + item.icon"></i>
-            <b-list-group-item :to="item.link" :active="item.link === $router.currentRoute? true:false"  v-text="item.text" class="rounded" active-class="active"></b-list-group-item>
+            <b-list-group-item :to="item.link" :active="item.link === $router.currentRoute? true:false"   v-text="item.text" class="rounded" active-class="active"></b-list-group-item>
           </div>
         </b-list-group>
       </b-col>

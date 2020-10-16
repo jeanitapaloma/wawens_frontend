@@ -31,7 +31,7 @@
         <p class="divider-text">
           <span class="bg-light" style="font-weight:bold;font-size:15px;">OR</span>
         </p>
-        <form>
+        <form @submit.prevent="onSubmit">
           <div class="form-group input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">

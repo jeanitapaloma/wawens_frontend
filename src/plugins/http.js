@@ -1,7 +1,7 @@
 import axios from "axios";
 import Vue from 'vue'
 
-const devInstance = createInstance('http://172.0.0.1:8000');
+const devInstance = createInstance('http://127.0.0.1:8000/');
 // const productionInstance = createInstance("http://localhost:3000"); // will change later
 
 function createInstance(baseURL){
