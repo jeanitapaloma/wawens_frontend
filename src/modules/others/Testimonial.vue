@@ -7,74 +7,73 @@
         <span id="style">TESTIMONIALS</span>
       </h2>
     </div>
-    <!-- CARD Number 1 -->
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-horizontal">
-            <img src="@/assets/P.png" alt="Card image cap" class="img-thumbnail">
-            <div class="card-body">
-              <p class="card-text text-justify">
-                "It's my first time to taste it and it's very delicious,it's not bidli.
-                The texture is good.I'll recommend this to my colleagues.
-                Cravings Satisfied.Thanks to Ube Halaya!!!"Once tasted you'll want it!
-              </p>
-              <p class="card-text1">Jeanita Paloma</p>
+    <b-container class="testimonial-card1-2 mb-3">
+      <b-row cols="2">
+        <b-col>
+          <div class="card">
+            <div class="card-horizontal">
+              <img src="@/assets/P.png" alt="Card image cap" class="img-thumbnail">
+              <div class="card-body">
+                <p class="card-text text-justify">
+                  "It's my first time to taste it and it's very delicious,it's not bidli.
+                  The texture is good.I'll recommend this to my colleagues.
+                  Cravings Satisfied.Thanks to Ube Halaya!!!!"
+                </p>
+                <p class="card-text1">Jeanita Paloma</p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <!-- CARD Number 2 -->
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-horizontal">
-            <img src="@/assets/A.png" alt="Card image cap" class="img-thumbnail">
-            <div class="card-body">
-              <p class="card-text text-justify">
-                "This is the the Ube Halaya that once you taste it, will keep you order all over again and again.
-                NO TO SAWA.You can really taste it's ube pureness.Why not try it now.Why not try it now.You'll 
-                surely look for more."
-              </p>
-              <p class="card-text1">Merry Cris Ajoc</p>
+        </b-col>
+        <b-col>
+          <div class="card">
+            <div class="card-horizontal">
+              <img src="@/assets/A.png" alt="Card image cap" class="img-thumbnail">
+              <div class="card-body">
+                <p class="card-text text-justify">
+                  "This is the the Ube Halaya that once you taste it, will keep you order all over again and again.
+                  NO TO SAWA.You can really taste it's ube pureness.Why not try it now.Why not try it now.
+                  Ube Halaya is the best"
+                </p>
+                <p class="card-text1">Merry Cris Ajoc</p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <!-- CARD NUMBER 3 -->
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-horizontal">
-            <img src="@/assets/R.png" alt="Card image cap" class="img-thumbnail">
-            <div class="card-body">
-              <p class="card-text text-justify">
-                "I am an Ube Lover, and I am really looking for the best ube taste for a long time and Ube
-                Halaya Cebu-Wawen's UBe Halaya is really the BEST EVER.Highly recommended.You must try it guys!"
-              </p>
-              <p class="card-text1">Roselyn Amoc</p>
+        </b-col>
+      </b-row>
+    </b-container>
+    <b-container class="testimonial-card3-4 mb-3">
+      <b-row cols="2">
+        <b-col>
+          <div class="card">
+            <div class="card-horizontal">
+              <img src="@/assets/R.png" alt="Card image cap" class="img-thumbnail">
+              <div class="card-body">
+                <p class="card-text text-justify">
+                  "I am an Ube Lover, and I am really looking for the best ube taste for a long time and Ube
+                  Halaya Cebu-Wawen's UBe Halaya is really the BEST EVER.Highly recommended.You must try it guys!"
+                </p>
+                <p class="card-text1">Roselyn Amoc</p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <br>
-      <!-- CARD NUMBER 4 -->
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-horizontal">
-            <img src="@/assets/D.png" alt="Card image cap" class="img-thumbnail">
-            <div class="card-body">
-              <p class="card-text text-justify">
-                "Got my ube halaya from Wawen's today and successfully used it in my Ube Macapuno Dream Cake!
-                Super satisfied with the texture & taste.
-                ❤️ Their order response and delivery is fast too. Buy now guyz!"
-              </p>
-              <p class="card-text1">Rica Christine Debuayan</p>
+        </b-col>
+        <b-col>
+          <div class="card">
+            <div class="card-horizontal">
+              <img src="@/assets/D.png" alt="Card image cap" class="img-thumbnail">
+              <div class="card-body">
+                <p class="card-text text-justify">
+                  "Got my ube halaya from Wawen's today and successfully used it in my Ube Macapuno Dream Cake!
+                  Super satisfied with the texture & taste.
+                  ❤️ Their order response and delivery is fast too. Buy now guyz!"
+                </p>
+                <p class="card-text1">Rica Christine Debuayan</p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
