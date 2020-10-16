@@ -66,7 +66,7 @@
   </sidebar>
 </template>
 <script>
-import CustomerModal from "../basic/Customer_Modal";
+// import CustomerModal from "../basic/Customer_Modal";
 import sidebar from "../../components/frame/sidebar";
 import CustomerTransactionHistory from "../../modules/basic/CustomerTransactionHistory.vue";
 export default {
