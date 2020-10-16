@@ -15,40 +15,39 @@
               >+ ADD PRODUCT</button>
             </span>
           </p>
+
           <div class="card">
             <div
               class="card-header text-center"
-              style="background-image: linear-gradient(#e5b1fd, #efe0f8);color:darkviolet;font-weight:bold"
+              style="background-image: linear-gradient(#e5b1fd, #efe0f8);color:darkviolet;font-weight:bold;font-size:15px;"
             >UBE HALAYA</div>
             <b-row>
-              <b-col lg="3" v-for="(item,i) in items" :key="i">
-                <div class="card-header text-center" id="card1">{{item.text}}</div>
-                <b-card
-                  :img-src="require(`@/assets/${item.img}`)"
-                  img-alt="Image"
-                  img-top
-                  img-height="150px"
-                  class="mb-5">
-                  <p>Price : {{item.price}}/ {{item.type}}</p>
-                  <!-- <a v-readMore:0="msg"></a> -->
-                  <div>
-                  <button class="button" v-b-toggle.collapse-2>View More</button>
-                  <b-collapse id="collapse-2">
-                    <div class="card card-body">
-                      <p>Ajoc is Beautiful</p>
-                      <div class="row">
-                        <div class="col">
-                          <button class="btn">Update</button>
-                        </div>
-                        <div class="col">
-                          <button class="btn">Remove</button>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="button" v-b-toggle="'collapse-2'">View Less</button>
-                  </b-collapse>
-                  </div>
-                </b-card>
+              <b-col lg="3" v-for="(item,i) in ubeHalaya" :key="i">
+                <ProductCard v-if="item.category == 'Ube Halaya'" :item="item" :id="item.id"></ProductCard>
+              </b-col>
+            </b-row>
+          </div>
+          <br>
+          <div class="card">
+            <div
+              class="card-header text-center"
+              style="background-image: linear-gradient(#e5b1fd, #efe0f8); color:darkviolet; font-weight:bold;font-size:15px;"
+            >UBE CAKE</div>
+            <b-row>
+              <b-col lg="3" v-for="(item,i) in ubeCake" :key="i">
+                <ProductCard v-if="item.category == 'Ube Cake'" :item="item" :id="item.id"></ProductCard>
+              </b-col>
+            </b-row>
+          </div>
+          <br>
+          <div class="card">
+            <div
+              class="card-header text-center"
+              style="background-image: linear-gradient(#e5b1fd, #efe0f8);color:darkviolet;font-weight:bold;font-size:15px;"
+            >UBE UBECHI</div>
+            <b-row>
+              <b-col lg="3" v-for="(item,i) in ubeChi" :key="i">
+                <ProductCard v-if="item.category == 'Ube Ubechi'" :item="item" :id="item.id"></ProductCard>
               </b-col>
             </b-row>
           </div>
@@ -61,48 +60,84 @@
 <script>
 import sidebar from "../../components/frame/sidebar";
 import addProductModal from "../basic/addProduct_Modal";
+import ProductCard from "./ProductCard";
 export default {
   components: {
     sidebar,
-    addProductModal
+    addProductModal,
+    ProductCard
   },
+
   data() {
     return {
       show: false,
-      msg: "All information of the product shall be put here",
-      msg1: "",
       items: [
         {
+          id: 1,
           img: "UbeHalaya1.jpg",
-          text: "Ube Halaya in Square Bottle",
+          text: "Ube Halaya Square Bottle",
           price: " Php 180.00 ",
           type: "pieces",
-          desription: "All product description shall be put here"
+          category: "Ube Halaya",
+          desription:
+            "Ube Halaya is one of the delicious jam created by wawens."
         },
         {
+          id: 2,
           img: "UbeHalaya2.jpg",
           text: "Ube Halaya in Square Box",
           price: " Php 890.00 ",
           type: "pack",
-          desription: "All product description shall be put here"
+          category: "Ube Halaya",
+          desription: "Ube Halaya is very yummy and delicious."
         },
         {
-          img: "UbeHalaya2.jpg",
-          text: "Ube Halaya in rounded bottle",
+          id: 3,
+          img: "cake.png",
+          text: "Ube Cake for our Dreams",
           price: " Php 200.00 ",
           type: "pieces",
-          desription: "All product description shall be put here"
+          category: "Ube Cake",
+          desription:
+            "Made with fresh Ube, this pretty pink and purple cake has a swirl of fresh ube sauce in the cake."
         },
         {
-          img: "UbeHalaya1.jpg",
-          text: "Ube Halaya in rounded bottle",
+          id: 4,
+          img: "cake.png",
+          text: "Ube Cake for our Success",
+          price: " Php 200.00 ",
+          type: "pieces",
+          category: "Ube Cake",
+          desription:
+            "Ube Halaya Cake are decorated with sparkly clear crystal sprinkles and pearl sprinkles. "
+        },
+        {
+          id: 5,
+          img: "wawens.png",
+          text: "Ubechi with care and love",
           price: " Php 100.00 ",
           type: "pieces",
-          desription: "All product description shall be put here"
+          category: "Ube Ubechi",
+          desription:
+            "Ube Ubechi is one of the popular ubechi in the philippines,with mixture of ube and cheeze."
+        },
+        {
+          id: 6,
+          img: "wawens.png",
+          text: "Ubechi with Cheeze",
+          price: " Php 100.00 ",
+          type: "pieces",
+          category: "Ube Ubechi",
+          desription:
+            "Ube Ubechi is one of the popular ubechi in the philippines,with mixture of ube and cheeze."
         }
-      ]
+      ],
+      ubeHalaya: [],
+      ubeCake: [],
+      ubeChi: []
     };
   },
+  computed: {},
   methods: {
     openModal() {
       this.$refs.childModal.shown();
@@ -110,17 +145,32 @@ export default {
   },
   mounted() {
     console.log("sadas");
+
+    let ubeHalaya = this.items.filter(item => {
+      return item.category == "Ube Halaya";
+    });
+    this.ubeHalaya = ubeHalaya;
+
+    let ubeCake = this.items.filter(item => {
+      return item.category == "Ube Cake";
+    });
+    this.ubeCake = ubeCake;
+
+    let ubeChi = this.items.filter(item => {
+      return item.category == "Ube Ubechi";
+    });
+    this.ubeChi = ubeChi;
   }
 };
 </script>
-<style>
+<style scoped>
 .pProducts {
   color: purple;
   font-weight: bold;
   font-family: Segoe Script;
   font-style: italic;
-  font-size: 20px;
-  /* margin-top: 1%; */
+  font-size: 22px;
+  margin-top: 1%;
 }
 #card1 {
   color: darkviolet;
@@ -177,7 +227,6 @@ pre {
 p {
   color: darkviolet;
   text-align: center;
+  font-weight: bold;
 }
 </style>
-
-

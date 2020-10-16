@@ -7,7 +7,7 @@
           style="text-align: center;font-style:Segoe Script;font-size: 28px;color:black"
         >WAWEN's UBE HALAYA</h3>
         <span>
-          <p style="text-align: center; color:black">Sign in to your Account.</p>
+          <p style="text-align: center; color:black ; font-size:15px; font-weight:bold">Sign in to your Account.</p>
         </span>
         <div class="row">
           <div class="col">
@@ -15,14 +15,14 @@
               <b-col cols="6" sm="6">
                 <a href class="btn btn-block btn-social btn-google">
                   <strong>
-                    <i class="fa fa-google" style="font-size:30px">&nbsp;</i> Sign Up with Google
+                    <i class="fa fa-google-plus-square" style="font-size:30px;color:red">&nbsp;&nbsp;</i> Sign Up with Google
                   </strong>
                 </a>
               </b-col>
               <b-col cols="6" sm="6">
                 <a href class="btn btn-block btn-social btn-facebook">
                   <strong>
-                    <i class="fa fa-facebook-official" style="font-size:30px;color:blue">&nbsp;</i> Sign Up with Facebook
+                    <i class="fa fa-facebook-official" style="font-size:29px;color:blue">&nbsp;&nbsp;</i> Sign Up with Facebook
                   </strong>
                 </a>
               </b-col>
@@ -30,7 +30,7 @@
           </div>
         </div>
         <p class="divider-text">
-          <span class="bg-light">OR</span>
+          <span class="bg-light" style="font-weight:bold;font-size:15px;">OR</span>
         </p>
         <form>
           <div class="form-group input-group">
@@ -49,23 +49,25 @@
               </span>
             </div>
             <input
-              name="password"
-              type="password"
+              :type="passwordVisible ? 'text' : 'password'"
               v-model="form.password"
               class="form-control"
               placeholder="Password"
               required
             >
-            <span class="input-group-text">
+            <!-- <span class="input-group-text">
               <i class="fa fa-eye" style="font-size:18px"></i>
+            </span> -->
+             <span class="input-group-text"  @click='togglePasswordVisibility' :arial-label='passwordVisible ? "Hide password" : "Show password"'>
+              <i :class="['fa' , passwordVisible ? 'fa-eye-slash':'fa-eye' ]"></i>
             </span>
           </div>
           <button @submit="onSubmit" name="submit">LOGIN</button>
           <br>
-          <p class="text-center">
+          <p style="text-align: center; color:black ; font-size:15px;">
             <a href>Forgot Password?</a>
             <br>Don't have yet an account?
-            <a v-on:click="redirect('/register')">Sign Up</a>
+            <a href="register">Sign Up</a>
           </p>
 
           <br>
@@ -85,6 +87,7 @@ export default {
       email: "",
       password: "",
     },
+    passwordVisible: false,
   }),
 
   //  methods:{
@@ -97,6 +100,9 @@ export default {
   //     alert("SUCCESS!! :-)" + JSON.stringify(this.form)); 
   //   }
   methods:{
+     togglePasswordVisibility () {
+			this.passwordVisible = !this.passwordVisible
+    },
     onSubmit(evt) {
       evt.preventDefault();
       AUTH.login(this.form.email, this.form.password);
@@ -112,10 +118,14 @@ mounted(){
 }
 </script>
 
-<style>
-.fa-eye-slash {
-  font-size: 20px;
+<style scoped>
+.fa:hover {
+  cursor: pointer;
 }
+.fa{
+  font-size:18px;
+}
+
 .divider-text {
   position: relative;
   text-align: center;
@@ -138,16 +148,15 @@ mounted(){
   left: 0;
   z-index: 1;
 }
-
 .btn-facebook {
   font-family: "Muli-Regular";
-  color: #333;
-  border: 1px solid darkviolet;
+  color: black;
+  border: 2px solid blueviolet;
 }
 .btn-google {
   font-family: "Muli-Regular";
-  color: #333;
-  border: 1px solid darkviolet;
+  color: black;
+  border: 2px solid blueviolet;
 }
 strong {
   font-size: 18px;
@@ -168,7 +177,7 @@ button {
 
 .form-control {
   border: 1px solid darkviolet;
-  width: 150%;
+  width: 20%;
   height: 40px;
   padding: 0 10px;
   font-family: "Muli-Bold";

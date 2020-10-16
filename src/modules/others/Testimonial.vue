@@ -78,7 +78,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .img-thumbnail {
   height: 150px;
   width: 150px;
@@ -92,7 +92,6 @@
   text-shadow: 2px 2px 4px violet;
   font-family: "Muli-Bold";
   font-size: 30px;
-  margin-top: 2%;
 }
 .card {
   border-color: darkviolet;

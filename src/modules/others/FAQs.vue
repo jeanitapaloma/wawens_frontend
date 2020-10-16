@@ -39,7 +39,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
 #form{
   height: 50px;
   font-size: 16px;

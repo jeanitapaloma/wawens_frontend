@@ -40,7 +40,7 @@
     </div>
   </div>
 </template>
-<style>
+<style scoped>
 .footer {
   background: transparent;
   box-shadow: transparent;
