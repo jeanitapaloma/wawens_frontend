@@ -6,7 +6,7 @@
           style="text-align: center;font-style:Segoe Script;font-size: 28px;color:black"
         >WAWEN's UBE HALAYA</h3>
         <span>
-          <p style="text-align: center; color:black ; font-size:15px;">Create your Account.</p>
+          <p style="text-align: center; color:black; font-size:15px;font-weight:bold;">Create your Account.</p>
         </span>
         <div class="row">
           <div class="col">
@@ -14,14 +14,14 @@
               <b-col cols="6" sm="6">
                 <a href class="btn btn-block btn-social btn-google">
                   <strong>
-                    <i class="fa fa-google" style="font-size:30px">&nbsp;</i> Sign Up with Google
+                    <i class="fa fa-google-plus-square" style="font-size:30px;color:red;">&nbsp;</i> Sign Up with Google
                   </strong>
                 </a>
               </b-col>
               <b-col cols="6" sm="6">
                 <a href class="btn btn-block btn-social btn-facebook">
                   <strong>
-                    <i class="fa fa-facebook-official" style="font-size:30px;color:blue">&nbsp;</i> Sign Up with Facebook
+                    <i class="fa fa-facebook-official" style="font-size:29px;color:blue">&nbsp;</i> Sign Up with Facebook
                   </strong>
                 </a>
               </b-col>
@@ -29,13 +29,13 @@
           </div>
         </div>
         <p class="divider-text">
-          <span class="bg-light">OR</span>
+          <span class="bg-light" style="font-weight:bold;font-size:15px;">OR</span>
         </p>
-        <form>
+        <form @submit.prevent="onSubmit">
           <div class="form-group input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">
-                <i class="fa fa-user" style="font-size:20px"></i>
+                <i class="fa fa-user-circle" style="font-size:20px"></i>
               </span>
             </div>
             <input 
@@ -60,7 +60,7 @@
              class="form-control" 
              id="email"
              placeholder="Email"
-             :class="{ 'is-invalid': submitted && $v.mine.email.$error }" 
+             :class="{ 'is-invalid': submitted && $v.form.email.$error }" 
              >
              <div v-if="submitted && $v.form.email.$error" class="invalid-feedback">
             <span v-if="!$v.form.email.required">Email is required</span>
@@ -78,14 +78,13 @@
               id="password"
               class="form-control"
               placeholder="Password"
-              :class="{ 'is-invalid': submitted && $v.mine.password.$error }"
+              :class="{ 'is-invalid': submitted && $v.form.password.$error }"
               :type="passwordVisible ? 'text' : 'password'"
             >
-            <!-- <span class="input-group-text">
-              <i class="fa fa-eye" style="font-size:18px"></i>
-            </span> -->
-            <span class="visibility" tabindex='-1' @click='togglePasswordVisibility' :arial-label='passwordVisible ? "Hide password" : "Show password"'>
-              <i class="material-icons">{{ passwordVisible ? "hide" : "show" }}</i>
+           
+            <span class="input-group-text"  @click='togglePasswordVisibility' :arial-label='passwordVisible ? "Hide password" : "Show password"'>
+              <i :class="['fa' , passwordVisible ? 'fa-eye-slash':'fa-eye' ]"></i>
+              <!-- <i class="fa fa-fw fa-eye field-icon " style="font-size:18px">{{ passwordVisible ? hide : show }}</i> -->
             </span>
 
               <div v-if="submitted && $v.form.password.$error" class="invalid-feedback">
@@ -100,16 +99,18 @@
               </span>
             </div>
             <input
-              type="password"
               id="conpassword"
               v-model="form.conpassword"
               class="form-control"
               placeholder="Confirm Password"
-              :class="{ 'is-invalid': submitted && $v.mine.conpassword.$error }"
-            >
-            <!-- <span class="input-group-text">
-              <i class="fa fa-eye" style="font-size:18px"></i>
-            </span> -->
+              :type="conpasswordVisible ? 'text' : 'password'"
+              :class="{ 'is-invalid': submitted && $v.form.conpassword.$error }"
+              >
+            <span class="input-group-text"  @click='togglePasswordVisibility1' :arial-label='conpasswordVisible ? "Hide conpassword" : "Show conpassword"'>
+              <!-- <i class="fa fa-eye " style="font-size:18px">{{ conpasswordVisible ? hide : show }}</i> -->
+              <i :class="['fa' , conpasswordVisible ? 'fa-eye-slash':'fa-eye' ]"></i>
+            </span>
+          
             <div v-if="submitted && $v.form.conpassword.$error" class="invalid-feedback">
           <span v-if="!$v.form.conpassword.required">Confirm Password is required</span>
           <span v-else-if="!$v.form.conpassword.sameAsPassword">Passwords must match</span>
@@ -117,16 +118,16 @@
           </div>
           <button @submit="onSubmit">SIGN UP</button><br>
           <center>
-            <p style="color:black ; font-size:12px;">
+            <p style="color:black ; font-size:15px;">
               By clicking Sign Up, you agree to our
               <a
                 href="#"
               >Terms & Conditions</a>
             </p>
             <hr style="width:60%;text-align:center;height:px;background-color:black;">
-            <p style="color:black ; font-size:12px;">
+            <p style="text-align: center; color:black ; font-size:15px;">
               Already have an account?
-              <a href>Login here</a>
+              <a href="login">Login here</a>
             </p>
             <div>
             </div>
@@ -149,6 +150,7 @@ export default {
       conpassword: ""
     },
     passwordVisible: false,
+    conpasswordVisible: false,
     submitted: false
   }),
   validations: {
@@ -173,6 +175,9 @@ export default {
     togglePasswordVisibility () {
 			this.passwordVisible = !this.passwordVisible
     },
+    togglePasswordVisibility1 () {
+			this.conpasswordVisible = !this.conpasswordVisible
+    },
     onSubmit(evt) {
       evt.preventDefault();
       this.submitted = true;
@@ -188,9 +193,13 @@ export default {
 </script>
 
 <style scoped>
-.fa-eye-slash {
-  font-size: 20px;
+.fa:hover {
+  cursor: pointer;
 }
+.fa{
+  font-size:18px;
+}
+
 .divider-text {
   position: relative;
   text-align: center;
@@ -216,13 +225,13 @@ export default {
 
 .btn-facebook {
   font-family: "Muli-Regular";
-  color: #333;
-  border: 1px solid darkviolet;
+  color: black;
+  border: 2px solid blueviolet;
 }
 .btn-google {
   font-family: "Muli-Regular";
-  color: #333;
-  border: 1px solid darkviolet;
+  color: black;
+  border: 2px solid blueviolet;
 }
 strong {
   font-size: 18px;
@@ -281,8 +290,6 @@ i {
     padding-top: 0;
     padding-bottom: 0;
   }
-p{
-  font-size: 12px;
-}
+
 }
 </style>

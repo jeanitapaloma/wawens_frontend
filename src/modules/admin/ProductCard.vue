@@ -1,7 +1,7 @@
   <template>
   <div>
     <b-col>
-      <div class="card-header text-center" id="card1" style="font-weight:bold">{{item.text}}</div>
+      <div class="card-header text-center" id="card1" style="font-weight:bold;font-size:15px;">{{item.text}}</div>
       <b-card  
         :img-src="require(`@/assets/${item.img}`)"
         img-alt="Image"
@@ -9,22 +9,22 @@
         img-height="150px"
         class="mb-5"
       >
-        <p style="color:darkviolet;">Price : {{item.price}}/ {{item.type}}</p>
+        <p style="color:darkviolet;font-size:12px;">Price : {{item.price}}/ {{item.type}}</p>
         <div>
-          <button v-show="show" class="button" v-b-toggle="'collapse-' + (id +1)" >View More</button>
+          <button v-show="show" class="button" v-b-toggle="'collapse-' + (id +1)" style="color:white;font-size:12px;">View More</button>
           <b-collapse :id="`collapse-${id+1}`" >
             <div class="card card-body">
               <p>{{item.desription}}</p>
               <div class="row">
                 <div class="col">
-                  <button class="btn" @click="update">Update</button>
+                  <button class="btn" @click="update" style="font-size:10px;font-weight:bold;">UPDATE</button>
                 </div>
                 <div class="col">
-                  <button class="btn" @click="showAlert">Remove</button>
+                  <button class="btn" @click="showAlert" style="font-size:10px;font-weight:bold;">REMOVE</button>
                 </div>
               </div>
             </div>
-            <button  class="button" v-b-toggle="'collapse-' + (id +1)">View Less</button>
+            <button  class="button" v-b-toggle="'collapse-' + (id +1)" style="color:white;font-size:12px;">View Less</button>
           </b-collapse>
         </div>
       </b-card>
@@ -41,7 +41,8 @@ export default {
   },
   props: ["item","id"],
   data: () => ({
-    show:true
+    show:true,
+
   }),
   methods: {
     showAlert() {
@@ -68,14 +69,7 @@ export default {
 };
 </script>
 <style scoped>
-.pProducts {
-  color: purple;
-  font-weight: bold;
-  font-family: Segoe Script;
-  font-style: italic;
-  font-size: 20px;
-  margin-top: 1%;
-}
+
 #card1 {
   color: darkviolet;
 }

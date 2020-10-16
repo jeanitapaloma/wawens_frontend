@@ -2,6 +2,7 @@
   <div>
     <div>
       <b-modal
+        hide-backdrop content-class="shadow" 
         class="modal fade text-center"
         id="addProduct"
         role="dialog"
@@ -16,79 +17,83 @@
         </strong>
         <div class="row">
           <div class="col">
-            <div class="form-group">
+            <div class="form-group"  style="font-size:13px;">
               <label type="text">
                 <span style="color:red;">*</span>Name of the Product:
               </label>
               <input class="form-control" id="name">
             </div>
             <div class="form-group">
-              <label type="text">
+              <label type="text"   style="font-size:13px;">
                 <span style="color:red;">*</span>Category:
                 <span>
                   <i
                     class="fa fa-plus-square-o"
-                    style="font-size:18px;margin-left:150px;color:darkviolet;"
+                    style="font-size:18px;margin-left:138px;color:darkviolet;"
                     v-on:click="swap"
+                    v-on:submit.prevent="addNewTodo"
                   ></i>
                 </span>
               </label>
 
               <b-form-input
+                id="addCategory"
                 class="form-control"
                 v-show="show"
                 placeholder="Type new category here.."
               ></b-form-input>
 
-              <!-- fa fa-calendar-plus-o -->
-              <select v-show="!show" id="inputState" class="form-control">
+              <b-form-select
+                class="form-control"
+                v-show="!show"
+                v-model="selected"
+                :options="options"
+                style="font-size:12px; color:black;"
+              >
+              <template v-slot:first>
+                <b-form-select-option :value="null" disabled style="font-size:12px; color:black;">-- Please select your option --</b-form-select-option>
+              </template>
+              </b-form-select>
+              <!-- <select v-show="!show" id="inputState" class="form-control">
                 <option selected>Ube Halaya</option>
                 <option>Ube Cake</option>
                 <option>Ube Ubechi</option>
-              </select>
+              </select>-->
             </div>
             <div class="row">
               <div class="col">
-                <label type="text">
+                <label type="text"  style="font-size:13px;">
                   <span style="color:red;">*</span>Price:
                 </label>
                 <input class="form-control" id="name">
               </div>
-              <div class="col">
-                <label type="text">
+              <div class="col"> 
+                <label type="text"  style="font-size:13px;">
                   <span style="color:red;">*</span>Per:
                 </label>
                 <input class="form-control" id="name">
               </div>
             </div>
             <br>
-            <div class="form-group">
-              <label type="text">
-                  <span style="color:red;">*</span>Images:
-                </label>
-              <div class="input-group">
-                <input type="text" class="form-control1" >
-                <div class="input-group-btn">
-                  <button  type="file" id="file" ref="file" v-on:change="handleFileUpload()">
-                   Upload Image
-                  </button>
-                </div>
-              </div>
-              <!-- <label type="text">
+            <div class="form-group" >
+              <label type="text"  style="font-size:13px;">
                 <span style="color:red;">*</span>Images:
               </label>
-              <input class="form-control" id="form-control">
-              <div class="input-group-btn">
-                <button>
-                    <i class="fa fa-file-image-o" style="height: calc(2em + 0.75rem + 2px);"></i>
-                </button>
-              </div>-->
-              <!-- <input type="file" id="file" ref="file" placeholder="Choose a file..." v-on:change="handleFileUpload()"/> -->
-              <!-- <b-form-file multiple :file-name-formatter="formatNames" class="form-control"></b-form-file> -->
+              <div class="input-group">
+                <input type="text" class="form-control1">
+                <div class="input-group-btn">
+                  <button
+                    type="file"
+                    id="file"
+                    ref="file"
+                    v-on:change="handleFileUpload()"
+                  >Upload Image</button>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col">
-            <label type="text">
+            <label type="text"  style="font-size:13px;">
               <span style="color:red;">*</span>Descriptions:
             </label>
             <br>
@@ -107,20 +112,30 @@
 export default {
   data() {
     return {
-      show: true
+      show: true,
+      selected: null,
+      options: [
+        { id: 1, text: "Ube Halaya" },
+        { id: 2, text: "Ube Ubechi" },
+        { id: 3, text: "Ube Cake" }
+      ]
     };
   },
   methods: {
+    addNewTodo: function() {
+      this.options.push({
+        id: this.selected++,
+        text: this.selected.text
+      });
+      this.selected = "";
+    },
+
     shown() {
       this.$bvModal.show("addProduct");
     },
     swap() {
       this.show = false;
-    },
-    formatNames(files) {
-      return files.length === 1
-        ? files[0].name
-        : `${files.length} files selected`;
+      this.addCategory;
     },
     handleFileUpload() {
       this.file = this.$refs.file.files[0];
@@ -129,21 +144,15 @@ export default {
 };
 </script>
 <style scoped>
-.pProducts {
-  color: purple;
-  font-weight: bold;
-  font-family: Segoe Script;
-  font-style: italic;
-  font-size: 20px;
-  /* margin-top: 1%; */
-}
-#file{
+
+#file {
   background: lightgrey;
   height: calc(2em + 0.75rem + 2px);
-  min-width:  75px;
+  min-width: 75px;
   font-size: 1rem;
   color: darkviolet;
-  border:1px solid darkviolet;
+  border: 1px solid darkviolet;
+  font-weight:bold;
 }
 .btn {
   background: transparent;
@@ -153,6 +162,7 @@ export default {
   color: darkviolet;
   height: calc(2.5em + 0.75rem + 2px);
   border: 1px solid darkviolet;
+  font-weight:bold;
 }
 .btn1 {
   background: #bb6bd9;
@@ -172,6 +182,6 @@ export default {
 .form-control1 {
   border: 1px solid darkviolet;
   height: calc(2em + 0.75rem + 2px);
-  width:  150px;
+  width: 150px;
 }
 </style>

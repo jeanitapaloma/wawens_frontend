@@ -24,7 +24,7 @@
               </b-col>
               <b-col cols="4">
                 <div class="col">
-                  <div class="box-info">EMAIL:</div>
+                  <div class="box-info" >EMAIL</div>
                   <br>
                   <div class="box-info">FIRTS NAME:</div>
                   <br>
@@ -54,15 +54,13 @@
 export default {
   data() {
     return {
-      info:{
-        // email,
-        // fname,
-        // lname,
-        // mname,
-        // gender,
-        // contact,
-        // address
-      }
+      // emai:this.email,
+      // firstname:this.firstname,
+      // lastname:this.lastname,
+      // middlename:this.middlename,
+      // gender:this.gender,
+      // contact:this.contact,
+      // address:this.address     
     };
   },
   methods: {

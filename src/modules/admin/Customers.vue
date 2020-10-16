@@ -61,12 +61,12 @@
             <CustomerTransactionHistory/>
           </div>
         </div>
-        <!-- History Modal End -->
       </div>
     </div>
   </sidebar>
 </template>
 <script>
+import CustomerModal from "../basic/Customer_Modal";
 import sidebar from "../../components/frame/sidebar";
 import CustomerTransactionHistory from "../../modules/basic/CustomerTransactionHistory.vue";
 export default {
@@ -100,10 +100,16 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    customerModal() {
+      this.$refs.Customermodal.shown();
+    }
   }
 };
 </script>
 <style scoped>
+
 .dropdown-toggle {
   cursor: pointer;
 }
@@ -120,13 +126,13 @@ a {
   position: absolute;
   top: 100%;
   display: none;
-  width: 100%;
+  width: 102%;
   font-size: 1.5rem;
-  color: purple;
+  color: blueviolet;
   text-align: center;
   list-style: none;
   background-color: violet;
-  margin-left: -35%;
+  margin-left: -27%;
   margin-top: 3.5%;
 }
 .dropdown-menu:hover {

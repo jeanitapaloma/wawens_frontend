@@ -19,8 +19,8 @@
           <div class="card">
             <div
               class="card-header text-center"
-              style="background-image: linear-gradient(#e5b1fd, #efe0f8);color:darkviolet;font-weight:bold"
-            >Ube Halaya</div>
+              style="background-image: linear-gradient(#e5b1fd, #efe0f8);color:darkviolet;font-weight:bold;font-size:15px;"
+            >UBE HALAYA</div>
             <b-row>
               <b-col lg="3" v-for="(item,i) in ubeHalaya" :key="i">
                 <ProductCard v-if="item.category == 'Ube Halaya'" :item="item" :id="item.id"></ProductCard>
@@ -31,8 +31,8 @@
           <div class="card">
             <div
               class="card-header text-center"
-              style="background-image: linear-gradient(#e5b1fd, #efe0f8); color:darkviolet; font-weight:bold"
-            >Ube Cake</div>
+              style="background-image: linear-gradient(#e5b1fd, #efe0f8); color:darkviolet; font-weight:bold;font-size:15px;"
+            >UBE CAKE</div>
             <b-row>
               <b-col lg="3" v-for="(item,i) in ubeCake" :key="i">
                 <ProductCard v-if="item.category == 'Ube Cake'" :item="item" :id="item.id"></ProductCard>
@@ -43,8 +43,8 @@
           <div class="card">
             <div
               class="card-header text-center"
-              style="background-image: linear-gradient(#e5b1fd, #efe0f8);color:darkviolet;font-weight:bold"
-            >Ube Ubechi</div>
+              style="background-image: linear-gradient(#e5b1fd, #efe0f8);color:darkviolet;font-weight:bold;font-size:15px;"
+            >UBE UBECHI</div>
             <b-row>
               <b-col lg="3" v-for="(item,i) in ubeChi" :key="i">
                 <ProductCard v-if="item.category == 'Ube Ubechi'" :item="item" :id="item.id"></ProductCard>
@@ -75,7 +75,7 @@ export default {
         {
           id: 1,
           img: "UbeHalaya1.jpg",
-          text: "Ube Halaya in Square Bottle",
+          text: "Ube Halaya Square Bottle",
           price: " Php 180.00 ",
           type: "pieces",
           category: "Ube Halaya",
@@ -114,7 +114,7 @@ export default {
         {
           id: 5,
           img: "wawens.png",
-          text: "Ubechi with tender care and love",
+          text: "Ubechi with care and love",
           price: " Php 100.00 ",
           type: "pieces",
           category: "Ube Ubechi",
@@ -169,7 +169,7 @@ export default {
   font-weight: bold;
   font-family: Segoe Script;
   font-style: italic;
-  font-size: 20px;
+  font-size: 22px;
   margin-top: 1%;
 }
 #card1 {

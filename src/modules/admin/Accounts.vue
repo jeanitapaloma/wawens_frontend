@@ -6,7 +6,9 @@
           <p class="d-flex justify-content-between porder">Account Management</p>
         </div>
         <div>
-          <b-table bordered hover :items="items" :fields="fields" head-variant="light">
+          <b-table-lite class ="table table-purple table-bordered" bordered hover  :items="items" thead-class="thtable bg-primary" :fields="fields">
+            <template v-slot:header style="color:darkviolet">
+            </template>
             <template v-slot:cell(ACTIONS)>
               <i
                 class="fa fa-eye"
@@ -26,11 +28,11 @@
             <template v-slot:cell(TYPE)>
               <div>
                 <div>
-                  <b-form-select v-model="selected" :options="options" ></b-form-select>
+                  <b-form-select v-model="selected" :options="options" :id="options.id"></b-form-select>
                 </div>
               </div>
             </template>
-          </b-table>
+          </b-table-lite>
         </div>
       </b-container>
     </sidebar>
@@ -49,12 +51,20 @@ export default {
   data() {
     return {
       show: false,
-      selected: "ADMIN",
+      selected: null,
       options: [
-        { value: "ADMIN", text: "ADMIN" },
-        { value: "CUSTOMER", text: "CUSTOMER" }
+        { id: null, text: '--SELECT--', disabled: true } ,
+        { id: 2, text: "ADMIN" },
+        { id: 3, text: "CUSTOMER" }
       ],
-      fields: ["DATE", "USERNAME", "EMAIL", "TYPE", "ACTIONS"],
+      fields: [
+       <span style="color:red">DATE</span>,
+        "DATE",
+        "USERNAME", 
+        "EMAIL", 
+        "TYPE", 
+        "ACTIONS"
+        ],
       items: [
         {
           isActive: false,
@@ -151,20 +161,19 @@ export default {
   font-weight: bold;
   font-family: Segoe Script;
   font-style: italic;
-  font-size: 20px;
+  font-size: 24px;
   /* margin-top: 1%; */
 }
-th {
+.thtable {
   border: 2px solid darkviolet;
   text-align: center;
-  font-weight: bold;
-  font-size: 20px;
-  color: darkviolet !important;
+  /* font-weight: bold; */
+  font-size: 10px;
+  color: darkviolet ;
 }
 .table {
-  margin-bottom: 1rem;
   font-size: 13px;
-  /* border: 1px solid darkviolet; */
+  border: 1px solid darkviolet;
   text-align: center;
 }
 </style>
