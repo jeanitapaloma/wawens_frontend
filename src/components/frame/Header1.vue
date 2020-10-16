@@ -23,15 +23,16 @@
               <b-dropdown-item class="drpd" to="cake">Ube Cake</b-dropdown-item>
             </b-nav-item-dropdown>
 
-            <b-nav-item to="faq" style="padding:5px;">FAQs</b-nav-item>
+            <b-nav-item to="cart">
+            </b-nav-item>
             <button class="dropbtn">
               <i class="fa fa-shopping-cart" style="font-size:28px"></i>
             </button>
             <div class="dropdown" style="float:right;">
               <button class="dropbtn">
-                <i class="fa fa-user" style="font-size:28px"></i>
+                <i class="fa fa-user" style="font-size:28px" ></i>
               </button>
-              <div class="dropdown-content">
+              <div class="dropdown-content dropdown-menu-right" no caret>
                 <button class="dropdown-item">Profile</button>
                 <button class="dropdown-item">Order Status</button>
                 <button class="dropdown-item">Logout</button>
@@ -49,9 +50,11 @@
   height: 60px;
   width: 100%;
   border-radius: 0px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
-
+.fa:hover{
+  cursor:pointer;
+}
 #navbar-nav {
   color: black;
   font-size: 18px;

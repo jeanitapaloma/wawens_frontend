@@ -17,6 +17,7 @@ export default {
             password: password,
             conpassword: conpassword, 
         })
+        
         ROUTER.push('/dashboard')
     },
 

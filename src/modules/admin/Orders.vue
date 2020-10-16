@@ -25,7 +25,7 @@
         <div>
           <b-table class="tabledata" :items="filterProducts" :fields="fields">
             <template v-slot:cell(ACTIONS)>
-              <i
+              <i  
                 class="fa fa-eye"
                 style="font-size:20px;"
                 data-toggle="modal"
