@@ -24,10 +24,10 @@
             <div class="row">
               <div class="col">
                   <h2 class="text-left ml-3"><br><u> Click and settle them now! </u></h2>
-                <p class="text-center mt-5"
+                <small class="text-center mt-5"
                 style="font-size:16px" 
-                >* The following are the total products quantity made and the pending and confirmed products delivered</p>
-              <table class="table table-purple rounded-lg">
+                > <br>* The following are the total products quantity made and the pending and confirmed products delivered</small>
+              <table class="table table-purple rounded-lg mt-5">
                 <thead>
                   <tr>
                     <th class="thtable" scope="col">PRODUCTS</th>
@@ -54,7 +54,7 @@
           </div>
               <div class="row">
                   <div class="col">
-                  <p class="text-center font-weight-bold" style="font-size:27px; color:darkviolet; font-family: Segoe Script;">
+                  <p class="text-center font-weight-bold " style="font-size:27px; color:darkviolet; font-family: Segoe Script;">
                   <br>PRODUCT SALES SUMMARY</p>
                   <p class="text-center font-weight-bolder " style="font-size:20px;">UBE HALAYA PRODUCTS </p>
                   <bar></bar>
@@ -76,7 +76,7 @@
             
           <!-- TOP TEN BEST BUYERS -->
             <div class="col">
-              <b-table-lite class="table table-purple table-bordered mt-5" thead-class="thtable text-black"  :items="items" >
+              <b-table-lite class="table table-purple table-bordered mt-5" thead-class="thtable text-black  "  :items="items" >
                 
               </b-table-lite>                
               </div>
