@@ -26,7 +26,11 @@
                   <h2 class="text-left ml-3"><br><u> Click and settle them now! </u></h2>
                 <small class="text-center mt-5"
                 style="font-size:16px" 
-                > <br>* The following are the total products quantity made and the pending and confirmed products delivered</small>
+                > <br>* The following are the total Ube halaya products that pending and need to confirmed.</small>
+              
+              <p class="text-center font-weight-bold " style="font-size:20px; color:black;">
+                  <br> PENDING UBE HALAYA PRODUCTS QUANTITY</p>
+
               <table class="table table-purple rounded-lg mt-5">
                 <thead>
                   <tr>
@@ -70,7 +74,7 @@
                   <p class="text-center font-weight-bold" style="font-size:20px; color:darkviolet">
                   <br>PRODUCT SOLD OUT CHART (Category)
                 </p>
-                <p class="text-center font-weight-bold " style="font-size:20px;">TOTAL: 120,000 </p>
+                <p class="text-center font-weight-bold display-4 ">TOTAL: 120,000 </p>
                 <piegraph></piegraph>
                 </div>  
             
@@ -169,10 +173,7 @@ td{
   color: white;
   background-color: darkviolet;
 }
-
 .b-table{
   font-size: 14px ;
-
 }
-
 </style>
