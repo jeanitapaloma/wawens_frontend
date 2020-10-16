@@ -85,7 +85,7 @@
               <i class="fa fa-eye" style="font-size:18px"></i>
             </span> -->
             <span class="visibility" tabindex='-1' @click='togglePasswordVisibility' :arial-label='passwordVisible ? "Hide password" : "Show password"'>
-              <i class="material-icons">{{ passwordVisible ? "hide" : "show" }}</i>
+              <i :class="['fa' , passwordVisible ? 'fa-eye' : 'fa-eye-slash']"></i>
             </span>
 
               <div v-if="submitted && $v.form.password.$error" class="invalid-feedback">

@@ -17,10 +17,21 @@
 
 <script>
 import sidebar from "../../components/frame/sidebar";
+import axios from "axios";
 export default {
   components: {
     sidebar
   },
+  mounted(){
+    // axios.post("http://127.0.0.1:8000/api/customers/1/carts", {id:19,sub_total:1000, sub_quantity:10000
+    axios.post("http://127.0.0.1:8000/api/customers/1/carts", {'quantity':"fdsjkafhdj"
+
+    }).then(res => {
+            console.log(res)
+        })
+        .catch(err => console.log(err))
+        
+  }
 };
 </script>
 <style>
