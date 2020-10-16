@@ -234,29 +234,19 @@ import Testimonial from "@/modules/others/Testimonial.vue";
 import Partner from "@/modules/others/Partner.vue";
 import FAQ from "@/modules/others/FAQs.vue";
 import sidebar from "../../components/frame/sidebar";
-import axios from "axios";
 export default {
   components: {
     sidebar,
     Testimonial,
     Partner,
-    FAQ
+    FAQ,
+ 
   },
-<<<<<<< HEAD
-  mounted(){
-    // axios.post("http://127.0.0.1:8000/api/customers/1/carts", {id:19,sub_total:1000, sub_quantity:10000
-    axios.post("http://127.0.0.1:8000/api/customers/1/carts", {'quantity':"fdsjkafhdj"
-
-    }).then(res => {
-            console.log(res)
-        })
-        .catch(err => console.log(err))
-        
-=======
   data: () => ({
     testimonial: true,
     partner: false,
     faqs: false,
+   
     categories: [
       { name: "testimonial", show: true },
       { name: "partner", show: false },
@@ -278,7 +268,6 @@ export default {
     changeTab(index){
       this.index = index
     }
->>>>>>> 9197dc9b7163aa20435d1bc7761c33a41055e597
   }
 };
 </script>
