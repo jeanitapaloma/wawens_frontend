@@ -5,7 +5,7 @@
         WAWEN's UBE HALAYA:
         <span>PARTNERS</span>
       </h1>
-      <p class="tagline">Know your nearest ube halaya source and you can directly buy to them.</p>
+      <p style="font-size: 20px;font-style: italic;">Know your nearest ube halaya source and you can directly buy to them.</p>
     </div>
     <b-tabs>
       <b-tab @click="testEvent(i)"  v-for="(tab,i) in tabs" :key="i" :id="tab.id" :title="tab.title">
@@ -67,16 +67,12 @@ export default {
 };
 </script>
 
-<style scoped>
-.font-weight-bolder {
+<style >
+#partner1 {
   color: darkviolet;
   text-shadow: 2px violet;
   font-family: "Muli-Bold";
   font-size: 40px;
-}
-.tagline {
-  font-size: 20px;
-  font-style: italic;
 }
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
     font-size: 20px;
