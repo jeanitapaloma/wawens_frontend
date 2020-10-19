@@ -12,25 +12,29 @@
           <div class="container">
             <div class="row">
               <div class="col" lg-6>
-              <div class="border  bg-light shadow-sm pt-0 m-0 rounded-lg" >
+                <p class="text-center font-weight-bold" style="font-size:27px; color:darkviolet">
+                  <br>PRODUCT SOLD OUT CHART
+                </p>
+                <p class="text-center font-weight-bold " style="font-size:20px;">TOTAL: 120,000 </p>
+                <piegraph></piegraph>
+              
+            <div class="row">
+              <div class="col">
+                 <p class="text-center font-weight-bold" style="font-size:27px; color:darkviolet">
+                  <br>PENDING & CONFIRMED PRODUCTS
+                </p>
+                <div class="border  bg-light shadow-sm pt-0 m-0 rounded-lg" >
               <h1><span class="badge badge-secondary text-center text-danger w-50 d"   >PENDING</span>
               <span class="badge badge-secondary text-center text-success w-50">CONFIRMED</span> </h1>
               <div class="row">
                 <div class="col font-weight-bolder text-center display-2">589</div>
                 <div class="col font-weight-bolder text-center display-2">340</div>
               </div>
-            </div>
-              
-            <div class="row">
-              <div class="col">
-                  <h2 class="text-left ml-3"><br><u> Click and settle them now! </u></h2>
-                <small class="text-center mt-5"
+               </div
+               ><h2 class="text-left ml-3"><br><u> Click and settle them now! </u></h2>
+                  <small class="text-center mt-5"
                 style="font-size:16px" 
                 > <br>* The following are the total Ube halaya products that pending and need to confirmed.</small>
-              
-              <p class="text-center font-weight-bold " style="font-size:20px; color:black;">
-                  <br> PENDING UBE HALAYA PRODUCTS QUANTITY</p>
-
               <table class="table table-purple rounded-lg mt-5">
                 <thead>
                   <tr>
@@ -56,36 +60,29 @@
                 </div>           
             </div>
           </div>
-              <div class="row">
+          <div class="row">
                   <div class="col">
-                  <p class="text-center font-weight-bold " style="font-size:27px; color:darkviolet; font-family: Segoe Script;">
+                  <p class="text-center font-weight-bold " style="font-size:27px; color:darkviolet; ">
                   <br>PRODUCT SALES SUMMARY</p>
                   <p class="text-center font-weight-bolder " style="font-size:20px;">UBE HALAYA PRODUCTS </p>
                   <bar></bar>
-                  </div>
-                  </div>
-                  </div>
-                  </div>
+                  
+              <b-table-lite class="table table-purple table-bordered mt-5" thead-class="thtable text-black  "  :items="items" > 
+              </b-table-lite>   
               </div>
-
-          <div class="container">
-            <div class="row">
-              <div class="col" lg-6>
-                  <p class="text-center font-weight-bold" style="font-size:20px; color:darkviolet">
-                  <br>PRODUCT SOLD OUT CHART (Category)
-                </p>
-                <p class="text-center font-weight-bold display-4 ">TOTAL: 120,000 </p>
-                <piegraph></piegraph>
-                </div>  
+                  </div>
+              </div>             
             
-          <!-- TOP TEN BEST BUYERS -->
-            <div class="col">
-              <b-table-lite class="table table-purple table-bordered mt-5" thead-class="thtable text-black  "  :items="items" >
-                
+          </div>
+                  </div>
+                 
+            
+          <!-- <div class="container">
+            <div class="row">
+              <b-table-lite class="table table-purple table-bordered mt-5" thead-class="thtable text-black  "  :items="items" > 
               </b-table-lite>                
               </div>
-            </div>
-          </div>
+          </div> -->
       </b-container>
     </sidebar>
   </div>

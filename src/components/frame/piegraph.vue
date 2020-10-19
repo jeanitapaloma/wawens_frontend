@@ -1,5 +1,5 @@
 <template>
-  <div class="border mt-5 bg-light shadow-sm pt-0 m-0 rounded-lg" style="width:500px">
+  <div class="border mt-0 bg-light shadow-sm pt-0 m-0 rounded-lg" style="width:500px">
     <h1>
        <span class="badge badge-secondary text-center  " style="padding-top: 1.9rem !important;" >All</span>
       <Datepicker></Datepicker>

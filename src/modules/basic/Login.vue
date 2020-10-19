@@ -7,7 +7,7 @@
           style="text-align: center;font-style:Segoe Script;font-size: 28px;color:black"
         >WAWEN's UBE HALAYA</h3>
         <span>
-          <p style="text-align: center; color:black ; font-size:15px; font-weight:bold">Sign in to your Account.</p>
+          <p style="text-align: center; color:black">Sign in to your Account.</p>
         </span>
         <div class="row">
           <div class="col">
@@ -15,14 +15,14 @@
               <b-col cols="6" sm="6">
                 <a href class="btn btn-block btn-social btn-google">
                   <strong>
-                    <i class="fa fa-google-plus-square" style="font-size:30px;color:red">&nbsp;&nbsp;</i> Sign Up with Google
+                    <i class="fa fa-google" style="font-size:30px">&nbsp;</i> Sign Up with Google
                   </strong>
                 </a>
               </b-col>
               <b-col cols="6" sm="6">
                 <a href class="btn btn-block btn-social btn-facebook">
                   <strong>
-                    <i class="fa fa-facebook-official" style="font-size:29px;color:blue">&nbsp;&nbsp;</i> Sign Up with Facebook
+                    <i class="fa fa-facebook-official" style="font-size:30px;color:blue">&nbsp;</i> Sign Up with Facebook
                   </strong>
                 </a>
               </b-col>
@@ -30,9 +30,9 @@
           </div>
         </div>
         <p class="divider-text">
-          <span class="bg-light" style="font-weight:bold;font-size:15px;">OR</span>
+          <span class="bg-light">OR</span>
         </p>
-        <form>
+        <form @submit.prevent="onSubmit">
           <div class="form-group input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">
@@ -40,7 +40,14 @@
               </span>
             </div>
 
-            <input type="email" v-model="form.email" class="form-control" name="email" placeholder="Email" required>
+            <input
+              type="email"
+              v-model="form.email"
+              class="form-control"
+              name="email"
+              placeholder="Email"
+              required
+            >
           </div>
           <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -49,25 +56,23 @@
               </span>
             </div>
             <input
-              :type="passwordVisible ? 'text' : 'password'"
+              name="password"
+              type="password"
               v-model="form.password"
               class="form-control"
               placeholder="Password"
               required
             >
-            <!-- <span class="input-group-text">
+            <span class="input-group-text">
               <i class="fa fa-eye" style="font-size:18px"></i>
-            </span> -->
-             <span class="input-group-text"  @click='togglePasswordVisibility' :arial-label='passwordVisible ? "Hide password" : "Show password"'>
-              <i :class="['fa' , passwordVisible ? 'fa-eye-slash':'fa-eye' ]"></i>
             </span>
           </div>
           <button @submit="onSubmit" name="submit">LOGIN</button>
           <br>
-          <p style="text-align: center; color:black ; font-size:15px;">
+          <p class="text-center">
             <a href>Forgot Password?</a>
             <br>Don't have yet an account?
-            <a href="register">Sign Up</a>
+            <a v-on:click="redirect('/register')">Sign Up</a>
           </p>
 
           <br>
@@ -79,15 +84,15 @@
 
 <script>
 import AUTH from "@/services/auth";
+
 export default {
- data: () => ({
+  data: () => ({
     modal: true,
     auth: AUTH,
-    form:{
+    form: {
       email: "",
-      password: "",
-    },
-    passwordVisible: false,
+      password: ""
+    }
   }),
 
   //  methods:{
@@ -97,35 +102,39 @@ export default {
   //        AUTH.register(this.form.username,this.form.email,this.form.password,this.form.conpassword)
   //       return;
   //     }
-  //     alert("SUCCESS!! :-)" + JSON.stringify(this.form)); 
+  //     alert("SUCCESS!! :-)" + JSON.stringify(this.form));
   //   }
-  methods:{
-     togglePasswordVisibility () {
-			this.passwordVisible = !this.passwordVisible
-    },
+  methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      AUTH.login(this.form.email, this.form.password);
-    },
-      redirect: ('/dashboard')
+      AUTH.login(this.form.email, this.form.password).then(res => {
+        localStorage.setItem('user',JSON.stringify(res.data))
+        
+        if (res.data.account_type == "admin") {
+         this.$router.push({ path: "/dashboard" });
+        } else {
+          this.$router.push({ path: "/product" });
+        }
+      }).catch(err=> {
+        console.log(err)});
+    }
+    // redirect: ('/dashboard')
   },
-mounted(){
-  // axios.post("http://172.16.32.14:8000/api/customers/1/carts", {id:19,sub_total:1000, sub_quantity:10000
+  mounted() {
+    // axios.post("http://172.16.32.14:8000/api/customers/1/carts", {id:19,sub_total:1000, sub_quantity:10000
 
-  this.$http.post('api/login').then(res => console.log(res)).catch(err => console.log(err));
-  
-}
-}
+    // this.$http
+    //   .post("api/login")
+    //   .then(res => console.log(res))
+    //   .catch(err => console.log(err));
+  }
+};
 </script>
 
-<style scoped>
-.fa:hover {
-  cursor: pointer;
+<style>
+.fa-eye-slash {
+  font-size: 20px;
 }
-.fa{
-  font-size:18px;
-}
-
 .divider-text {
   position: relative;
   text-align: center;
@@ -148,15 +157,16 @@ mounted(){
   left: 0;
   z-index: 1;
 }
+
 .btn-facebook {
   font-family: "Muli-Regular";
-  color: black;
-  border: 2px solid blueviolet;
+  color: #333;
+  border: 1px solid darkviolet;
 }
 .btn-google {
   font-family: "Muli-Regular";
-  color: black;
-  border: 2px solid blueviolet;
+  color: #333;
+  border: 1px solid darkviolet;
 }
 strong {
   font-size: 18px;
@@ -177,7 +187,7 @@ button {
 
 .form-control {
   border: 1px solid darkviolet;
-  width: 20%;
+  width: 150%;
   height: 40px;
   padding: 0 10px;
   font-family: "Muli-Bold";

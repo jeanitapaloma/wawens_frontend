@@ -1,7 +1,11 @@
 <template>
-  <b-container class="mt-5 pt-5 h-100" fluid  >
-    <b-row >
-      <b-col lg="2" class="pt-5 side-nav-border">
+<div class="wrapper"  style="position: -webkit-sticky;
+  position: sticky;
+  top: 0;" >
+  <div class="sidebar p-15">
+  <b-container class="mt-5 pt-5 h-100" fluid >
+    <b-row  >
+      <b-col lg="2" class="pt-5 side-nav-border" >
         <div class="text-center mb-5">
           <h1>ADMIN</h1>
           <i class="fa fa-user-circle-o my-3"></i>
@@ -19,6 +23,8 @@
       </b-col>
     </b-row>
   </b-container>
+  </div>
+  </div>  
 </template>
 <script>
 export default {
@@ -81,6 +87,7 @@ export default {
   text-align: center;
  
 }
+
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;

@@ -25,8 +25,8 @@
                 </b-nav-item-dropdown>
 
                 <b-nav-item to="faq" style="padding:5px;">FAQs</b-nav-item>
-                <b-nav-item to="login" style="padding:5px;">LOGIN</b-nav-item>
-                <b-nav-item to="register" style="padding:5px;">SIGNUP</b-nav-item>
+                <b-nav-item v-show="!currentUser" to="login" style="padding:5px;">LOGIN</b-nav-item>
+                <b-nav-item v-show="!currentUser" to="register" style="padding:5px;">SIGNUP</b-nav-item>
                 <b-nav-item to="cart">
                     <i class="fa fa-shopping-cart" style="font-size:28px"><span v-if="cartNo > 0" class="badge" style="font-size:8px;background-color:red;">{{cartNo}}</span></i>
                 </b-nav-item>
@@ -70,6 +70,11 @@
 <script>
 import ROUTER from '@/router'
 export default {
+    data(){
+        return {
+            user: null
+        }
+    },
     computed: {
         cartNo() {
             var total = 0
@@ -79,6 +84,9 @@ export default {
                 });
             }
             return total
+        },
+        currentUser(){
+            return localStorage.getItem('user')
         }
     },
     methods: {
@@ -87,6 +95,10 @@ export default {
             localStorage.setItem('category', parameter)
             this.refresh()
         },
+    },
+    mounted(){
+       this.user = localStorage.getItem('user')
     }
+    
 }
 </script>

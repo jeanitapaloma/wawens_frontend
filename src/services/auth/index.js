@@ -1,11 +1,12 @@
-import ROUTER from 'router';
+//import router from 'router';
 import axios from 'axios'
 
 
 const http = axios.create({
-    baseURL :'http://127.0.0.1:8000',
+    baseURL: 'http://127.0.0.1:8000',
     headers: {
         'Content-Type': 'application/json',
+        'Accept' : 'application/json'
     }
 });
 export default {
@@ -18,35 +19,42 @@ export default {
     getUser(user) {
         return this.user = user;
     },
-    register(username, email, password,conpassword ) {
+    register(username, email, password, conpassword) {
         this.registeredUser.push({
             username: username,
             email: email,
             password: password,
-            conpassword: conpassword, 
+            conpassword: conpassword,
         })
-        console.log(username,email,password)
-        http.post('/api/register',{
+        console.log(username, email, password)
+        http.post('/api/register', {
             username: username,
             email: email,
             password: password
         }).then(res => {
             console.log(res)
-            ROUTER.push({path: '/dashboard'})
+            //ROUTER.push({path: '/dashboard'})
         })
-        .catch(err => console.log(err))
-        
-        
+            .catch(err => console.log(err))
+
+
     },
 
     login(email, password) {
-        for (let i = 0; i < this.registeredUser.length; i++) {
-            if (this.registeredUser[i].email === email && this.registeredUser[i].password === password) {
-                ROUTER.push('/dashboard')
-                return this.registeredUser[i]
-            }
-        }
-        alert("Email or Password is incorrect!")
-        return null
+        // for (let i = 0; i < this.registeredUser.length; i++) {
+        //     if (this.registeredUser[i].email === email && this.registeredUser[i].password === password) {
+        //         ROUTER.push('/dashboard')
+        //         return this.registeredUser[i]
+        //     }
+        // }
+        return new Promise((resolve, reject) => {
+            http.post('/api/login', {
+                email: email,
+                password: password
+            }).then(res => resolve(res))
+            .catch(err => {reject(err)})
+        })
     }
 }
+
+
